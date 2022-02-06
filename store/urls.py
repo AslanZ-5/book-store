@@ -1,5 +1,7 @@
+from unicodedata import name
 from django.urls import path
-from .views import home
+from .views import all_products
+app_name = 'store'
 urlpatterns = [
-    path('',home),
+    path('',all_products,name='home'),
 ]
