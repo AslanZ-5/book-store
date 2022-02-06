@@ -1,4 +1,11 @@
+{% extends 'base.html' %}
+{% block title %}Home{% endblock %}
+{% block content %}
+
 {% for product in products %} 
 {{ product.title }}
 {{ product.created_by}}
 {% endfor %}
+
+
+{% endblock %}
