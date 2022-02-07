@@ -14,6 +14,9 @@ class Category(models.Model):
     def __str__(self):
         return self.name
 
+    def get_absolute_url(self):
+        return reverse('store:category_list', kwargs={'category_slug':self.slug})
+
 class Product(models.Model):
     category = models.ForeignKey(Category,related_name='product', on_delete=models.CASCADE)
     created_by = models.ForeignKey(User,on_delete=models.CASCADE,related_name='product_creator')
