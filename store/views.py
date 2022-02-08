@@ -3,13 +3,10 @@ from django.http import HttpResponse
 from .models import Category,Product
 from django.shortcuts import get_object_or_404
 
-def categories(request):
-    return {
-        'categories':Category.objects.all()
-    }
+
 
 def all_products(request):
-    products = Product.objects.all()
+    products = Product.objects.filter(is_active=True)
     return render(request,'home.html',{'products':products})
 
 
