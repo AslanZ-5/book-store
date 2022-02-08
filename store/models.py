@@ -1,38 +1,40 @@
-from distutils.command.upload import upload
-from operator import mod
-from tabnanny import verbose
-from unicodedata import category
 from django.db import models
 from django.contrib.auth.models import User
 from django.urls import reverse
+
 
 class ProductManager(models.Manager):
     def get_queryset(self):
         return super().get_queryset().filter(is_active=True)
 
+
 class Category(models.Model):
+
     name = models.CharField(max_length=255, db_index=True)
-    slug = models.SlugField(max_length=255,unique=True)
+    slug = models.SlugField(max_length=255, unique=True)
+
     class Meta:
+
         verbose_name_plural = 'categories'
-    
+
     def __str__(self):
         return self.name
 
     def get_absolute_url(self):
-        return reverse('store:category_list', kwargs={'category_slug':self.slug})
+        return reverse('store:category_list', kwargs={'category_slug': self.slug})
+
 
 class Product(models.Model):
-    category = models.ForeignKey(Category,related_name='product', on_delete=models.CASCADE)
-    created_by = models.ForeignKey(User,on_delete=models.CASCADE,related_name='product_creator')
+    category = models.ForeignKey(Category, related_name='product', on_delete=models.CASCADE)
+    created_by = models.ForeignKey(User, on_delete=models.CASCADE, related_name='product_creator')
     title = models.CharField(max_length=255)
-    author = models.CharField(max_length=255,default='admin')
+    author = models.CharField(max_length=255, default='admin')
     description = models.TextField(blank=True)
-    image = models.ImageField(upload_to='images/',default='default_img.jpg')
+    image = models.ImageField(upload_to='images/', default='default_img.jpg')
     slug = models.SlugField(max_length=255)
-    price = models.DecimalField(max_digits=4,decimal_places=2)
-    in_stock =models.BooleanField(default=True)
-    is_active =models.BooleanField(default=True)
+    price = models.DecimalField(max_digits=4, decimal_places=2)
+    in_stock = models.BooleanField(default=True)
+    is_active = models.BooleanField(default=True)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
     objects = models.Manager()
@@ -40,17 +42,10 @@ class Product(models.Model):
 
     class Meta:
         verbose_name_plural = 'Products'
-        ordering = ('-created',)
+        ordering = ('-created', )
 
     def __str__(self):
-        return self.title 
+        return self.title
 
     def get_absolute_url(self):
-        return reverse('store:product_detail', kwargs={'slug':self.slug})
-
-
-
-    
-
-
-
+        return reverse('store:product_detail', kwargs={'slug': self.slug})
