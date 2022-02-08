@@ -6,7 +6,7 @@ from django.shortcuts import get_object_or_404
 
 
 def all_products(request):
-    products = Product.objects.filter(is_active=True)
+    products = Product.products.all()
     return render(request,'home.html',{'products':products})
 
 
