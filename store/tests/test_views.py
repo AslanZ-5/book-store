@@ -48,3 +48,10 @@ class TestViewResponse(TestCase):
         self.assertTrue(html.startswith('\n<!DOCTYPE html>\n'))
         self.assertEqual(response.status_code,200)
 
+    def test_url_alowed_hosts(self):
+        response = self.c.get('/',HTTP_HOST='example.com')
+        self.assertEqual(response.status_code,400)
+        response = self.c.get('/',HTTP_HOST='127.0.0.0.1')
+        self.assertEqual(response.status_code,200)
+      
+            
