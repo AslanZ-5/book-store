@@ -6,6 +6,8 @@ from django.contrib.auth.models import User
 from store.models import Category,Product
 from django.test import Client
 from django.urls import reverse
+from store.views import *
+from django.http import HttpRequest
 # @skip('deponstarting skipping')
 # class TestSkip(TestCase):
 #     def test_skip_example(self):
@@ -33,4 +35,12 @@ class TestViewResponse(TestCase):
         self.assertEqual(response.status_code,200)
     def test_category_deatil_url(self):
         response = self.c.get(reverse('store:category_list', kwargs={'category_slug':'django'}))
+        self.assertEqual(response.status_code,200)
+
+    def test_home_html(self):
+        request = HttpRequest()
+        response = all_products(request)
+        html = response.content.decode('utf8')
+        self.assertIn('<title>Home</title>',html)
+        self.assertTrue(html.startswith('\n<!DOCTYPE html>\n'))
         self.assertEqual(response.status_code,200)
