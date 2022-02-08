@@ -16,7 +16,6 @@ class TestCategoriesModel(TestCase):
         Test Category model Defaul name
         """
         data = self.data1
-        
         self.assertEqual(str(data),'django')
 
 class TestProductsModel(TestCase):
