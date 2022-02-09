@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from .models import Category, Product
 from django.shortcuts import get_object_or_404
-
+from django.http import HttpResponse
 
 def all_products(request):
     products = Product.products.all()
@@ -21,3 +21,7 @@ def category_list(request, category_slug):
             'products': products,
     }
     return render(request, 'category.html', context)
+
+
+def home(request):
+    return HttpResponse('helllow')
