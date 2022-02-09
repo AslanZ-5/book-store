@@ -1,6 +1,8 @@
 from email.mime import base
+from unicodedata import name
 from django.urls import path
 from . views import basket_summary
+app_name = 'basket'
 urlpatterns = [
-    path('', basket_summary)
+    path('', basket_summary,name='basket_summary')
 ]
