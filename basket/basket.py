@@ -40,4 +40,6 @@ class Basket():
         
         return sum(item['qty'] for item in self.basket.values())
 
+    def get_total_price(self):
+        return sum( item['total_price'] for item in self.basket.values())
     
