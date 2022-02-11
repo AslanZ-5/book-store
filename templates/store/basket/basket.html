@@ -39,7 +39,7 @@
                     class="btn btn-outline-secondary btn-sm update-button">
                     Update
                   </button>
-                  <button type="button" id="delete-button" value="{{product.id}}"
+                  <button type="button" id="delete-button" data-index="{{product.id}}"
                     class="btn btn-outline-secondary btn-sm delete-button">
                     Delete
                   </button>
@@ -58,14 +58,14 @@
   </main>
 
   <script>
-    $(document).on('click', '#delete-button', function (e) {
+    $(document).on('click', '.delete-button', function (e) {
         e.preventDefault();
   
         $.ajax({
             type: 'post',
             url: '{% url "basket:basket_delete" %}',
             data: {
-                productid: $('#delete-button').val(),
+                productid: $(this).data('index'),
                 csrfmiddlewaretoken: "{{csrf_token}}",
                 action: 'post'
             },
