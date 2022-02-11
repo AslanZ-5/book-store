@@ -35,11 +35,11 @@
                     <option value="">3</option>
                     <option value="">4</option>
                   </select>
-                  <button type="button" id="update-button" data-index="{{product.id}}"
+                  <button type="button" id="update-button" data-index="{{product.id}}" 
                     class="btn btn-outline-secondary btn-sm update-button">
                     Update
                   </button>
-                  <button type="button" id="delete-button" data-index="{{product.id}}"
+                  <button type="button" id="delete-button" value="{{product.id}}"
                     class="btn btn-outline-secondary btn-sm delete-button">
                     Delete
                   </button>
@@ -56,5 +56,25 @@
       </div>
     </div>
   </main>
+
+  <script>
+    $(document).on('click', '#delete-button', function (e) {
+        e.preventDefault();
+  
+        $.ajax({
+            type: 'post',
+            url: '{% url "basket:basket_delete" %}',
+            data: {
+                productid: $('#delete-button').val(),
+                csrfmiddlewaretoken: "{{csrf_token}}",
+                action: 'post'
+            },
+            success: function (json) {
+              document.getElementById('basket-qty').innerHTML = json.qty
+            },
+            error: function (xhr, errmsg, err) {}
+        });
+    })
+</script>
 
 {% endblock %} 
