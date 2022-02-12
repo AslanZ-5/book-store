@@ -18,3 +18,23 @@ class TestBasketView(TestCase):
         self.prod3 = Product.objects.create(category_id=1, title='testproduct3',
                                             created_by_id=1, slug='test3', price=30.1, in_stock=True,
                                             is_active=True, image='django.jpg')
+        self.client.post(
+            reverse('basket:basket_add'), {"productid": 1, "productqty": 1, "action": "post"}, xhr=True)
+        
+        self.client.post(
+            reverse('basket:basket_add'), {"productid": 2, "productqty": 5, "action": "post"}, xhr=True)
+        
+    def test_basket_url(self):
+        """
+        Test homepage response status
+        """
+        response = self.client.get(reverse('basket:basket_summary'))
+        self.assertEqual(response.status_code,200)
+
+    def test_basket_add(self):
+        """
+        Test adding to the basket 
+        """
+        response = self.client.post(
+            reverse('basket:basket_add'), {"productid": 2, "productqty": 4, "action": "post"}, xhr=True)
+        self.assertEqual(response.json(), {'qty':5})
