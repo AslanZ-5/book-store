@@ -63,6 +63,8 @@ class Basket():
 
         if product_id  in self.basket:
             self.basket[product_id]['qty'] = qty 
+            self.basket[product_id]['total_price'] = qty * Decimal(self.basket[product_id]['price'])
+            print(self.basket[product_id]['total_price'])
         self.save()
 
     def save(self):

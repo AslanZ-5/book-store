@@ -6,7 +6,7 @@ from store.models import Product
 
 def basket_summary(request):
     basket = Basket(request)
-    return render(request,'basket/basket.html')
+    return render(request, 'basket/basket.html')
 
 
 def basket_add(request):
@@ -16,8 +16,8 @@ def basket_add(request):
         product_qty = int(request.POST.get('productqty'))
         product = get_object_or_404(Product, id=product_id)
         basketqty = basket.__len__()
-        basket.add(product=product,qty=product_qty)
-        response = JsonResponse({'qty':basketqty})
+        basket.add(product=product, qty=product_qty)
+        response = JsonResponse({'qty': basketqty})
         return response
 
 def basket_delete(request):
@@ -34,5 +34,7 @@ def basket_update(request):
         product_id = int(request.POST.get('productid'))
         product_qty = int(request.POST.get('productqty'))
         basket.update(product=product_id, qty=product_qty)
-        response = JsonResponse({'Success': True})
+        basketqty = basket.__len__()
+        baskettotal = basket.get_total_price()
+        response = JsonResponse({'qty': basketqty, 'subtotal': baskettotal})
         return response 
