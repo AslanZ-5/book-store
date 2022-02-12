@@ -22,7 +22,7 @@ class TestBasketView(TestCase):
             reverse('basket:basket_add'), {"productid": 1, "productqty": 1, "action": "post"}, xhr=True)
         
         self.client.post(
-            reverse('basket:basket_add'), {"productid": 2, "productqty": 5, "action": "post"}, xhr=True)
+            reverse('basket:basket_add'), {"productid": 2, "productqty": 3, "action": "post"}, xhr=True)
         
     def test_basket_url(self):
         """
@@ -36,5 +36,17 @@ class TestBasketView(TestCase):
         Test adding to the basket 
         """
         response = self.client.post(
-            reverse('basket:basket_add'), {"productid": 2, "productqty": 4, "action": "post"}, xhr=True)
-        self.assertEqual(response.json(), {'qty':5})
+            reverse('basket:basket_add'), {"productid": 3, "productqty": 2, "action": "post"}, xhr=True)
+        self.assertEqual(response.json(), {'qty':6})
+
+        response = self.client.post(
+            reverse('basket:basket_add'), {"productid": 2, "productqty": 1, "action": "post"}, xhr=True)
+        self.assertEqual(response.json(),{'qty':4})
+
+    def test_basket_delete(self):
+        """
+        Test deleting items from the basket
+        """
+        response = self.client.post(reverse('basket:basket_delete'), {"productid": 1, "action": "post"}, xhr=True)
+        self.assertEqual(response.json(), {'qty':3,'subtotal':'90.90'})
+        
