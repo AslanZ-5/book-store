@@ -1,5 +1,5 @@
 from decimal import Decimal
-from tkinter.tix import Tree
+
 from store.models import Product
 
 
@@ -18,6 +18,8 @@ class Basket():
         """Adding and updating the users basket session data """
         product_id = str(product.id)
         if product_id  in self.basket:
+            self.basket[product_id]['qty'] = qty
+        else:
             self.basket[product_id] = {'price': str(product.price),'qty':int(qty)}
         self.save() 
     
