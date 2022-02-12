@@ -17,7 +17,7 @@ class Basket():
     def add(self,product,qty):
         """Adding and updating the users basket session data """
         product_id = str(product.id)
-        if product_id not in self.basket:
+        if product_id  in self.basket:
             self.basket[product_id] = {'price': str(product.price),'qty':int(qty)}
         self.save() 
     
@@ -50,7 +50,7 @@ class Basket():
         Delete item from session data
         """
         product_id = str(product)
-        print(product_id)
+  
         if product_id in self.basket:
             del self.basket[product_id]
         self.save()
@@ -63,9 +63,12 @@ class Basket():
 
         if product_id  in self.basket:
             self.basket[product_id]['qty'] = qty 
-            self.basket[product_id]['total_price'] = qty * Decimal(self.basket[product_id]['price'])
-            print(self.basket[product_id]['total_price'])
+            self.basket[product_id]['total_price'] = qty * float(self.basket[product_id]['price'])
+            
         self.save()
 
+    def get_total_item(self,id):
+        product_id = str(id)
+        return Decimal(self.basket[product_id]['price']) * int(self.basket[product_id]['qty'])
     def save(self):
         self.session.modified = True

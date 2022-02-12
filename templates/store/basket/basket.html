@@ -19,7 +19,7 @@
             <div class="col border-bottom">
               <div class="row p-3">
                 <div class="col-6">Hardback Book</div>
-                <div class="col-6 text-end"><span class="h6 fw-bold">£{{item.total_price}}</span></div>
+                <div class="col-6 text-end">£<span class="h6 fw-bold"><p id="itemtotal{{product.id}}" >{{item.total_price}}</p></span></div>
               </div>
             </div>
             <div class="col">
@@ -72,6 +72,9 @@
             },
             success: function (json) {
                $('.product-item[data-index="' + prodid + '"]').remove();
+               document.getElementById('subtotal').innerHTML = json.subtotal
+               document.getElementById('basket-qty').innerHTML = json.qty
+
             },
             error: function (xhr, errmsg, err) {}
         });
@@ -92,6 +95,9 @@
             success: function (json) {
               document.getElementById('basket-qty').innerHTML = json.qty
               document.getElementById('subtotal').innerHTML = json.subtotal
+              document.getElementById('itemtotal'+ prodid).innerHTML = json.itemtotal
+
+              
 
             },
             error: function (xhr, errmsg, err) {}
