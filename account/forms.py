@@ -11,3 +11,21 @@ class RegistrationForm(forms.ModelForm):
         fields = ('user_name', 'email')
 
     
+    def clean_username(self):
+        user_name = self.cleaned_data['user_name'].lower()
+        r = Userbase.objects.filter(user_name=user_name)
+        if r.count():
+            raise forms.ValidationError("username already exists")
+        return user_name
+    
+    def clean_password2(self):
+        cd = self.changed_data
+        if cd['password'] != cd['password2']:
+            raise forms.ValidationError('Posswords do not match')
+        return cd['password2']
+    
+    def clean_email(self):
+        email = self.cleaned_data['email']
+        if Userbase.objects.filter(email=email).exists():
+            raise forms.ValidationError('Please use another email, that is already taken')
+        return email
