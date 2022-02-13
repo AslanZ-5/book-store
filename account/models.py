@@ -1,6 +1,5 @@
-from multiprocessing.sharedctypes import Value
-from tabnanny import verbose
 from django.db import models
+from django.core.mail import send_mail
 from django.contrib.auth.models import (AbstractBaseUser,BaseUserManager,PermissionsMixin)
 from django_countries.fields import CountryField
 from django.utils.translation import gettext_lazy as _
@@ -59,6 +58,16 @@ class Userbase(AbstractBaseUser,PermissionsMixin):
     class Meta:
         verbose_name = 'Account'
         verbose_name_plural = 'Accounts'
+
+    def email_user(self,subject,message):
+        send_mail(
+            subject,
+            message,
+            'asl.zurabov@gmail.com',
+            [self.email],
+            fail_silently=False,
+
+        )
 
     def __str__(self):
         return self.user_name

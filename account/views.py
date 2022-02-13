@@ -1,6 +1,6 @@
-from msilib.schema import Error
 from django.contrib.sites.shortcuts import get_current_site
-from django.utils.http import  urlsafe_base64_encode
+from django.http import HttpResponse
+from django.utils.http import  urlsafe_base64_encode,urlsafe_base64_decode
 from django.shortcuts import redirect, render
 from django.utils.encoding import force_bytes, force_str 
 from django.template.loader import render_to_string
@@ -37,6 +37,7 @@ def account_register(request):
                 'token': account_activation_token.make_token(user),
             })
             user.email_user(subject=subject, message=message)
+            return HttpResponse('registered Succssfully and activation sent')
     else:
         registerForm = RegistrationForm()
     
@@ -45,13 +46,15 @@ def account_register(request):
 
 def account_activate(request,uidb64,token):
 
-    uid = force_str(urlsafe_base64_encode(uidb64))
+    uid = force_str(urlsafe_base64_decode(uidb64))
     user = Userbase.objects.get(pk=uid)
     
     if user is not None and account_activation_token.check_token(user,token):
         user.is_active = True
         user.save()
         login(request,user)
+        return redirect('account:dashboard')
     else:
         return render(request,'account/registration/activation_invalid.html')
+    
 
