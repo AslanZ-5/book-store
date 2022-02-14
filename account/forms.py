@@ -4,6 +4,7 @@ from django.contrib.auth.forms import AuthenticationForm
 from .models import Userbase
 
 
+
 class UserLoginForm(AuthenticationForm):
     username = forms.CharField(widget=forms.TextInput(attrs={'class':'form-control mb-3', 'placeholder':'Username', 'id': 'login-username'}))
     password = forms.CharField(widget=forms.PasswordInput(
@@ -50,3 +51,22 @@ class RegistrationForm(forms.ModelForm):
         self.fields['email'].widget.attrs.update({'class':'form-control mb-3', 'placeholder':'E-mail'})
         self.fields['password'].widget.attrs.update({'class':'form-control mb-3', 'placeholder':'Password'})
         self.fields['password2'].widget.attrs.update({'class':'form-control mb-3', 'placeholder':'Repeat Password'})
+
+
+class UserEditForm(forms.ModelForm):
+    email = forms.EmailField(
+        label='Account email(can not be changed)', max_length=200, widget=forms.TextInput(
+            attrs={'class': 'form-control mb-3', 'placeholder': 'email', 'id': 'form-email', 'readonly': 'readonly'}))
+
+    first_name = forms.CharField(
+        label='Firstname', min_length=4, max_length=200, widget=forms.TextInput(
+            attrs={'class': 'form-control mb-3', 'placeholder': 'Firstname', 'id': 'form-firstname'}))
+
+    class Meta:
+        model = Userbase
+        fields = ('email','first_name')
+
+    def __init__(self,*args,**kwargs):
+        super().__init__(*args,**kwargs)
+        self.fields['first_name'].required = True
+        self.fields['email'].required = True 
