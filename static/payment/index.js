@@ -23,4 +23,44 @@ card.on('change', function(event) {
         displayError.textContent = '';
         $('#card-errors').removeClass('alert aler-info')
     }
-})
+});
+
+var form = document.getElementById('payment-form')
+
+form.addEventListener('submit',function(ev){
+    ev.preventDefault();
+
+var custName = document.getElementById('custName')
+var custAdd = document.getElementById('custAdd')
+var custAdd2 = document.getElementById('custAdd2')
+var custCode = document.getElementById('custCode')
+
+
+
+    stripe.confirmCardPayment(clientsecret,{
+        payment_method: {
+            card: card,
+            billing_details:{
+                address: {
+                    line1:custAdd,
+                    line2:custAdd2
+                },
+                name:custName
+            },
+        }
+    }).then(function(result){
+        if (result.error) {
+            console.log('payment error')
+            console.log(resulet.error.message);
+        } else {
+            if (result.paymentIntent.status === 'succeeded'){
+                console.log('payment precessed')
+                // There's a risk of the customer closing the window before callback
+                // execution. Set up a webhook or plugin to listen for the 
+                // payment_intent.succeeded event that handles any business critical
+                // post-payment actions
+                window.location.replace('http://127.0.0.1:8000/payment/orderplaced/');
+            }
+        }
+    })
+});
