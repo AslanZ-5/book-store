@@ -25,7 +25,9 @@ SECRET_KEY = 'django-insecure-vons#r%x#f6wg!-i#f&89pbsul6uv8^n+po#003az#*nw-d!4p
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
+ALLOWED_HOSTS = []
+
+CSRF_TRUSTED_ORIGINS = ['http://localhost:8000']
 
 
 # Application definition
@@ -153,3 +155,9 @@ PASSWORD_RESET_TIMEOUT_DAYS = 2
 
 # Email setting 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+
+# Stripe Payment
+
+STRIPE_ENDPOINT_SECRET = 'whsec_289c2a700ea2740d29a46981499b6f49f7c35e4fd7eedf166d998cfe3d9e08cc'
+# stripe listen --forward-to localhost:8000/payment/webhook

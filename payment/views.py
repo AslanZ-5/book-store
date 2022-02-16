@@ -45,6 +45,7 @@ def stripe_webhook(request):
         payment_confirmation(event.data.object.client_secret)
     else:
         print('Unhandled event type {}'.format(event.type))
+    return HttpResponse(status=200)
 
 def order_placed(request):
     basket = Basket(request)
