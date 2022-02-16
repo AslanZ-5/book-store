@@ -14,7 +14,7 @@ from orders.views import user_orders
 @login_required
 def dashboard(request):
     orders = user_orders(request)
-    return render(request,'account/user/dashboard.html',{'orders':orders})
+    return render(request,'dashboard.html',{'orders':orders})
 
 @login_required
 def edit_details(request):
@@ -27,7 +27,7 @@ def edit_details(request):
         user_form = UserEditForm(instance=request.user)
 
     return render(request,
-                  'account/user/edit_details.html', {'user_form': user_form})
+                  'edit_details.html', {'user_form': user_form})
 
 @login_required
 def delete_user(request):
@@ -55,7 +55,7 @@ def account_register(request):
             # Setup email
             current_site = get_current_site(request)
             subject = "Activate your Account"
-            message = render_to_string('account/registration/account_activation_email.html',{
+            message = render_to_string('account_activation_email.html',{
                 'user':user,
                 'domain':current_site.domain,
                 'uid':urlsafe_base64_encode(force_bytes(user.pk)),
@@ -66,7 +66,7 @@ def account_register(request):
     else:
         registerForm = RegistrationForm()
     
-    return render(request, 'account/registration/register.html', {'form': registerForm})
+    return render(request, 'register.html', {'form': registerForm})
 
 
 def account_activate(request,uidb64,token):

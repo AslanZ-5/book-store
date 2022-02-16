@@ -67,7 +67,8 @@ TEMPLATES = [
         'DIRS': [
             BASE_DIR / 'templates/store/',
             BASE_DIR / 'templates/',
-            BASE_DIR / 'templates/store/products/',
+            BASE_DIR / 'templates/account/registration/',
+            BASE_DIR / 'templates/account/user/'
         ],
         'APP_DIRS': True,
         'OPTIONS': {
