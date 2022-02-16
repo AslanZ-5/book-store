@@ -153,6 +153,8 @@ LOGIN_URL = '/account/login/'
 
 PASSWORD_RESET_TIMEOUT_DAYS = 2
 
+BASKET_SESSION_ID = 'basket'
+
 # Email setting 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
