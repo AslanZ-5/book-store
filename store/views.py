@@ -5,7 +5,7 @@ from django.http import HttpResponse
 
 def all_products(request):
     products = Product.products.all()
-    return render(request, 'home.html', {'products': products})
+    return render(request, 'index.html', {'products': products})
 
 
 def product_detail(request, slug):
