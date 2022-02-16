@@ -36,7 +36,7 @@
           
           <div class="">Sub Total: <span class="fw-bold">£</span><div id="subtotal" class="d-inline-flex fw-bold">{{basket.get_subtotal_price}}</div></div>
           <div id="">Shipping <span class="small">(Next day delivery)</span>: <span class="fw-bold">£11.50</span></div>
-          <div class="pt-2">Total to pay: <span class="fw-bold h5">£</span><span id="total" class="fw-bold h5">{{basket.get_total_price}}</span></div>
+          <div class="pt-2">Total to pay: <span class="fw-bold ">£</span><div id="total" class="d-inline-flex fw-bold">{{basket.get_total_price}}</div></div>
           
         </div>
       </div>
@@ -82,10 +82,11 @@
             </div>
           </div>
         </div>
-        {% endwith %} 
-        {% endfor %}
+        
       </div>
     </div>
+    {% endwith %} 
+        {% endfor %}
     
   </div>
 </main>
@@ -106,7 +107,11 @@
             success: function (json) {
                $('.product-item[data-index="' + prodid + '"]').remove();
                document.getElementById('subtotal').innerHTML = json.subtotal
+               document.getElementById('total').innerHTML = json.total
+
                document.getElementById('basket-qty').innerHTML = json.qty
+
+
 
             },
             error: function (xhr, errmsg, err) {}
@@ -126,11 +131,11 @@
                 action: 'post'
             },
             success: function (json) {
-              document.getElementById('basket-qty').innerHTML = json.qty
               document.getElementById('subtotal').innerHTML = json.subtotal
-              document.getElementById('itemtotal'+ prodid).innerHTML = json.itemtotal
+               document.getElementById('total').innerHTML = json.total
 
-              
+               document.getElementById('basket-qty').innerHTML = json.qty
+              document.getElementById('itemtotal'+ prodid).innerHTML = json.itemtotal
 
             },
             error: function (xhr, errmsg, err) {}
