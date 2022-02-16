@@ -16,7 +16,7 @@ def BasketView(request):
     total = str(basket.get_total_price())
     total = total.replace('.', '')
     total = int(total)
-    print('total')
+
 
     stripe.api_key = 'sk_test_51KTPH3Hhpp9pM3a695a4HMHZ8kGTR0YoWP665LWzPhOLsff3KcNsiUMhWsgZ0iHqJBvNMQvppT0DLpViGVn4jsNp00DWAM4oJU'
     intent = stripe.PaymentIntent.create(
@@ -45,3 +45,8 @@ def stripe_webhook(request):
         payment_confirmation(event.data.object.client_secret)
     else:
         print('Unhandled event type {}'.format(event.type))
+
+def order_placed(request):
+    basket = Basket(request)
+    basket.clear()
+    return render(request, 'payment/orderplaced.html')

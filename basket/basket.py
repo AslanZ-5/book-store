@@ -74,3 +74,7 @@ class Basket():
         return Decimal(self.basket[product_id]['price']) * int(self.basket[product_id]['qty'])
     def save(self):
         self.session.modified = True
+
+    def clear(self):
+        del self.session['skey']
+        self.save()
