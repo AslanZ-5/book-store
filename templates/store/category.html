@@ -2,13 +2,23 @@
 {% block title %}Search by category: "{{category}}"{% endblock %}
 {% block content %}
 
-<main>
+<div class="container" style="max-width: 1000px">
+   <div class="col-12">
+     <h1 class="h2">{{ category.name|title}}</h1>
+   </div>
+   <div class="col-12 d-flex justify-content-between">
+     <div><b>Popular</b> products purchased</div>
+     
+   </div>
+   <hr />
+</div>
+
   <div class="container">
     <div class="row">
-      <div class="album py-5">
-
-
-        <div class="pb-3"><h1 class="h3">Popular</h1></div>
+      <div class="album">
+        {% if not products %} 
+        <div class="col-12">There are currently no products active <a href="{% url 'store:home' %}">  Home </a></div>
+      {% else %}
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-5 g-3">
 
           {% for product in products %}
@@ -29,6 +39,7 @@
           </div>
 
           {% endfor %}
+          {% endif %}
 
         </div>
       </div>
@@ -37,7 +48,7 @@
   </div>
 
 
-</main>
+
   
 
 

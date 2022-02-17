@@ -1,9 +1,10 @@
 {% extends 'base.html' %}
 {% load static %}
+{% block stylesheet %}{% static 'basket/css/basket.css' %}{% endblock %}
 {% block title %}Basket Summary{% endblock %}
 {% block content %}
-<main class="pt-5">
-  <div class="container" style="max-width: 1000px">
+
+  <div class="container" >
     <div class="col-12">
       <h1 class="h2">Your Basket</h1>
     </div>
@@ -12,7 +13,10 @@
     </div>
     <hr />
   </div>
-  <div class="container" style="max-width: 1000px">
+  <div class="container" >
+    {% if basket|length == 0 %} 
+    <div class="col-12">Your basket is empty <a href="{% url 'store:home' %}">Shop</a></div>
+    {% else %}
     
     <div class="row g-3">
       <div class="col-12 bg-light p-3 d-flex justify-content-between">
@@ -54,8 +58,7 @@
         <div class="card mb-3 mt-3 border-0 product-item" data-index="{{product.id}}">
           <div class="row g-0 " >
             <div class="col-md-2 d-none d-md-block">
-              <img class="img-fluid mx-auto d-block" alt="Responsive image"
-                  src="{{ product.image.url }}" />
+              <img class="img-fluid mx-auto d-block" alt="Responsive image" src="{{ product.image.url }}"/>
             </div>
             <div class="col-md-10 ps-md-3">
               <div class="card-body p-1">
@@ -89,7 +92,7 @@
         {% endfor %}
     
   </div>
-</main>
+{% endif %}
 
   <script>
     // Delete Item
