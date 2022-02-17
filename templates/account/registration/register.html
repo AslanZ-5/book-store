@@ -3,7 +3,7 @@
 
 {% block subcontent %}
 
-<form action="." method="post" class="account-form p-4 rounded col-lg-10 mx-auto">
+<form action="." method="post" class="account-form p-4 rounded  mx-auto">
     {% csrf_token %}
     <h3 class="mb-2 ">Create an account</h3>
     <p class="mb-4">It's free and only takes a minute.</p>
@@ -30,7 +30,7 @@
     {{form.password2}}
     <button class="btn btn-primary btn-block py-2 mb-4 mt-5 fw500 w-100" type="submit">Register</button>
     <p class="text-center">
-        <a href="#">Already have an account? </a>
+        <a href="{% url 'account:login' %}">Already have an account? </a>
     </p>
 </form>
 
