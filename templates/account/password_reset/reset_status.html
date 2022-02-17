@@ -2,38 +2,22 @@
 {% block title %}Reset Status{% endblock %}
 {% block content %}
 
-<style>
-    .container-fluid {
-        max-width: 100%;
-    }
 
-    .account-form input {
-        border: 2px solid #ccc;
-        height: calc(2em + .75rem + 2px);
-    }
+<div class="container">
+    <div class="row">
+        <div class="col-12 col-lg-6  mx-auto">
 
-    .account-form input:focus {
-        border-color: #1497ff;
-        box-shadow: none;
-    }
-</style>
+            {% if 'email' in request.get_full_path %}
+            <h3 class="mb-4">Password Reset Success</h3>
+            <p>Check your email for instructions</p>
+            {% endif%}
+            {% if 'complete' in request.get_full_path %}
+            <h3 class="mb-4">Password Reset Success</h3>
+            <a href="{% url 'account:login' %}">Login</a>
+            {% endif%}
 
-
-                <div class="container">
-                    <div class="row">
-                        <div class="col-12 col-lg-6  mx-auto">
-                            <div class="p-4">
-                                {% if 'email' in request.get_full_path %}
-                                        <h3 class="mb-4">Password Reset Success</h3>
-                                        <p>Check your email for instructions</p>
-                                {% endif%}
-                                {% if 'complete' in request.get_full_path %}
-                                        <h3 class="mb-4">Password Reset Success</h3>
-                                        <a href="{% url "account:login" %}">Login</a>
-                                {% endif%}
-                            </div>       
-                        </div>
-                    </div>
-                </div>
+        </div>
+    </div>
+</div>
 
 {% endblock %}
