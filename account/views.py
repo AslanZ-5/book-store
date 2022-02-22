@@ -1,4 +1,6 @@
+from email.policy import default
 import imp
+from tkinter.tix import Tree
 from django.contrib.sites.shortcuts import get_current_site
 from django.http import HttpResponseRedirect
 from django.utils.http import  urlsafe_base64_encode,urlsafe_base64_decode
@@ -121,3 +123,9 @@ def edit_address(request,id):
 def delete_address(request,id):
     address = Address.objects.filter(pk=id, customer=request.user).delete()
     return redirect('account:addresses')
+
+@login_required
+def set_default(request,id):
+    Address.objects.filter( customer=request.user, default=True).update(default=False)# make current default address False
+    Address.objects.filter(pk=id, customer=request.user, default=True).update(default=False)# make this address True
+    return redirect("account:addresses")
