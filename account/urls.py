@@ -8,7 +8,10 @@ from .views import (account_register,
                     account_activate,
                     dashboard,
                     edit_details,
-                    delete_user,)
+                    delete_user,
+                    view_address,
+                    add_address,
+                    edit_address)
 
 app_name = 'account'
 urlpatterns = [
@@ -34,6 +37,11 @@ urlpatterns = [
     path('profile/delete_user/', delete_user, name='delete_user'),
     path('profile/delete_confirm', TemplateView.as_view(template_name='delete_confirm.html'),
                                                         name='delete_confirmation'),
+    path("addresses/", view_address, name='addresses'),
+    path("add_address/", add_address, name='add_address'),
+    path("address/edit/<slug:id>/", edit_address, name='addresses'),
+    path("address/delete/<slug:id>/", edit_address, name='addresses'),
+    path("address/set_default/<slug:id>/", edit_address, name='addresses'),
     
     
 ]
