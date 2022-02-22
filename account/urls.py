@@ -11,7 +11,7 @@ from .views import (account_register,
                     delete_user,
                     view_address,
                     add_address,
-                    # edit_address,
+                    edit_address,
                     # set_default,
                     # delete_address
                     )
@@ -42,7 +42,7 @@ urlpatterns = [
                                                         name='delete_confirmation'),
     path("addresses/", view_address, name='addresses'),
     path("add_address/", add_address, name='add_address'),
-    # path("address/edit/<slug:id>/", edit_address, name='edit_address'),
+    path("address/edit/<slug:id>/", edit_address, name='edit_address'),
     # path("address/delete/<slug:id>/", delete_address, name='delete_address'),
     # path("address/set_default/<slug:id>/", set_default, name='set_default'),
     
