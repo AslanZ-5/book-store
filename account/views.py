@@ -8,7 +8,7 @@ from django.contrib.auth import login, logout
 from django.contrib.auth.decorators import login_required
 from .token  import account_activation_token
 from .forms import RegistrationForm, UserEditForm
-from .models import Customer
+from .models import Customer, Address
 from orders.views import user_orders
 
 @login_required
@@ -83,3 +83,8 @@ def account_activate(request,uidb64,token):
         return render(request,'activation_invalid.html')
     
 
+# Adresses
+@login_required
+def view_address(request):
+    addresses = Address.objects.filter(customer=request.user)
+    return render(request, "adresses.html", {'addresses':addresses})
