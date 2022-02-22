@@ -1,7 +1,7 @@
 {% extends "sub_base.html" %}
 {% block title %}Log-in{% endblock %}
 {% block subcontent %}
-
+<div class="col-6 mx-auto">
 <form class="account-form" action="{% url 'account:login' %}" method="post">
   {% csrf_token %}
   <h3 class="mb-4">Sign In</h3>
@@ -24,5 +24,5 @@
     <div class="text-center"><a href="{% url 'account:pwdreset' %}">Forgotten Password?</a></div>
   </div>
 </form>
-
+</div>
 {% endblock %}
