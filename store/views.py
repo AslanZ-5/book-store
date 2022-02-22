@@ -5,11 +5,12 @@ from django.http import HttpResponse
 
 def all_products(request):
     products = Product.objects.all()
+
     return render(request, 'index.html', {'products': products})
 
 
 def product_detail(request, slug):
-    product = get_object_or_404(Product, slug=slug, in_stock=True)
+    product = get_object_or_404(Product, slug=slug, is_active=True)
     return render(request, 'detail.html', {'product': product})
 
 

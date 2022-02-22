@@ -26,11 +26,16 @@ class ProductTypeAdmin(admin.ModelAdmin):
 
 class ProductImageInline(admin.TabularInline):
     model = ProductImage
+class ProductSpecificationValueInline(admin.TabularInline):
+    model = ProductSpecificationValue
 
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
     inlines = [
-        ProductImageInline
+        ProductSpecificationValueInline,
+        ProductImageInline,
+        
+
     ]
 
 # @admin.register(Category)

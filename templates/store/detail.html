@@ -42,7 +42,17 @@
                   <div class="col-md-12">
                       <div class="card-body p-1">
                           <h1 class="mb-0 h2 pe-4 pb-4">{{ product.title }}</h1>
-                          <div class="bg-light"><img class="img-fluid mx-auto d-block" width="200px" alt="Responsive image" src="{{ product.image.url }}"> </div>
+                          <div class="bg-light"></div>
+                          {% for image in  product.product_image.all %} 
+                            {% if image.is_feature %} 
+                            
+                                <img class="img-fluid mx-auto d-block" width="200px" alt="{{image.image.alt_text}}" src="{{ image.image.url }}">
+                            
+                            {% else %} 
+                            <img class="img-fluid d-block-inline pt-3" width="100px" alt="{{image.image.alt_text}}" src="{{ image.image.url }}">
+                            {% endif %}
+                          {% endfor %}
+                        </div>
                       </div>
                       
                   </div>
