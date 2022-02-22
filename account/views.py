@@ -7,7 +7,7 @@ from django.template.loader import render_to_string
 from django.contrib.auth import login, logout
 from django.contrib.auth.decorators import login_required
 from .token  import account_activation_token
-from .forms import RegistrationForm, UserEditForm
+from .forms import RegistrationForm, UserEditForm, UserAddressForm
 from .models import Customer, Address
 from orders.views import user_orders
 
