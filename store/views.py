@@ -1,3 +1,4 @@
+from xml.etree.ElementInclude import include
 from django.shortcuts import render
 from .models import Category, Product
 from django.shortcuts import get_object_or_404
@@ -16,7 +17,7 @@ def product_detail(request, slug):
 
 def category_list(request, category_slug):
     category = get_object_or_404(Category, slug=category_slug)
-    products = Product.objects.filter(category=category)
+    products = Product.objects.filter(category__in=category.get_descendants(include_self=True))
     context = {
             'category': category,
             'products': products,
