@@ -21,4 +21,6 @@ stripe3==0.0.0
 tzdata==2021.5
 urllib3==1.26.8
 six==1.16.0
+numpy==1.22.2
+
 

@@ -8,7 +8,7 @@ from django.contrib.auth import login, logout
 from django.contrib.auth.decorators import login_required
 from .token  import account_activation_token
 from .forms import RegistrationForm, UserEditForm
-from .models import Userbase
+from .models import Customer
 from orders.views import user_orders
 
 @login_required
@@ -31,7 +31,7 @@ def edit_details(request):
 
 @login_required
 def delete_user(request):
-    user = Userbase.objects.get(user_name=request.user)
+    user = Customer.objects.get(user_name=request.user)
     user.is_active = False
     user.save()
     logout(request)
@@ -72,7 +72,7 @@ def account_register(request):
 def account_activate(request,uidb64,token):
 
     uid = force_str(urlsafe_base64_decode(uidb64))
-    user = Userbase.objects.get(pk=uid)
+    user = Customer.objects.get(pk=uid)
     
     if user is not None and account_activation_token.check_token(user,token):
         user.is_active = True
