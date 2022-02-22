@@ -5,7 +5,7 @@ from django.shortcuts import get_object_or_404
 from django.http import HttpResponse
 
 def all_products(request):
-    products = Product.objects.all()
+    products = Product.objects.prefetch_related("product_image").filter(is_active=True)
 
     return render(request, 'index.html', {'products': products})
 
