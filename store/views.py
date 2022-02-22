@@ -17,7 +17,7 @@ def product_detail(request, slug):
 
 def category_list(request, category_slug):
     category = get_object_or_404(Category, slug=category_slug)
-    products = Product.objects.filter(category__in=category.get_descendants(include_self=True))
+    products = Product.objects.prefetch_related("product_image").filter(category__in=category.get_descendants(include_self=True))
     context = {
             'category': category,
             'products': products,
