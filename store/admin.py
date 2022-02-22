@@ -1,6 +1,37 @@
-# from django.contrib import admin
-# from .models import Category, Product
+from django.contrib import admin
+from django import forms
+from mptt.admin import MPTTModelAdmin
+from .models import (Category,
+                     Product,
+                     ProductImage,
+                     ProductSecification,
+                     ProductSpecificationValue,
+                     ProductType,
+                     )
+admin.site.register(Category, MPTTModelAdmin)
+# admin.site.register(Product)
+# admin.site.register(ProductImage)
+# admin.site.register(ProductSecification)
+# admin.site.register(ProductSpecificationValue)
 
+
+class ProductSpecificationInline(admin.TabularInline):
+    model = ProductSecification
+
+@admin.register(ProductType)
+class ProductTypeAdmin(admin.ModelAdmin):
+    inlines = [ 
+        ProductSpecificationInline
+    ]
+
+class ProductImageInline(admin.TabularInline):
+    model = ProductImage
+
+@admin.register(Product)
+class ProductAdmin(admin.ModelAdmin):
+    inlines = [
+        ProductImageInline
+    ]
 
 # @admin.register(Category)
 # class CategoryAdmin(admin.ModelAdmin):
