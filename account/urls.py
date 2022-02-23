@@ -14,7 +14,8 @@ from .views import (account_register,
                     edit_address,
                     set_default,
                     delete_address,
-                    add_to_wishlist
+                    add_to_wishlist,
+                    wishlist
                     )
 
 app_name = 'account'
@@ -47,7 +48,8 @@ urlpatterns = [
     path("address/delete/<slug:id>/", delete_address, name='delete_address'),
     path("address/set_default/<slug:id>/", set_default, name='set_default'),
     # Wish list
-    path('wishlist/add_to_whishlist/<int:id>/', add_to_wishlist, name='add_to_wishlist')
+    path('wishlist', wishlist, name='wishlist'),
+    path('wishlist/add_to_whishlist/<int:id>/', add_to_wishlist, name='add_to_wishlist'),
     
     
 ]

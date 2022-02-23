@@ -10,6 +10,7 @@ from django.template.loader import render_to_string
 from django.contrib.auth import login, logout
 from django.contrib.auth.decorators import login_required
 from django.urls import reverse
+from django.contrib import messages
 
 from .token  import account_activation_token
 from .forms import RegistrationForm, UserEditForm, UserAddressForm
@@ -18,12 +19,20 @@ from orders.views import user_orders
 from store.models import Product
 
 @login_required
+def wishlist(request):
+    products = Product.objects.filter(users_wishlist=request.user)
+    return render(request, 'user_wishlist.html', {'products':products})
+
+@login_required
 def add_to_wishlist(request,id):
     product = get_object_or_404(Product,id=id)
     if product.users_wishlist.filter(id=request.user.id).exists():
         product.users_wishlist.remove(request.user)
+        messages.success(request, product.title + ' has been removed from your Wishlist')
+
     else:
         product.users_wishlist.add(request.user)
+        messages.success(request, "Added " + product.title + ' to your Wishlist')
     return HttpResponseRedirect(request.META['HTTP_REFERER'])
 
 
