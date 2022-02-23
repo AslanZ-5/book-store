@@ -31,7 +31,6 @@ INSTALLED_APPS = [
     'store',
     'basket',
     'account',
-    'payment',
     'orders',
     'mptt'
 
@@ -150,9 +149,3 @@ BASKET_SESSION_ID = 'basket'
 
 # Email setting 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-
-
-# Stripe Payment
-
-STRIPE_ENDPOINT_SECRET = 'whsec_289c2a700ea2740d29a46981499b6f49f7c35e4fd7eedf166d998cfe3d9e08cc'
-# stripe listen --forward-to localhost:8000/payment/webhook
