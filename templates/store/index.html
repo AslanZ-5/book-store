@@ -25,6 +25,7 @@
             {% for product in products %}
             <div class="col">
               <div class="card border-0">
+                
                 {% for image in product.product_image.all %}
                 {% if image.is_feature %}
                 <img class="img-fluid" alt="{{ image.image.alt_text }}" src="{{ image.image.url }}">
