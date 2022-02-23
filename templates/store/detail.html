@@ -32,7 +32,7 @@
               </div>
               <hr>
               <button type="button" id="add-button" value="{{product.id}}" class="btn btn-success fw500">Add to basket</button>
-              <button type="button" id="add-button" value="{{product.id}}" class="btn btn-light fw500">Add to Favorites</button>
+              <a href="{% url 'account:add_to_wishlist' product.id %}" class="btn btn-light fw500" tabindex="-1" role="button" aria-disabled="true">Add to Wish List</a>
               </div>
           </div>
   

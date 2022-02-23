@@ -4,16 +4,28 @@ from tkinter.tix import Tree
 from django.contrib.sites.shortcuts import get_current_site
 from django.http import HttpResponseRedirect
 from django.utils.http import  urlsafe_base64_encode,urlsafe_base64_decode
-from django.shortcuts import redirect, render
+from django.shortcuts import get_object_or_404, redirect, render
 from django.utils.encoding import force_bytes, force_str 
 from django.template.loader import render_to_string
 from django.contrib.auth import login, logout
 from django.contrib.auth.decorators import login_required
 from django.urls import reverse
+
 from .token  import account_activation_token
 from .forms import RegistrationForm, UserEditForm, UserAddressForm
 from .models import Customer, Address
 from orders.views import user_orders
+from store.models import Product
+
+@login_required
+def add_to_wishlist(request,id):
+    product = get_object_or_404(Product,id=id)
+    if product.users_wishlist.filter(id=request.user.id).exists():
+        product.users_wishlist.remove(request.user)
+    else:
+        product.users_wishlist.add(request.user)
+    return HttpResponseRedirect(request.META['HTTP_REFERER'])
+
 
 @login_required
 def dashboard(request):

@@ -13,7 +13,8 @@ from .views import (account_register,
                     add_address,
                     edit_address,
                     set_default,
-                    delete_address
+                    delete_address,
+                    add_to_wishlist
                     )
 
 app_name = 'account'
@@ -45,6 +46,8 @@ urlpatterns = [
     path("address/edit/<slug:id>/", edit_address, name='edit_address'),
     path("address/delete/<slug:id>/", delete_address, name='delete_address'),
     path("address/set_default/<slug:id>/", set_default, name='set_default'),
+    # Wish list
+    path('wishlist/add_to_whishlist/<int:id>/', add_to_wishlist, name='add_to_wishlist')
     
     
 ]
