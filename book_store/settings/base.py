@@ -60,7 +60,8 @@ TEMPLATES = [
             BASE_DIR / 'templates/account/registration/',
             BASE_DIR / 'templates/account/',
             BASE_DIR / 'templates/account/password_reset/',
-            BASE_DIR / 'templates/account/dashboard/'
+            BASE_DIR / 'templates/account/dashboard/',
+            BASE_DIR / 'templates/checkout/',
         ],
         'APP_DIRS': True,
         'OPTIONS': {
