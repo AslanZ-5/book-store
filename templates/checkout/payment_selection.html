@@ -47,6 +47,23 @@
 <script src="https://www.paypal.com/sdk/js?client-id=AeL4VXjka2yAxYxOidpeIrs0GVwgQmzlxzfwY7QUyvWWMBD44fnBYRNReUSD77UDbV1ut-T1DOM2zSff" data-sdk-integration-source="button-factory"></script>
 
 <script>
+  function getCookie(name) {
+    var cookieValue = null;
+    if (document.cookie && document.cookie !== '') {
+      var cookies = document.cookie.split(';');
+      for (var i = 0; i < cookies.length; i++) {
+        var cookie = cookies[i].trim();
+        if (cookie.substring(0, name.length + 1) === (name + '=')) {
+          cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+          break;
+        }
+      }
+    }
+    return cookieValue;
+  }
+  var csrftoken = getCookie('csrftoken');
+
+
     function initPaypalButton() {
         paypal.Buttons({
             style:{
@@ -66,7 +83,7 @@
           });
         },
         onApprove: function (data) {
-            var url =  ""
+            var url =  "{% url 'checkout:payment_complete' %}"
             
             return fetch(url, {
                 mehtod: "POST",
