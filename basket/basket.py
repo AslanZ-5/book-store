@@ -59,6 +59,9 @@ class Basket():
     def get_subtotal_price(self):
         return sum(item['qty'] * Decimal(item['price']) for item in self.basket.values())
 
+    def basket_update_delivery(self,del_price=0):
+        return sum(item['qty'] * Decimal(item['price']) for item in self.basket.values()) + Decimal(del_price)
+
     def delete(self, product):
         """
         Delete item from session data
