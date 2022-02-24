@@ -54,9 +54,14 @@ class Basket():
         total = subtotal + Decimal(newprice)
         return total
     def delivery_price(self):
+        price = 0.00
         if 'purchase' in self.session:
             price = DeliveryOptions.objects.get(id=self.session['purchase']['delivery_id']).delivery_price
             return price
+    def get_delivery_id(self):
+        if 'purchase' in self.session:
+            id = self.session['purchase']['delivery_id']
+            return id
     def get_subtotal_price(self):
         return sum(item['qty'] * Decimal(item['price']) for item in self.basket.values())
 

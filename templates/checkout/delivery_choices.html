@@ -58,7 +58,7 @@
                           </div>
                         </div>
                         <div class="col-md-1 ps-md-1">
-                          <input class="align-middle h-100" type="radio" name="deliveryOption" id="{{option.id}}"
+                          <input class="align-middle h-100" type="radio" {% if option.id == basket.get_delivery_id %}checked{% endif %} name="deliveryOption" id="{{option.id}}"
                             value="{{option.id}}">
                         </div>
                       </div>
