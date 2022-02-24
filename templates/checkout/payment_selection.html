@@ -1,14 +1,14 @@
 {% extends "base.html" %}
 {% load static %}
-{% block title %}Basket Summary{%endblock %}
+{% block title %}Payment{%endblock %}
 {% block content %}
 
 <div class="container">
   <div class="col-12">
-    <h1 class="h2">Delivery Address</h1>
+    <h1 class="h2"> Payment Selections</h1>
   </div>
   <div class="col-12">
-    <p>Please select your delivery address</p>
+    <p>Please select your Payment Options</p>
   </div>
   <hr />
 </div>
@@ -34,11 +34,47 @@
 <a role="button" href="{% url 'checkout:payment_selection' %}" class="btn btn-success fw-bold w-100" type="button">Pay Securely</a>
 </div>
     
-    <div class="col-md-7 col-lg-8">
+    <div class="col-md-7 col-lg-8 pe-0 pe-md-5">
+        <div id="paypal-button-container">
+
+        </div>
      
     </div>
  
   </div>
 
 </div>
+<script src="https://www.paypal.com/sdk/js?client-id=AeL4VXjka2yAxYxOidpeIrs0GVwgQmzlxzfwY7QUyvWWMBD44fnBYRNReUSD77UDbV1ut-T1DOM2zSff" data-sdk-integration-source="button-factory"></script>
+<script>
+    paypal.Buttons({
+
+      // Sets up the transaction when a payment button is clicked
+      createOrder: function(data, actions) {
+        return actions.order.create({
+          purchase_units: [{
+            amount: {
+              value: '77.44' // Can reference variables or functions. Example: `value: document.getElementById('...').value`
+            }
+          }]
+        });
+      },
+
+      // Finalize the transaction after payer approval
+      onApprove: function(data, actions) {
+        return actions.order.capture().then(function(orderData) {
+          // Successful capture! For dev/demo purposes:
+              console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
+              var transaction = orderData.purchase_units[0].payments.captures[0];
+              alert('Transaction '+ transaction.status + ': ' + transaction.id + '\n\nSee console for all available details');
+
+          // When ready to go live, remove the alert and show a success message within this page. For example:
+          // var element = document.getElementById('paypal-button-container');
+          // element.innerHTML = '';
+          // element.innerHTML = '<h3>Thank you for your payment!</h3>';
+          // Or go to another URL:  actions.redirect('thank_you.html');
+        });
+      }
+    }).render('#paypal-button-container');
+
+  </script>
 {% endblock %}
