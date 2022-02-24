@@ -1,7 +1,8 @@
 from urllib import response
 from django.contrib.auth.decorators import login_required
-from django.http import JsonResponse
+from django.http import HttpResponseRedirect, JsonResponse
 from django.shortcuts import render
+from django.contrib import messages
 
 from basket.basket import Basket
 from .models import DeliveryOptions
@@ -30,3 +31,11 @@ def basket_update_delivery(request):
             session.modified = True 
         response = JsonResponse({'total':update_total_price, 'delivery_price':delivery_type.delivery_price})
         return response
+
+@login_required
+def delivery_address(request):
+    session = request.session
+    if 'purchase' not in request.session:
+        messages.success(request, "Please select delivery option")
+        return HttpResponseRedirect(request.META['HTTP_REFERER'])
+        
