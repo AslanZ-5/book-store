@@ -22,5 +22,7 @@ tzdata==2021.5
 urllib3==1.26.8
 six==1.16.0
 numpy==1.22.2
+paypal-checkout-serversdk==1.0.1
+paypalhttp==1.0.0
 
 

@@ -1,9 +1,14 @@
+import json
 from urllib import response
+from paypalcheckoutsdk.orders import OrdersGetRequest
+from .paypal import PayPalClient
+
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseRedirect, JsonResponse
 from django.shortcuts import render
 from django.contrib import messages
 
+from orders.models import Order, OrderItem
 from account.models import Address
 from basket.basket import Basket
 from .models import DeliveryOptions
@@ -55,3 +60,36 @@ def payment_selection(request):
         return HttpResponseRedirect(request.META['HTTP_REFERER'])
 
     return render(request,'payment_selection.html')
+
+@login_required
+def payment_complete(request):
+    PPClient = PayPalClient()
+
+    # Collecting information from body request
+    body = json.loads(request.body)
+    data = body['orderID']
+    user_id = request.user.id
+    requestorder = OrdersGetRequest(data)
+    response = PPClient.client.execute(requestorder)
+    total_paid = response.result.purchase_units[0].amount.value
+    basket = Basket(request)
+    order = Order.objects.create(
+        user_id=user_id,
+        full_name = response.result.purchase_units[0].shipping.name.full_name,
+        email=response.result.payer.email_address,
+        address1 = response.result.purchase_units[0].shipping.address.address_line_1,
+        address2 = response.result.purchase_units[0].shipping.address.address_line_2,
+        post_code = response.result.purchase_units[0].shipping.address.postal_code,
+        city = response.result.purchase_units[0].shipping.address.country_code,
+        order_key = response.result.purchase_units[0].shipping.amount.value,
+        billing_status=True
+
+    )
+    order_id = order.pk
+
+    for item in basket:
+        OrderItem.objects.create(order_id=order_id,product=item["product"], price=item['price'], quantity=item['qty'])
+    
+    return JsonResponse("Payment completed!", safe=False)
+
+
