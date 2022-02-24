@@ -28,5 +28,5 @@ def basket_update_delivery(request):
         else:
             session['purchase']['delivery_id'] = delivery_type.id
             session.modified = True 
-        response = JsonResponse({'total':update_total_price, 'delivery_price':delivery_type.delivery_price})
+        response = JsonResponse({'hell':'hellkk1221','total':update_total_price, 'delivery_price':delivery_type.delivery_price})
         return response
