@@ -149,4 +149,5 @@ def delete_address(request,id):
 def set_default(request,id):
     Address.objects.filter( customer=request.user, default=True).update(default=False)# make current default address False
     Address.objects.filter(pk=id, customer=request.user, default=False).update(default=True)# make this address True
-    return redirect("account:addresses")
+    previous_url = request.META.get('HTTP_REFERER')
+    return redirect(previous_url)
