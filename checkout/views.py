@@ -4,6 +4,7 @@ from django.http import HttpResponseRedirect, JsonResponse
 from django.shortcuts import render
 from django.contrib import messages
 
+from account.models import Address
 from basket.basket import Basket
 from .models import DeliveryOptions
 
@@ -38,4 +39,6 @@ def delivery_address(request):
     if 'purchase' not in request.session:
         messages.success(request, "Please select delivery option")
         return HttpResponseRedirect(request.META['HTTP_REFERER'])
-        
+    addresses = Address.objects.filter(customer=request.user).order_by('-default')
+    return render(request, 'delivery_address.html', {"addresses":addresses})
+
