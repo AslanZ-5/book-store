@@ -40,5 +40,14 @@ def delivery_address(request):
         messages.success(request, "Please select delivery option")
         return HttpResponseRedirect(request.META['HTTP_REFERER'])
     addresses = Address.objects.filter(customer=request.user).order_by('-default')
+
+    if 'address' not in request.session:
+        session['address'] = {'address_id': str(addresses[0].id)}
+    else:
+        session['address']['address_id'] = str(addresses[0].id)
+        session.modified = True
     return render(request, 'delivery_address.html', {"addresses":addresses})
 
+@login_required
+def payment_selection(request):
+    return render(request,'payment_selection.html')
