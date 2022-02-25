@@ -15,7 +15,7 @@ from django.contrib import messages
 from .token  import account_activation_token
 from .forms import RegistrationForm, UserEditForm, UserAddressForm
 from .models import Customer, Address
-from orders.views import user_orders
+from orders.models import Order 
 from store.models import Product
 
 @login_required
@@ -151,3 +151,10 @@ def set_default(request,id):
     Address.objects.filter(pk=id, customer=request.user, default=False).update(default=True)# make this address True
     previous_url = request.META.get('HTTP_REFERER')
     return redirect(previous_url)
+
+
+
+def user_orders(request):
+    user_id = request.user.id
+    orders = Order.objects.filter(user_id=user_id).filter(billing_status=True)
+    return render(request, 'user_orders.html',{'orders':orders})

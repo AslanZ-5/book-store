@@ -3,6 +3,7 @@ from django.shortcuts import get_object_or_404, render
 
 from .basket import Basket
 from store.models import Product
+from orders.models import Order
 
 def basket_summary(request):
     basket = Basket(request)
@@ -43,3 +44,4 @@ def basket_update(request):
         basket_item_total = basket.get_total_item(product_id)
         response = JsonResponse({'qty': basketqty, 'total': baskettotal, 'subtotal': subtotal, 'itemtotal': basket_item_total})
         return response 
+

@@ -15,7 +15,8 @@ from .views import (account_register,
                     set_default,
                     delete_address,
                     add_to_wishlist,
-                    wishlist
+                    wishlist,
+                    user_orders
                     )
 
 app_name = 'account'
@@ -50,6 +51,7 @@ urlpatterns = [
     # Wish list
     path('wishlist', wishlist, name='wishlist'),
     path('wishlist/add_to_whishlist/<int:id>/', add_to_wishlist, name='add_to_wishlist'),
+    path('user/orders/', user_orders, name='user_orders')
     
     
 ]
