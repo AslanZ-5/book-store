@@ -71,8 +71,8 @@ def payment_complete(request):
 
     requestorder = OrdersGetRequest(data)
     response = PPClient.client.execute(requestorder)
-   
 
+    total_paid = response.result.purchase_units[0].amount.value
 
     basket = Basket(request)
     order = Order.objects.create(
@@ -88,7 +88,6 @@ def payment_complete(request):
         payment_option="paypal",
         billing_status=True,
     )
-
     order_id = order.pk
 
     for item in basket:
@@ -96,4 +95,8 @@ def payment_complete(request):
 
     return JsonResponse("Payment completed!", safe=False)
 
-
+@login_required
+def payment_successful(request):
+    basket = Basket(request)
+    basket.clear()
+    return render(request, 'payment_successful.html', {})

@@ -1,8 +1,5 @@
-from operator import mod
-from pyexpat import model
 from django.db import models
 from django.conf import settings
-from decimal import Decimal
 
 from store.models import Product
 
@@ -22,6 +19,7 @@ class Order(models.Model):
     total_paid = models.DecimalField(max_digits=5,decimal_places=2)
     order_key = models.CharField(max_length=200)
     billing_status = models.BooleanField(default=False)
+    payment_option = models.CharField(max_length=50)
 
     class Meta:
         ordering = ('-created',)
