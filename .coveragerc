@@ -1,0 +1,13 @@
+[run]
+source = .
+omit =
+    conftest.py
+    *tests*
+    *setting.py*
+
+[report]
+omit = 
+    conftest.py
+    *tests*
+    *__init__.py*
+    *setting.py*
