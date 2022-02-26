@@ -1,6 +1,6 @@
 import pytest
+from pytest_factoryboy import register
+from tests.factories import (
+                            StoreFactory,)
 
-@pytest.fixture(scope='session')
-def test_fixture1():
-    print('Run Once')
-    return 1
+register(StoreFactory)
