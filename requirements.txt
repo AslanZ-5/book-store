@@ -16,6 +16,7 @@ factory-boy==3.2.1
 Faker==13.2.0
 flake8==4.0.1
 idna==3.3
+inflection==0.5.1
 iniconfig==1.1.1
 mccabe==0.6.1
 numpy==1.22.2
@@ -32,6 +33,7 @@ pyOpenSSL==22.0.0
 pyparsing==3.0.7
 pytest==7.0.1
 pytest-django==4.5.2
+pytest-factoryboy==2.1.0
 python-dateutil==2.8.2
 requests==2.27.1
 six==1.16.0
