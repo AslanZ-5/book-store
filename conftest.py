@@ -48,3 +48,8 @@ def product_spec_value(db, product_specification_value_factory):
 def customer(db, customer_factory):
     new_customer = customer_factory.create()
     return new_customer
+
+@pytest.fixture
+def adminuser(db, customer_factory):
+    new_customer = customer_factory.create(name='admin_user', is_staff=True, is_superuser=True)
+    return new_customer

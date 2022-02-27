@@ -78,3 +78,11 @@ class CustomerFactory(factory.django.DjangoModelFactory):
     is_active = True
     is_staff = False
 
+    @classmethod 
+    def _create(cls, model_class, *args, **kwargs):
+        manager = cls._get_manager(model_class)
+        if 'is_superuser' in kwargs:
+            return manager.create_superuser(*args, **kwargs)
+        else:
+            return manager.create_user(*args, **kwargs)
+        
