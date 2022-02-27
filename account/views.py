@@ -1,8 +1,5 @@
-from email.policy import default
-import imp
-from tkinter.tix import Tree
 from django.contrib.sites.shortcuts import get_current_site
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, HttpResponse
 from django.utils.http import  urlsafe_base64_encode,urlsafe_base64_decode
 from django.shortcuts import get_object_or_404, redirect, render
 from django.utils.encoding import force_bytes, force_str 
@@ -123,6 +120,8 @@ def add_address(request):
             address_form.customer = request.user
             address_form.save()
             return HttpResponseRedirect(reverse("account:addresses"))
+        else:
+            return HttpResponse('Error handler content', status=400)
     else:
         address_form = UserAddressForm()
     return render(request, "edit_address.html", {"form":address_form})
