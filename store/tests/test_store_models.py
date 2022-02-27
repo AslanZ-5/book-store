@@ -17,3 +17,14 @@ def test_producttype_str(product_type):
 
 def test_product_specification_str(product_specification):
     assert product_specification.__str__() == 'pages'
+
+
+
+def test_product_str(product):
+    assert product.__str__() == 'product_title'
+
+def test_product_reverse_url(client,product):
+    slug = product.slug
+    url = reverse('store:product_detail', args=[slug])
+    response = client.get(url)
+    assert response.status_code == 200
