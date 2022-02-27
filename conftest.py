@@ -1,6 +1,16 @@
 import pytest
 from pytest_factoryboy import register
 from tests.factories import (
-                            StoreFactory,)
 
-register(StoreFactory)
+    CategoryFactory
+)
+
+register(CategoryFactory)
+
+
+@pytest.fixture
+def product_category(db,category_factory):
+    category = category_factory.create()
+    return category
+
+
