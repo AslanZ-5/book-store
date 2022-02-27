@@ -85,6 +85,8 @@ def account_register(request):
             })
             user.email_user(subject=subject, message=message)
             return render(request, 'register_confirm.html')
+        else:
+            return HttpResponse('Error handler content', status=400)
     else:
         registerForm = RegistrationForm()
     
