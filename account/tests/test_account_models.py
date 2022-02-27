@@ -39,4 +39,4 @@ def test_adminuser_is_superuser_false(customer_factory):
     assert str(e.value) == 'Superuser must be assigned to is_superuser=True.'
 
 def test_address_str(address):
-    assert address.__str__() == "Address"
+    assert address.__str__() == "Aslan Zurabov Address"
