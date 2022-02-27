@@ -1,6 +1,7 @@
 from unicodedata import category
 import django
 import factory
+from account.models import Customer, Address
 from store.models import (Category,
                          ProductType,
                          ProductSecification,
@@ -11,6 +12,11 @@ from store.models import (Category,
 from faker import Faker 
 
 fake = Faker()
+
+#########
+# Store
+#########
+
 
 class CategoryFactory(factory.django.DjangoModelFactory):
     class Meta:
@@ -55,3 +61,20 @@ class ProductSpecificationValueFactory(factory.django.DjangoModelFactory):
     product = factory.SubFactory(ProductFactory)
     specification = factory.SubFactory(ProductSpecificationFactory)
     value = '100'
+
+#########
+# Account
+#########
+
+
+class CustomerFactory(factory.django.DjangoModelFactory):
+    class Meta:
+        model = Customer
+    email = 'a@a.com'
+    name = 'user1'
+    first_name = 'asl'
+    mobile = '123456789'
+    password = 'test12345'
+    is_active = True
+    is_staff = False
+

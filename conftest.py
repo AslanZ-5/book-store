@@ -6,7 +6,8 @@ from tests.factories import (
     ProductFactory,
     ProductTypeFactory,
     ProductSpecificationFactory,
-    ProductSpecificationValueFactory
+    ProductSpecificationValueFactory,
+    CustomerFactory
     
 )
 
@@ -15,6 +16,7 @@ register(ProductTypeFactory)
 register(ProductSpecificationFactory)
 register(ProductFactory)
 register(ProductSpecificationValueFactory)
+register(CustomerFactory)
 
 
 @pytest.fixture
@@ -41,3 +43,8 @@ def product(db,product_factory):
 def product_spec_value(db, product_specification_value_factory):
     product_spec_value = product_specification_value_factory.create()
     return product_spec_value
+
+@pytest.fixture
+def customer(db, customer_factory):
+    new_customer = customer_factory.create()
+    return new_customer

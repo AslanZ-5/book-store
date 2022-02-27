@@ -25,5 +25,4 @@ def category_list(request, category_slug):
     return render(request, 'category.html', context)
 
 
-def home(request):
-    return HttpResponse('helllow')
+
