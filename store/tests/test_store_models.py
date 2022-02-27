@@ -15,12 +15,13 @@ def test_category_reverse(client,product_category): # client allows to make ruqu
 def test_producttype_str(product_type):
     assert product_type.__str__() == 'book'
 
-def test_product_specification_str(product_specification):
-    assert product_specification.__str__() == 'pages'
+def test_product_spec_str(product_specification):
+    assert product_specification.__str__() == "pages"
 
 
 
 def test_product_str(product):
+    print('-'*10)
     assert product.__str__() == 'product_title'
 
 def test_product_reverse_url(client,product):
@@ -28,3 +29,6 @@ def test_product_reverse_url(client,product):
     url = reverse('store:product_detail', args=[slug])
     response = client.get(url)
     assert response.status_code == 200
+
+def test_product_specification_str(product_spec_value):
+    assert product_spec_value.__str__() == '100'

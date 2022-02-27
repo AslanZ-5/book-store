@@ -1,7 +1,12 @@
 from unicodedata import category
 import django
 import factory
-from store.models import Category, ProductType, ProductSecification, Product
+from store.models import (Category,
+                         ProductType,
+                         ProductSecification,
+                         Product,
+                         ProductSpecificationValue,)
+
 
 from faker import Faker 
 
@@ -26,10 +31,10 @@ class ProductTypeFactory(factory.django.DjangoModelFactory):
 
 class ProductSpecificationFactory(factory.django.DjangoModelFactory):
     class Meta:
-        model  = ProductSecification
+        model = ProductSecification
 
     product_type = factory.SubFactory(ProductTypeFactory)
-    name = 'pages'
+    name = "pages"
 
 
 class ProductFactory(factory.django.DjangoModelFactory):
@@ -42,4 +47,11 @@ class ProductFactory(factory.django.DjangoModelFactory):
     slug = 'product_slug'
     regular_price = '9.99'
     discount_price = '1.11'
-    
+
+
+class ProductSpecificationValueFactory(factory.django.DjangoModelFactory):
+    class Meta:
+        model = ProductSpecificationValue
+    product = factory.SubFactory(ProductFactory)
+    specification = factory.SubFactory(ProductSpecificationFactory)
+    value = '100'
