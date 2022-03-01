@@ -1,5 +1,3 @@
-from unicodedata import category
-import django
 import factory
 from account.models import Customer, Address
 from store.models import (Category,
@@ -90,6 +88,7 @@ class CustomerFactory(factory.django.DjangoModelFactory):
 class AddressFactory(factory.django.DjangoModelFactory):
     class Meta:
         model = Address
+        
     customer = factory.SubFactory(CustomerFactory)
     full_name = 'Aslan Zurabov'
     phone = '1234567890'

@@ -35,8 +35,7 @@ def add_to_wishlist(request,id):
 
 @login_required
 def dashboard(request):
-    orders = user_orders(request)
-    return render(request,'dashboard.html',{'orders':orders})
+    return render(request,'dashboard.html')
 
 @login_required
 def edit_details(request):
@@ -45,6 +44,9 @@ def edit_details(request):
 
         if user_form.is_valid():
             user_form.save()
+        else:
+            return HttpResponse('Error handler content', status=400)
+            
     else:
         user_form = UserEditForm(instance=request.user)
 
@@ -53,7 +55,7 @@ def edit_details(request):
 
 @login_required
 def delete_user(request):
-    user = Customer.objects.get(user_name=request.user)
+    user = Customer.objects.get(name=request.user)
     user.is_active = False
     user.save()
     logout(request)
