@@ -3,7 +3,7 @@ import pytest
 def test_custormer_str(customer):
     assert customer.__str__() == 'user1'
 
-def test_custormer_str(adminuser):
+def test_adminuser_str(adminuser):
     assert adminuser.__str__() == 'admin_user'
 
 

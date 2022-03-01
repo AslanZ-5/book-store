@@ -21,7 +21,6 @@ def test_product_spec_str(product_specification):
 
 
 def test_product_str(product):
-    print('-'*10)
     assert product.__str__() == 'product_title'
 
 def test_product_reverse_url(client,product):

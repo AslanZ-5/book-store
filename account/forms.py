@@ -52,10 +52,10 @@ class RegistrationForm(forms.ModelForm):
         fields = ('user_name', 'email')
 
     
-    def clean_username(self):
+    def clean_user_name(self):
         user_name = self.cleaned_data['user_name'].lower()
-        r = Customer.objects.filter(user_name=user_name)
-        if r.count():
+        r = Customer.objects.filter(name=user_name).exists()
+        if r:
             raise forms.ValidationError("username already exists")
         return user_name
     

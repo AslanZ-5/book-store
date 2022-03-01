@@ -1,6 +1,5 @@
-from pydoc import cli
 import pytest
-from account.forms import RegistrationForm, UserAddressForm
+from account.forms import RegistrationForm, UserAddressForm, UserEditForm,PwdResetForm
 from django.urls import reverse
 @pytest.mark.parametrize(
     "full_name, phone, address_line, address_line2, town_city, postcode, validity",
@@ -98,3 +97,68 @@ def test_account_register_redirect(client,customer):
 def test_account_register_page(client,customer):
     response = client.get(reverse('account:register'))
     assert response.status_code == 200
+
+
+@pytest.mark.parametrize(
+    "user_name, email, password, password2, validity",
+    [
+        ("user1", 'asl@gmail.com', 'test12345', 'test12345', 400), #username already exists
+        ("user4", 'a@a.com', 'test12345', 'test12345', 400), # email already exists
+    
+    
+    ]
+)
+@pytest.mark.django_db
+def test_register_already_exist_errors(client,customer, user_name, email, password, password2, validity):
+    response = client.post(reverse('account:register'),
+        data={
+            'user_name': user_name,
+            'email': email,
+            'password': password,
+            'password2': password2
+        
+        }
+    )
+    
+    
+    assert response.status_code == validity
+
+def test_account_edit_forms(client,customer):
+
+    form = UserEditForm(
+        data={
+            'email':'dd@ew.com',
+            'first_name': 'ddedd'
+        }
+    )
+    assert form.is_valid() == True
+
+@pytest.mark.parametrize(
+    "email, validity",
+    [
+       ('a@a11.com', 200),
+       ('a@a.com', 302),
+    ]
+)
+def test_account_password_reset_clean_email(client,customer,email,validity):
+    # form = PwdResetForm(data={
+    #         'email': 'a@a1.com',
+    #     })
+    response = client.post(reverse('account:pwdreset'),
+    data={
+            'email': email,
+        })
+    assert response.status_code  == validity
+ 
+
+# def test_account_clean_name(client,customer):
+    
+#     response = client.post(reverse('account:register'),
+#                             data={
+#                             'user_name': 'user1',
+#                             'email': "a@a.com",
+#                             'password': 'test12345',
+#                             'password2': 'test12345'
+        
+#         })
+#     assert response.status_code == 400
