@@ -117,18 +117,18 @@ class PaymentSelectionsFactory(factory.django.DjangoModelFactory):
     name = 'paypal'
 
 
-class OrderFactory(factory.django.DjangoModelFactory):
-    class Meata:
-        model = Order
-    user = factory.SubFactory(CustomerFactory)
-    full_name = "aass"
-    email = "aa@ss.c"
-    address1 = "ddss"
-    address2 = "ssdd"
-    city = "wer"
-    phone = "123431"
-    postal_code = "33322"
-    country_code = "3r44"
-    total_paid = "32.44"
-    order_key = "112"
-    payment_option = "card"
+# class OrderFactory(factory.django.DjangoModelFactory):
+#     class Meata:
+#         model = Order
+#     user = factory.SubFactory(CustomerFactory)
+#     full_name = "aass"
+#     email = "aa@ss.c"
+#     address1 = "ddss"
+#     address2 = "ssdd"
+#     city = "wer"
+#     phone = "123431"
+#     postal_code = "33322"
+#     country_code = "3r44"
+#     total_paid = "32.44"
+#     order_key = "112"
+#     payment_option = "card"
