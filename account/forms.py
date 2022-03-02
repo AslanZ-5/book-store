@@ -49,7 +49,7 @@ class RegistrationForm(forms.ModelForm):
     password2 = forms.CharField(label='Repeat Password', widget=forms.PasswordInput)
     class Meta:
         model = Customer
-        fields = ('user_name', 'email')
+        fields = ('email',)
 
     
     def clean_user_name(self):

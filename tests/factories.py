@@ -1,5 +1,6 @@
 import factory
 from account.models import Customer, Address
+from checkout.models import DeliveryOptions, PaymentSelections
 from store.models import (Category,
                          ProductType,
                          ProductSecification,
@@ -97,3 +98,19 @@ class AddressFactory(factory.django.DjangoModelFactory):
     address_line2 = 'street 007'
     town_city = 'Nazran'
     delivery_instructions = 'Be careful'
+
+class DeliveryOptionsFactory(factory.django.DjangoModelFactory):
+    class Meta:
+        model = DeliveryOptions
+    delivery_name = "fastdl"
+    delivery_price = "33.22"
+    delivery_method = "Home"
+    delivery_timeframe = "9:00am - 9:00pm"
+    delivery_window = "ddd"
+    order = "1"
+
+class PaymentSelectionsFactory(factory.django.DjangoModelFactory):
+    class Meta:
+        model = PaymentSelections
+    
+    name = 'paypal'

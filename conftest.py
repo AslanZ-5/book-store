@@ -8,7 +8,9 @@ from tests.factories import (
     ProductSpecificationFactory,
     ProductSpecificationValueFactory,
     CustomerFactory,
-    AddressFactory
+    AddressFactory,
+    DeliveryOptionsFactory,
+    PaymentSelectionsFactory
     
 )
 
@@ -19,11 +21,9 @@ register(ProductFactory)
 register(ProductSpecificationValueFactory)
 register(CustomerFactory)
 register(AddressFactory)
+register(DeliveryOptionsFactory)
+register(PaymentSelectionsFactory)
 
-@pytest.fixture
-def address(db, address_factory):
-    new_address = address_factory.create()
-    return new_address
 
 @pytest.fixture
 def product_category(db,category_factory):
@@ -60,3 +60,19 @@ def adminuser(db, customer_factory):
     new_customer = customer_factory.create(name='admin_user', email='dd@dd.com', is_staff=True, is_superuser=True)
     return new_customer
 
+@pytest.fixture
+def address(db, address_factory):
+    new_address = address_factory.create()
+    return new_address
+
+
+@pytest.fixture
+def delivery_option(db, delivery_options_factory):
+    delivery_option = delivery_options_factory.create()
+    return delivery_option
+
+
+@pytest.fixture
+def delivery_selection(db, payment_selections_factory):
+    delivery_selection = payment_selections_factory.create()
+    return delivery_selection

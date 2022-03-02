@@ -74,9 +74,11 @@ def test_account_add_address_get_page(client, customer):
 #         })
 #     print(response.status_code)
 
-@pytest.mark.django_db
-def test_account_edit_address_get_page(db,client, customer,address):
+
+def test_account_edit_address_get_page(client, customer):
     client.force_login(customer)
-    print(address.customer)
-    # response = client.get(reverse('account:edit_address',args=[address.id]))
+  
+    response = client.get(reverse('account:user_orders'))
+    assert response.status_code == 200
+
     

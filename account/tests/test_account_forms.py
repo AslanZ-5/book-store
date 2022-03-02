@@ -70,7 +70,7 @@ def test_create_account(user_name, email, password, password2, validity):
     "user_name, email, password, password2, validity",
     [
         ("user1", 'asl@gmail.com', 'test12345', 'test12345', 200),
-        ("user1", '', 'test12345', '', 400), # no email
+        ("user1", '', 'test12345', 'test12345', 400), # no email
         ("user1", 'asl@gmail.com', 'tast123345', 'test12345', 400), # password mismatch
     
     ]
@@ -108,7 +108,6 @@ def test_account_register_page(client,customer):
     
     ]
 )
-@pytest.mark.django_db
 def test_register_already_exist_errors(client,customer, user_name, email, password, password2, validity):
     response = client.post(reverse('account:register'),
         data={
