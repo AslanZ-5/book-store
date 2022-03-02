@@ -10,7 +10,8 @@ from tests.factories import (
     CustomerFactory,
     AddressFactory,
     DeliveryOptionsFactory,
-    PaymentSelectionsFactory
+    PaymentSelectionsFactory,
+    OrderFactory
     
 )
 
@@ -23,6 +24,7 @@ register(CustomerFactory)
 register(AddressFactory)
 register(DeliveryOptionsFactory)
 register(PaymentSelectionsFactory)
+register(OrderFactory)
 
 
 @pytest.fixture
@@ -76,3 +78,4 @@ def delivery_option(db, delivery_options_factory):
 def delivery_selection(db, payment_selections_factory):
     delivery_selection = payment_selections_factory.create()
     return delivery_selection
+
