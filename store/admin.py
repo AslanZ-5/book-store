@@ -20,6 +20,7 @@ class ProductSpecificationInline(admin.TabularInline):
 
 @admin.register(ProductType)
 class ProductTypeAdmin(admin.ModelAdmin):
+    list_display = ['id', 'name' ]
     inlines = [ 
         ProductSpecificationInline
     ]
@@ -31,6 +32,8 @@ class ProductSpecificationValueInline(admin.TabularInline):
 
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
+    list_display = ['id', 'title' ]
+    list_display_links = ['title']
     inlines = [
         ProductSpecificationValueInline,
         ProductImageInline,
