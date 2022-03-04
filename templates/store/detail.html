@@ -65,8 +65,24 @@
                   </div>
               </div>
               </div>
+
+
+             
           </div>
-  
+
+
+          {% for product in recently_viewed %}
+          <div class="card" style="width: 18rem;">
+            {% for image in product.product_image.all %}
+            {% if image.is_feature %}
+            <img class="card-img-top" alt="{{ image.image.alt_text }}" src="{{ image.image.url }}">
+            {% endif %}
+            {% endfor %}
+            <div class="card-body">
+              <p class="card-text">{{ product.title }}</p>
+            </div>
+          </div>
+          {% endfor %}
       </div>
     </div>
 

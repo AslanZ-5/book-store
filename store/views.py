@@ -14,7 +14,19 @@ def all_products(request):
 
 def product_detail(request, slug):
     product = get_object_or_404(Product, slug=slug, is_active=True)
-    return render(request, 'detail.html', {'product': product})
+    recently_viewed = None
+    if 'recently_viewed' in  request.session:
+        if product.id in request.session['recently_viewed']:
+            request.session['recently_viewed'].remove(product.id)
+            recently_viewed = Product.objects.filter(id__in=request.session['recently_viewed'])
+        request.session['recently_viewed'].insert(0, product.id)  
+    else:
+        request.session['recently_viewed'] = [product.id]
+    if len(request.session['recently_viewed']) > 5:
+        request.session['recently_viewed'].pop()
+    print(request.session['recently_viewed'])
+    request.session.modified = True
+    return render(request, 'detail.html', {'product': product, 'recently_viewed':recently_viewed})
 
 
 def category_list(request, category_slug):
