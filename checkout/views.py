@@ -1,5 +1,4 @@
 import json
-from urllib import response
 from paypalcheckoutsdk.orders import OrdersGetRequest
 from .paypal import PayPalClient
 
