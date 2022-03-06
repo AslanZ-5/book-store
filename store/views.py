@@ -18,7 +18,10 @@ def product_detail(request, slug):
     if 'recently_viewed' in  request.session:
         if product.id in request.session['recently_viewed']:
             request.session['recently_viewed'].remove(product.id)
-            recently_viewed = Product.objects.filter(id__in=request.session['recently_viewed'])
+        products = Product.objects.filter(id__in=request.session['recently_viewed'])
+        recently_viewed = sorted(products,
+        key=lambda x: request.session['recently_viewed'].index(x.id)
+        )
         request.session['recently_viewed'].insert(0, product.id)  
     else:
         request.session['recently_viewed'] = [product.id]
