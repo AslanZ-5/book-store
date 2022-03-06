@@ -4,7 +4,7 @@ from .paypal import PayPalClient
 
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseRedirect, JsonResponse
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from django.contrib import messages
 
 from orders.models import Order, OrderItem
@@ -43,13 +43,17 @@ def delivery_address(request):
     if 'purchase' not in request.session:
         messages.success(request, "Please select delivery option")
         return HttpResponseRedirect(request.META['HTTP_REFERER'])
+    
     addresses = Address.objects.filter(customer=request.user).order_by('-default')
-
-    if 'address' not in request.session:
-        session['address'] = {'address_id': str(addresses[0].id)}
+    if addresses.exists():    
+        if 'address' not in request.session:
+            session['address'] = {'address_id': str(addresses[0].id)}
+        else:
+            session['address']['address_id'] = str(addresses[0].id)
+            session.modified = True
     else:
-        session['address']['address_id'] = str(addresses[0].id)
-        session.modified = True
+        messages.error(request,"Please add address you don't have any address!")
+        return redirect('account:add_address')
     return render(request, 'delivery_address.html', {"addresses":addresses})
 
 @login_required

@@ -3,6 +3,13 @@
 
 {% block subcontent %}
 <div class="col-6 mx-auto">
+  {% if messages %} 
+  <div class="alert alert-warning" alert-{{message.tags}} role="alert">
+      {% for message in messages %} 
+          {{message|safe}} 
+      {% endfor %}
+  </div>
+  {% endif %}
   <h1 class="h3">Create/Edit Address</h1>
   <div>Add a new delivery <b>address</b> and delivery preferences</div>
   <hr />
