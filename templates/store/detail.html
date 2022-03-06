@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
-{% block stylesheet %}{% static 'store/css/store.css' %}{% endblock %}
+{% block stylesheet %}{% static 'store.css' %}{% endblock %}
 {% block title %}
 {{ product.title }}
 {% endblock %}
@@ -70,7 +70,12 @@
              
           </div>
 
+          <div class="rec-container">
 
+            <div class="rectext"> Recently Viewed</div>
+            <div class="recview">
+                
+                
           {% for product in recently_viewed %}
           <div class="card" style="width: 18rem;">
             {% for image in product.product_image.all %}
@@ -83,8 +88,11 @@
             </div>
           </div>
           {% endfor %}
+        </div>
       </div>
     </div>
+    </div>
+
 
 <script>
     $(document).on('click', '#add-button', function (e) {
