@@ -70,6 +70,29 @@
              
           </div>
 
+
+          <div>
+            <h4>Review</h4>
+            {% load mptt_tags %}
+          
+            <div>
+              
+              <ul class="root">
+                {% recursetree product.comments.all %}
+                    <li>
+                        {{ node.content }}
+                        {% if not node.is_leaf_node %}
+                            <ul class="children">
+                                {{ children }}
+                            </ul>
+                        {% endif %}
+                    </li>
+                {% endrecursetree %}
+            </ul>
+
+            </div>
+          </div>
+
           <div class="rec-container">
 
             <div class="rectext"> Recently Viewed</div>
@@ -89,6 +112,7 @@
           </div>
           {% endfor %}
         </div>
+        
       </div>
     </div>
     </div>

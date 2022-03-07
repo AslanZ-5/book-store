@@ -4,7 +4,7 @@ from django.urls import reverse
 from django.utils.translation import gettext_lazy as _
 from django.conf import settings
 from mptt.models import MPTTModel, TreeForeignKey
-
+from account.models import Customer
 
 class Category(MPTTModel):
     """
@@ -168,3 +168,16 @@ class ProductImage(models.Model):
         verbose_name = _("Product Image")
         verbose_name_plural = _("Product Images")
 
+class Comment(MPTTModel):
+    product = models.ForeignKey(Product,on_delete=models.CASCADE, related_name='comments')
+    parent = TreeForeignKey('self',on_delete=models.CASCADE, null=True,blank=True,related_name='children')
+    author = models.ForeignKey(Customer,on_delete=models.CASCADE)
+    content = models.TextField()
+    created = models.DateTimeField(auto_now_add=True)
+    status = models.BooleanField(default=True)
+
+    class MPTTMeta:
+        order_insertion_by = ['created']
+        
+    def __str__(self):
+        return f'Comment "{self.content[:50]}" by {self.author.name}'

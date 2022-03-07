@@ -49,15 +49,8 @@ def category_list(request, category_slug):
 
 def product_filter(request):
     query = request.GET.get('q')
-    date = request.GET.get('days')
-    print('##################################',date)
-    
-        
-        
-        
-
     products = Product.objects.filter(is_active=True)
-    if query or date:
+    if query:
         time = datetime.today() - timedelta(days=6)
         products = Product.objects.prefetch_related("product_image").filter(
             Q(category__name__icontains=query)|

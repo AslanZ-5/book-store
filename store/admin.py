@@ -6,10 +6,11 @@ from .models import (Category,
                      ProductSecification,
                      ProductSpecificationValue,
                      ProductType,
+                     Comment
                      )
 admin.site.register(Category, MPTTModelAdmin)
-
-
+admin.site.register(Comment, MPTTModelAdmin)
+ 
 
 class ProductSpecificationInline(admin.TabularInline):
     model = ProductSecification
