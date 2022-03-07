@@ -29,4 +29,7 @@
     background-color: rgb(241, 241, 241);
 }
 
-
+.editContent{
+    display: flex;
+    flex-direction: row;
+}
