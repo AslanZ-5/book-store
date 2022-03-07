@@ -1,9 +1,11 @@
 from xml.etree.ElementInclude import include
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from .models import Category, Product
 from django.shortcuts import get_object_or_404
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from django.db.models import Q
+
+from .forms import CommentForm
 
 from datetime import datetime, timedelta
 import requests
@@ -31,9 +33,22 @@ def product_detail(request, slug):
         request.session['recently_viewed'] = [product.id]
     if len(request.session['recently_viewed']) > 5:
         request.session['recently_viewed'].pop()
-    print(request.session['recently_viewed'])
     request.session.modified = True
-    return render(request, 'detail.html', {'product': product, 'recently_viewed':recently_viewed})
+
+
+    
+    if request.method == "POST":
+        form = CommentForm(request.POST)
+        if form.is_valid():
+            form = form.save(commit=False)
+            form.author = request.user
+            form.product = product
+            form.save()
+            return HttpResponseRedirect(request.META['HTTP_REFERER'])
+            
+    else:
+        form = CommentForm()
+    return render(request, 'detail.html', {'product': product, 'recently_viewed':recently_viewed, 'form':form})
 
 
 def category_list(request, category_slug):
@@ -44,6 +59,10 @@ def category_list(request, category_slug):
             'products': products,
     }
     return render(request, 'category.html', context)
+
+
+    
+
 
 
 

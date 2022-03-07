@@ -89,8 +89,14 @@
                     </li>
                 {% endrecursetree %}
             </ul>
-
+            
             </div>
+            <form  method="post">
+              {% csrf_token %}
+            
+          {{form}}
+          <button type="submit">Comment</button>
+        </form>
           </div>
 
           <div class="rec-container">
