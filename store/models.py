@@ -187,7 +187,7 @@ class Comment(MPTTModel):
 
 class Rating(models.Model):
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
-    user = models.ForeignKey(Customer, on_delete=models.CASCADE)
+    user = models.ForeignKey(Customer, on_delete=models.CASCADE) # Change later!!! (Should be unique)
     stars = models.IntegerField(validators=[MinValueValidator(1),MaxValueValidator(5)])
 
     def __str__(self):

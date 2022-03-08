@@ -1,15 +1,20 @@
 from xml.etree.ElementInclude import include
 from django.shortcuts import redirect, render
-from .models import Category, Product
+from .models import Category, Product, Rating
 from django.shortcuts import get_object_or_404
 from django.http import HttpResponse, HttpResponseRedirect
-from django.db.models import Q, Count, Avg
-
+from django.db.models import Q, Count, Avg, Func
+from django.contrib.auth.decorators import login_required
 from .forms import CommentForm
 
 from datetime import datetime, timedelta
 import requests
 import json
+
+class Round(Func):
+  function = 'ROUND'
+  template='%(function)s(%(expressions)s, 1)'
+
 
 
 def all_products(request):
@@ -38,6 +43,7 @@ def product_detail(request, slug):
 
     
     if request.method == "POST":
+        
         form = CommentForm(request.POST)
         if form.is_valid():
             form = form.save(commit=False)
@@ -50,8 +56,33 @@ def product_detail(request, slug):
             
     else:
         form = CommentForm()
-    rating = product.rating_set.all().aggregate(Avg('stars'), Count('user'))
-    return render(request, 'detail.html', {'product': product, 'recently_viewed':recently_viewed, 'form':form, 'rating':rating})
+    
+    rating = product.rating_set.all().aggregate(stars__avg=Round(Avg('stars')), user__count=Count('user'))
+    if not request.user or Rating.objects.filter(product=product, user=request.user).exists():
+        can_rate = False
+    else:
+        can_rate = True 
+    
+    
+    context = {
+        'product': product,
+        'recently_viewed':recently_viewed,
+        'form':form,
+        'rating':rating,
+        'can_rate':can_rate}
+    return render(request, 'detail.html', context)
+
+def add_stars(request):
+    if not  request.user:
+        return HttpResponse('You should be logged in ')
+    if request.POST.get('action') == 'post_star':
+            value = int(request.POST.get('value'))
+            prductid = int(request.POST.get('productid'))
+            rate = Rating.objects.create(product_id=prductid, user=request.user, stars=value)
+            rate.save()
+            return HttpResponseRedirect(request.META['HTTP_REFERER'])
+
+    
 
 
 def category_list(request, category_slug):

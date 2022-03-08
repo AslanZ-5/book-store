@@ -38,23 +38,37 @@
                       </div>
               </div>
               <div>
-                <div class="center">
-                  <div class="stars">
-                    <input type="radio" id="five" {% if rating.stars__avg > 4.5 %}checked{% endif %}     name="rate" value="5">
+                
+
+                
+                <div class="center" {% if not can_rate %}   title="You cant rate now because you are not loged in or you already rated"{% endif %}>
+                
+                
+                
+                    <div class="stars" {% if not can_rate %} style="pointer-events: none;" {% endif %} >
+                    <input class="star_val" type="radio" id="five" {% if rating.stars__avg > 4.5 %}checked{% endif %}     name="rate" value="5">
                     <label for="five"></label>
-                    <input type="radio" id="four" {% if rating.stars__avg > 3.5 and rating.stars__avg < 4.5  %}checked{% endif %} name="rate" value="4">
+                    <input class="star_val" type="radio" id="four" {% if rating.stars__avg > 3.5 and rating.stars__avg < 4.5  %}checked{% endif %} name="rate" value="4">
                     <label for="four"></label>
-                    <input type="radio" id="three" {% if rating.stars__avg > 2.5 and rating.stars__avg < 3.5 %}checked{% endif %} name="rate" value="3">
+                    <input class="star_val" type="radio" id="three" {% if rating.stars__avg > 2.5 and rating.stars__avg < 3.5 %}checked{% endif %} name="rate" value="3">
                     <label for="three"></label>
-                    <input type="radio" id="two" {% if rating.stars__avg > 1.5 and rating.stars__avg < 2.5 %}checked{% endif %} name="rate" value="2">
+                    <input class="star_val" type="radio" id="two" {% if rating.stars__avg > 1.5 and rating.stars__avg < 2.5 %}checked{% endif %} name="rate" value="2">
                     <label for="two"></label>
-                    <input type="radio" id="one" {% if rating.stars__avg == 1  %}checked{% endif %}  name="rate" value="1">
+                    <input class="star_val" type="radio" id="one" {% if rating.stars__avg == 1  %}checked{% endif %}  name="rate" value="1">
                     <label for="one"></label>
                     <span class="result"></span>
+                    
+                      <div>
+                        {% if rating.stars__avg %}
+                        <p>{{rating.stars__avg}}/5</p>
+                        {% endif %}
+                
+                        <p>ratings: {{rating.user__count}} </p>
+                      </div>
                   </div>
+                  
                </div>
-                {{rating.stars__avg}}
-                {{rating.user__count}}
+                
               </div>
               <hr>
               <button type="button" id="add-button" value="{{product.id}}" class="btn btn-success fw500">Add to basket</button>
@@ -158,6 +172,25 @@ function comentReplay(id) {
     row.classList.add('d-none')
   }
 };
+
+$(document).on("click",".star_val", function () {
+  var clickedBtnVal = $(this).attr('value');
+  console.log('hello you clicked at' )
+  console.log($('#add-button').val())
+  $.ajax({
+            type: 'POST',
+            url: '{% url "store:add_stars" %}',
+            data: {
+                productid: $('#add-button').val(),
+                value: clickedBtnVal,
+                csrfmiddlewaretoken: "{{csrf_token}}",
+                action: 'post_star'
+            },
+            
+            error: function (xhr, errmsg, err) {}
+        });
+  
+});
 
 
 
