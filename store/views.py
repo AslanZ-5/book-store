@@ -43,6 +43,8 @@ def product_detail(request, slug):
             form = form.save(commit=False)
             form.author = request.user
             form.product = product
+            if request.POST.get('parent_id'):
+                form.parent_id = request.POST.get('parent_id')
             form.save()
             return HttpResponseRedirect(request.META['HTTP_REFERER'])
             

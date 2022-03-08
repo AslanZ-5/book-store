@@ -80,7 +80,13 @@
               <ul class="root">
                 {% recursetree product.comments.all %}
                     <li>
-                        {{ node.content }}
+                        {{ node.content }}  <button onclick="comentReplay('{{node.pk}}')">Replay</button>
+                        <form id="{{node.pk}}" class="d-none" method="post" >
+                          {% csrf_token %}
+                        <input type="hidden" name="parent_id" value="{{node.pk}}">
+                      {{form}}
+                      <button type="submit">Comment</button>
+                    </form>
                         {% if not node.is_leaf_node %}
                             <ul class="children">
                                 {{ children }}
@@ -91,7 +97,7 @@
             </ul>
             
             </div>
-            <form  method="post">
+            <form id="FormReview" method="post">
               {% csrf_token %}
             
           {{form}}
@@ -125,6 +131,17 @@
 
 
 <script>
+function comentReplay(id) {
+  const row = document.getElementById(id);
+  if (row.classList.contains('d-none')) {
+    row.classList.remove('d-none');
+  } else {
+    row.classList.add('d-none')
+  }
+};
+
+
+
     $(document).on('click', '#add-button', function (e) {
         e.preventDefault();
   
