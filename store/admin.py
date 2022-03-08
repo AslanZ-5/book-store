@@ -6,10 +6,12 @@ from .models import (Category,
                      ProductSecification,
                      ProductSpecificationValue,
                      ProductType,
-                     Comment
+                     Comment,
+                     Rating
                      )
 admin.site.register(Category, MPTTModelAdmin)
 admin.site.register(Comment, MPTTModelAdmin)
+admin.site.register(Rating)
  
 
 class ProductSpecificationInline(admin.TabularInline):

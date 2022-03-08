@@ -19,7 +19,7 @@
       <div class="row g-3">
            
           <div class="col-12 d-flex justify-content-between">
-  
+            
           </div>
   
           <div class="col-md-5 ps-3 col-lg-5 order-md-last p-0 order-1">
@@ -36,6 +36,25 @@
                                       <option value="4">4</option>
                                   </select>
                       </div>
+              </div>
+              <div>
+                <div class="center">
+                  <div class="stars">
+                    <input type="radio" id="five" {% if rating.stars__avg > 4.5 %}checked{% endif %}     name="rate" value="5">
+                    <label for="five"></label>
+                    <input type="radio" id="four" {% if rating.stars__avg > 3.5 and rating.stars__avg < 4.5  %}checked{% endif %} name="rate" value="4">
+                    <label for="four"></label>
+                    <input type="radio" id="three" {% if rating.stars__avg > 2.5 and rating.stars__avg < 3.5 %}checked{% endif %} name="rate" value="3">
+                    <label for="three"></label>
+                    <input type="radio" id="two" {% if rating.stars__avg > 1.5 and rating.stars__avg < 2.5 %}checked{% endif %} name="rate" value="2">
+                    <label for="two"></label>
+                    <input type="radio" id="one" {% if rating.stars__avg == 1  %}checked{% endif %}  name="rate" value="1">
+                    <label for="one"></label>
+                    <span class="result"></span>
+                  </div>
+               </div>
+                {{rating.stars__avg}}
+                {{rating.user__count}}
               </div>
               <hr>
               <button type="button" id="add-button" value="{{product.id}}" class="btn btn-success fw500">Add to basket</button>
@@ -101,7 +120,7 @@
               {% csrf_token %}
             
           {{form}}
-          <button type="submit">Comment</button>
+          <button class="commentbtn" type="submit">Comment</button>
         </form>
           </div>
 

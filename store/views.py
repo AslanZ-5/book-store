@@ -3,7 +3,7 @@ from django.shortcuts import redirect, render
 from .models import Category, Product
 from django.shortcuts import get_object_or_404
 from django.http import HttpResponse, HttpResponseRedirect
-from django.db.models import Q
+from django.db.models import Q, Count, Avg
 
 from .forms import CommentForm
 
@@ -50,7 +50,8 @@ def product_detail(request, slug):
             
     else:
         form = CommentForm()
-    return render(request, 'detail.html', {'product': product, 'recently_viewed':recently_viewed, 'form':form})
+    rating = product.rating_set.all().aggregate(Avg('stars'), Count('user'))
+    return render(request, 'detail.html', {'product': product, 'recently_viewed':recently_viewed, 'form':form, 'rating':rating})
 
 
 def category_list(request, category_slug):

@@ -192,3 +192,4 @@ class Rating(models.Model):
 
     def __str__(self):
         return str(self.product)+"---"+str(self.user)
+
