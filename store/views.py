@@ -5,6 +5,7 @@ from django.shortcuts import get_object_or_404
 from django.http import HttpResponse, HttpResponseRedirect
 from django.db.models import Q, Count, Avg, Func
 from django.contrib.auth.decorators import login_required
+from django.core.paginator import Paginator 
 from .forms import CommentForm
 
 from datetime import datetime, timedelta
@@ -19,8 +20,10 @@ class Round(Func):
 
 def all_products(request):
     products = Product.objects.prefetch_related("product_image").filter(is_active=True)
-
-    return render(request, 'index.html', {'products': products})
+    paginator = Paginator(products,10)
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+    return render(request, 'index.html', {'products': page_obj})
 
 
 def product_detail(request, slug):
