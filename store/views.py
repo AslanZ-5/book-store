@@ -61,11 +61,13 @@ def product_detail(request, slug):
         form = CommentForm()
     related_products = Product.objects.filter(category=product.category)[:5]
     rating = product.rating_set.all().aggregate(stars__avg=Round(Avg('stars')), user__count=Count('user'))
-    if not request.user or Rating.objects.filter(product=product, user=request.user).exists():
-        can_rate = False
+    if not request.user.is_anonymous:
+        if Rating.objects.filter(product=product, user=request.user).exists():
+            can_rate = False
+        else:
+            can_rate = True 
     else:
-        can_rate = True 
-    
+        can_rate = False
     
     context = {
         'product': product,
