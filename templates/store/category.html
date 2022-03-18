@@ -26,7 +26,63 @@
     <button class="btn btn-outline-success" type="submit">Search</button>
   </form>
 </ul>
-
+{% load static %}
+			<h3 class="mb-4 border-bottom pb-1">Filters</h3>
+			<!-- Price Filter -->
+			<div class="card mb-4">
+				<h6 class="card-header">Price</h6>
+				<div class="list-group list-group-flush">
+					<li class="list-group-item">
+						<input type="range" value="{{minMaxPrice.price__min}}" max={{minMaxPrice.price__max}} min={{minMaxPrice.price__min}} id="rangeInput" oninput="maxPrice.value=this.value" />
+						<p>{{minMaxPrice.price__min}}-{{minMaxPrice.price__max}}</p>
+					</li>
+					<li class="list-group-item">
+						Max: <input type="number" value="{{minMaxPrice.price__min}}" max={{minMaxPrice.price__max}} min={{minMaxPrice.price__min}} class="form-control" id="maxPrice" onkeyup="rangeInput.value=this.value" id="maxPrice" />
+						<button id="priceFilterBtn" class="btn btn-info btn-sm mt-1">Filter</button>
+					</li>
+				</div>
+			</div>
+			<!-- Filter 1 -->
+			<div class="card mb-4">
+				<h6 class="card-header">Colors</h6>
+				<div class="list-group list-group-flush">
+					<li class="list-group-item">
+						<input class="filter-checkbox" data-filter="color" value="{{color.color__id}}" type="checkbox" />&nbsp;
+						<button class="btn" style="background-color:red; margin-top: -5px;"></button>
+					</li>
+				</div>
+			</div>
+			<!-- Filter 2 -->
+			<div class="card mb-4">
+				<h6 class="card-header">Categories</h6>
+				<div class="list-group list-group-flush">
+					
+					<li class="list-group-item">
+						<input class="filter-checkbox" data-filter="category" value="{{cat.category__id}}" type="checkbox" />&nbsp;
+						clothing
+					</li>
+				</div>
+			</div>
+			<!-- Filter 3 -->
+			<div class="card mb-4">
+				<h6 class="card-header">Brands</h6>
+				<div class="list-group list-group-flush">
+					<li class="list-group-item">
+						<input class="filter-checkbox" data-filter="brand" value="1" type="checkbox" />&nbsp;
+						livenston
+					</li>
+				</div>
+			</div>
+			<!-- Filter 3 -->
+			<div class="card mb-4">
+				<h6 class="card-header">Sizes</h6>
+				<div class="list-group list-group-flush">
+					<li class="list-group-item">
+						<input class="filter-checkbox" data-filter="size" value="{{size.size__id}}" type="checkbox" />&nbsp;
+						12xxl
+					</li>
+				</div>
+			</div>
 <div class="container" style="max-width: 1000px">
    <div class="col-12">
      <h1 class="h2">{{ category.name|title}}</h1>
@@ -74,11 +130,25 @@
       </div>
     </div>
 
+
+
+    
   </div>
 
 
 
   
-
+<script>
+  $(document).ready(function(){
+    $(".filter-checkbox").on('click',function(){
+      var _filterObj={};
+      $(".filter-checkbox").each(function(index,ele){
+        var _filterVal=$(this).val();
+        var _filterKey=$(this).data('filter');
+        console.log(_filterKey,_filterVal);
+      });
+    });
+  });
+</script>
 
 {% endblock %}

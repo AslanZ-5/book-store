@@ -130,7 +130,7 @@ def product_filter(request):
            
             'products': products,
     }
-    return render(request, 'filter.html', context)
+    return render(request, 'category.html', context)
 
 
 
