@@ -8,6 +8,7 @@ from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator 
 from .forms import CommentForm
 
+from django.utils import timezone
 from datetime import datetime, timedelta
 import requests
 import json
@@ -107,22 +108,29 @@ def category_list(request, category_slug):
 
 
 def product_filter(request):
-    query = request.GET.get('q')
+    print(request.GET)
+    query = request.GET
     products = Product.objects.filter(is_active=True)
     if query:
-        time = datetime.today() - timedelta(days=6)
-        products = Product.objects.prefetch_related("product_image").filter(
-            Q(category__name__icontains=query)|
-            Q(product_type__name__icontains=query)|
-            Q(title__icontains=query)|
-            Q(description__icontains=query)|
-            Q(created_at__lte=time))
-    
+        if 'q' in query:
+            q = query.get('q')
+            products = Product.objects.prefetch_related("product_image").filter(
+                Q(category__name__icontains=q)|
+                Q(product_type__name__icontains=q)|
+                Q(title__icontains=q)|
+                Q(description__icontains=q))
+                # Q(created_at__lte=time))
+        
+        if 'time' in query:
+            days = int(query.get('time'))
+            time = timezone.make_aware(datetime.today() - timedelta(days=days))
+            products = products.filter(created_at__gte=time)
+
     context = {
            
             'products': products,
     }
-    return render(request, 'category.html', context)
+    return render(request, 'filter.html', context)
 
 
 
