@@ -28,8 +28,9 @@
 </ul>
 {% load static %}
 			<h3 class="mb-4 border-bottom pb-1">Filters</h3>
+      <h2 id="filteredProd">Loading</h2>
 			<!-- Price Filter -->
-			<div class="card mb-4">
+			<!-- <div class="card mb-4">
 				<h6 class="card-header">Price</h6>
 				<div class="list-group list-group-flush">
 					<li class="list-group-item">
@@ -41,48 +42,58 @@
 						<button id="priceFilterBtn" class="btn btn-info btn-sm mt-1">Filter</button>
 					</li>
 				</div>
-			</div>
+			</div> -->
 			<!-- Filter 1 -->
-			<div class="card mb-4">
+			<!-- <div class="card mb-4">
 				<h6 class="card-header">Colors</h6>
 				<div class="list-group list-group-flush">
 					<li class="list-group-item">
-						<input class="filter-checkbox" data-filter="color" value="{{color.color__id}}" type="checkbox" />&nbsp;
+						<input class="filter-checkbox" data-filter="color" value="43" type="checkbox" />&nbsp;
 						<button class="btn" style="background-color:red; margin-top: -5px;"></button>
 					</li>
 				</div>
-			</div>
+			</div> -->
 			<!-- Filter 2 -->
 			<div class="card mb-4">
+
 				<h6 class="card-header">Categories</h6>
 				<div class="list-group list-group-flush">
-					
+          {% for category in categories %}
+
 					<li class="list-group-item">
-						<input class="filter-checkbox" data-filter="category" value="{{cat.category__id}}" type="checkbox" />&nbsp;
-						clothing
+						<input class="filter-checkbox" data-filter="category" value="{{category.id}}" type="checkbox" />&nbsp;
+						{{category}}
 					</li>
+          {% endfor %}
+
 				</div>
 			</div>
 			<!-- Filter 3 -->
 			<div class="card mb-4">
-				<h6 class="card-header">Brands</h6>
+				<h6 class="card-header">Product Type</h6>
 				<div class="list-group list-group-flush">
+          {% for type in product_types %} 
 					<li class="list-group-item">
-						<input class="filter-checkbox" data-filter="brand" value="1" type="checkbox" />&nbsp;
-						livenston
+						<input class="filter-checkbox" data-filter="type" value="{{type.id}}" type="checkbox" />&nbsp;
+						{{type}}
 					</li>
+          {% endfor %}
 				</div>
 			</div>
 			<!-- Filter 3 -->
-			<div class="card mb-4">
+			<!-- <div class="card mb-4">
 				<h6 class="card-header">Sizes</h6>
 				<div class="list-group list-group-flush">
 					<li class="list-group-item">
-						<input class="filter-checkbox" data-filter="size" value="{{size.size__id}}" type="checkbox" />&nbsp;
+						<input class="filter-checkbox" data-filter="size" value="12" type="checkbox" />&nbsp;
 						12xxl
 					</li>
+          <li class="list-group-item">
+						<input class="filter-checkbox" data-filter="size" value="22" type="checkbox" />&nbsp;
+						1ml
+					</li>
 				</div>
-			</div>
+			</div> -->
 <div class="container" style="max-width: 1000px">
    <div class="col-12">
      <h1 class="h2">{{ category.name|title}}</h1>
@@ -94,45 +105,8 @@
    <hr />
 </div>
 
-  <div class="container">
-    <div class="row">
-      <div class="album">
-        {% if not products %} 
-        <div class="col-12">There are currently no products active <a href="{% url 'store:home' %}">  Home </a></div>
-      {% else %}
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-5 g-3">
-
-          {% for product in products %}
-
-          <div class="col">
-            <div class="card border-0">
-              {% for image in product.product_image.all %}
-                {% if image.is_feature %}
-                <img class="img-fluid" alt="{{ image.image.alt_text }}" src="{{ image.image.url }}">
-                {% endif %}
-                {% endfor %}
-              <div class="card-body px-0">
-                <p class="card-text">
-                  <a class="text-dark text-decoration-none"
-                    href="{{ product.get_absolute_url }}">{{ product.title }}</a>
-                </p>
-                <div class="d-flex justify-content-between align-items-center">
-                  <small class="text-muted">£{{product.regular_price}}</small>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {% endfor %}
-          {% endif %}
-
-        </div>
-      </div>
-    </div>
-
-
-
-    
+  <div class="container filteredProd2">
+    {% include 'products_filter.html' %} 
   </div>
 
 
@@ -140,13 +114,31 @@
   
 <script>
   $(document).ready(function(){
+    $('#filteredProd').hide()
     $(".filter-checkbox").on('click',function(){
       var _filterObj={};
       $(".filter-checkbox").each(function(index,ele){
         var _filterVal=$(this).val();
         var _filterKey=$(this).data('filter');
-        console.log(_filterKey,_filterVal);
+        _filterObj[_filterKey] = Array.from(document.querySelectorAll('input[data-filter='+_filterKey+']:checked')).map(function(el){
+          return el.value
+        })
       });
+      console.log(_filterObj)
+      $.ajax({
+        url: '{% url "store:filter_data" %}',
+        data: _filterObj,
+        dataType:'json',
+        beforeSend:function(){
+          $('#filteredProd').show()
+        },
+        success:function(res){
+          console.log(res)
+          $('.filteredProd2').html(res.data);
+          $('#filteredProd').hide()
+
+        }
+      })
     });
   });
 </script>

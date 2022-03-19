@@ -2,10 +2,12 @@ from xml.etree.ElementInclude import include
 from django.shortcuts import redirect, render
 from .models import Category, Product, Rating
 from django.shortcuts import get_object_or_404
-from django.http import HttpResponse, HttpResponseRedirect
+from django.http import HttpResponse, HttpResponseRedirect, JsonResponse
 from django.db.models import Q, Count, Avg, Func
 from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator 
+from django.template.loader import render_to_string 
+
 from .forms import CommentForm
 
 from django.utils import timezone
@@ -133,7 +135,18 @@ def product_filter(request):
     return render(request, 'category.html', context)
 
 
+def filter_data(request):
+    categories = request.GET.getlist('category[]')
+    product_types = request.GET.getlist('type[]')
+    products = Product.objects.prefetch_related("product_image")
+    if categories:
+        
+        products = products.filter(category_id__in=categories)
+    if product_types:
+        products = products.filter(product_type_id__in=product_types)
+    t = render_to_string('products_filter.html', {'products':products})
 
+    return JsonResponse({'data':t})
 
 
 # d = {  
