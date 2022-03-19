@@ -1,7 +1,6 @@
 {% extends 'base.html' %}
 {% block title %}Filtering{% endblock %}
 {% block content %}
-
 <ul class="nav justify-content-center">
   <div class="dropdown">
     <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
@@ -30,19 +29,19 @@
 			<h3 class="mb-4 border-bottom pb-1">Filters</h3>
       <h2 id="filteredProd">Loading</h2>
 			<!-- Price Filter -->
-			<!-- <div class="card mb-4">
+			<div class="card mb-4">
 				<h6 class="card-header">Price</h6>
 				<div class="list-group list-group-flush">
 					<li class="list-group-item">
-						<input type="range" value="{{minMaxPrice.price__min}}" max={{minMaxPrice.price__max}} min={{minMaxPrice.price__min}} id="rangeInput" oninput="maxPrice.value=this.value" />
-						<p>{{minMaxPrice.price__min}}-{{minMaxPrice.price__max}}</p>
+						<input type="range" value="0" max={{max.max}} min=0 id="rangeInput" oninput="maxPrice.value=this.value" />
+						<p>0-{{max.max}}</p>
 					</li>
 					<li class="list-group-item">
-						Max: <input type="number" value="{{minMaxPrice.price__min}}" max={{minMaxPrice.price__max}} min={{minMaxPrice.price__min}} class="form-control" id="maxPrice" onkeyup="rangeInput.value=this.value" id="maxPrice" />
+						Max: <input type="number" value="0" max={{max.max}} min=0 class="form-control" id="maxPrice" onkeyup="rangeInput.value=this.value" id="maxPrice" />
 						<button id="priceFilterBtn" class="btn btn-info btn-sm mt-1">Filter</button>
 					</li>
 				</div>
-			</div> -->
+			</div>
 			<!-- Filter 1 -->
 			<!-- <div class="card mb-4">
 				<h6 class="card-header">Colors</h6>
@@ -113,10 +112,26 @@
 
   
 <script>
+$("#maxPrice").on('blur',function(){
+  var _min=$(this).attr('min');
+  var _max=$(this).attr('max');
+  var _value=$(this).val();
+  if(_value < parseInt(_min) || _value > parseInt(_max)){
+    alert("Values should be" +_min + "-" + _max );
+    $(this).val(_min);
+    $(this).focus()
+    $("#rangeInput").val(_min);
+    return false;
+  }
+})
+
   $(document).ready(function(){
     $('#filteredProd').hide()
-    $(".filter-checkbox").on('click',function(){
+    $(".filter-checkbox, #priceFilterBtn").on('click',function(){
       var _filterObj={};
+      var _maxPrice = $('#maxPrice').val()
+      _filterObj.maxPrice = _maxPrice
+
       $(".filter-checkbox").each(function(index,ele){
         var _filterVal=$(this).val();
         var _filterKey=$(this).data('filter');

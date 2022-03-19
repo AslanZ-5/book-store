@@ -72,6 +72,7 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 'store.context_processors.categories',
                 'store.context_processors.product_types',
+                'store.context_processors.min_max_price',
                 'basket.context_processors.basket'
                 
             ],

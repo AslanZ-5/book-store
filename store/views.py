@@ -12,8 +12,7 @@ from .forms import CommentForm
 
 from django.utils import timezone
 from datetime import datetime, timedelta
-import requests
-import json
+
 
 class Round(Func):
   function = 'ROUND'
@@ -139,8 +138,10 @@ def filter_data(request):
     categories = request.GET.getlist('category[]')
     product_types = request.GET.getlist('type[]')
     products = Product.objects.prefetch_related("product_image")
+    max_price = request.GET.get('maxPrice')
+    if int(max_price) > 0:
+        products = products.filter(regular_price__lte=int(max_price))
     if categories:
-        
         products = products.filter(category_id__in=categories)
     if product_types:
         products = products.filter(product_type_id__in=product_types)
