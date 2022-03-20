@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-03-20 21:44+0300\n"
+"POT-Creation-Date: 2022-03-20 21:52+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -313,6 +313,10 @@ msgstr "Магазин"
 #: .\templates\base.html:62
 msgid "Languages"
 msgstr "Языки"
+
+#: .\templates\base.html:79
+msgid "Hello"
+msgstr "Привет"
 
 #: .\templates\base.html:83 .\templates\base.html:100
 #: .\templates\base.html:144
