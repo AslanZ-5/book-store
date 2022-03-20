@@ -42,6 +42,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+     'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -156,3 +157,11 @@ BASKET_SESSION_ID = 'basket'
 
 # Email setting 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+from django.utils.translation import gettext_lazy as _
+
+LANGUAGE_CODE = 'en' # default language
+LANGUAGES = (
+    ('en', _('English')),
+    ('ru', _('Russian'))
+)

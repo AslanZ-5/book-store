@@ -1,4 +1,3 @@
-from xml.etree.ElementInclude import include
 from django.shortcuts import redirect, render
 from .models import Category, Product, Rating
 from django.shortcuts import get_object_or_404
@@ -12,7 +11,6 @@ from .forms import CommentForm
 
 from django.utils import timezone
 from datetime import datetime, timedelta
-
 
 
 class Round(Func):
@@ -93,14 +91,7 @@ def add_stars(request):
 
     
 
-def category_list(request, category_slug):
-    category = get_object_or_404(Category, slug=category_slug)
-    products = Product.objects.prefetch_related("product_image").filter(category__in=category.get_descendants(include_self=True))
-    context = {
-            'category': category,
-            'products': products,
-    }
-    return render(request, 'filtering.html', context)
+
 
 
 def product_filter(request):
