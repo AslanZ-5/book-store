@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-03-20 21:52+0300\n"
+"POT-Creation-Date: 2022-03-20 22:01+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -162,7 +162,7 @@ msgstr ""
 msgid "Category"
 msgstr ""
 
-#: .\store\models.py:31
+#: .\store\models.py:31 .\templates\store\filtering.html:66
 msgid "Categories"
 msgstr ""
 
@@ -170,7 +170,7 @@ msgstr ""
 msgid "Product Name"
 msgstr ""
 
-#: .\store\models.py:49
+#: .\store\models.py:49 .\templates\store\filtering.html:80
 msgid "Product Type"
 msgstr ""
 
@@ -302,7 +302,7 @@ msgstr ""
 msgid "The %(site_name)s team"
 msgstr ""
 
-#: .\templates\base.html:37
+#: .\templates\base.html:37 .\templates\store\filtering.html:26
 msgid "Filter"
 msgstr "фильтр"
 
@@ -347,7 +347,7 @@ msgstr "Корзина"
 msgid "My Account"
 msgstr "Мой Аккаунт"
 
-#: .\templates\base.html:152
+#: .\templates\base.html:152 .\templates\store\filtering.html:10
 msgid "Search"
 msgstr "Поиск"
 
@@ -435,6 +435,34 @@ msgstr "Конфиденциальность"
 msgid "Terms"
 msgstr "Условия"
 
+#: .\templates\store\filtering.html:14
+msgid "Filters"
+msgstr "фильтры"
+
+#: .\templates\store\filtering.html:18
+msgid "Price"
+msgstr "Цена"
+
 #: .\templates\store\filtering.html:33
 msgid "Time"
 msgstr "Время"
+
+#: .\templates\store\filtering.html:38
+msgid "last week"
+msgstr "на прошлой неделе"
+
+#: .\templates\store\filtering.html:42
+msgid "last two weeks"
+msgstr "последние две недели"
+
+#: .\templates\store\filtering.html:46
+msgid "last month"
+msgstr "прошлый месяц"
+
+#: .\templates\store\filtering.html:109
+msgid "Popular"
+msgstr "Популярный"
+
+#: .\templates\store\filtering.html:109
+msgid "products purchased"
+msgstr "купленные продукты"
