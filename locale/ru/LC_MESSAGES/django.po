@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-03-20 15:23+0300\n"
+"POT-Creation-Date: 2022-03-20 16:14+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -273,6 +273,10 @@ msgstr ""
 #: .\store\models.py:171
 msgid "Product Images"
 msgstr ""
+
+#: .\store\views.py:28
+msgid "How are you?"
+msgstr "Как твои дела?"
 
 #: .\templates\account\password_reset\password_reset_email.html:2
 #, python-format

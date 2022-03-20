@@ -6,6 +6,8 @@ from django.db.models import Q, Count, Avg, Func
 from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator 
 from django.template.loader import render_to_string 
+from django.utils.translation import gettext_lazy as _
+from django.utils.translation import get_language, activate, gettext 
 
 from .forms import CommentForm
 
@@ -24,8 +26,17 @@ def all_products(request):
     paginator = Paginator(products,10)
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
-    return render(request, 'index.html', {'products': page_obj})
+    text = translate(language='ru')
+    return render(request, 'index.html', {'products': page_obj, 'text':text})
 
+def translate(language):
+    cur_language = get_language()
+    try:
+        activate(language)
+        text = gettext('How are you?')
+    finally:
+        activate(cur_language)
+    return text
 
 def product_detail(request, slug):
     product = get_object_or_404(Product, slug=slug, is_active=True)
