@@ -9,16 +9,20 @@ from .models import (Category,
                      Comment,
                      Rating
                      )
-admin.site.register(Category, MPTTModelAdmin)
+from modeltranslation.admin import TranslationAdmin
+
 admin.site.register(Comment, MPTTModelAdmin)
 admin.site.register(Rating)
- 
+
+@admin.register(Category)
+class CategoryAdmin(MPTTModelAdmin,TranslationAdmin):
+    pass 
 
 class ProductSpecificationInline(admin.TabularInline):
     model = ProductSecification
 
 @admin.register(ProductType)
-class ProductTypeAdmin(admin.ModelAdmin):
+class ProductTypeAdmin(TranslationAdmin):
     list_display = ['id', 'name' ]
     inlines = [ 
         ProductSpecificationInline
@@ -26,18 +30,17 @@ class ProductTypeAdmin(admin.ModelAdmin):
 
 class ProductImageInline(admin.TabularInline):
     model = ProductImage
+
 class ProductSpecificationValueInline(admin.TabularInline):
     model = ProductSpecificationValue
 
 @admin.register(Product)
-class ProductAdmin(admin.ModelAdmin):
+class ProductAdmin(TranslationAdmin):
     list_display = ['id', 'title' ]
     list_display_links = ['title']
     inlines = [
         ProductSpecificationValueInline,
         ProductImageInline,
-        
-
     ]
 
 # @admin.register(Category)

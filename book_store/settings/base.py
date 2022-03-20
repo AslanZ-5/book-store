@@ -22,6 +22,7 @@ CSRF_TRUSTED_ORIGINS = ['http://localhost:8000']
 # Application definition
 
 INSTALLED_APPS = [
+    'modeltranslation',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -33,10 +34,7 @@ INSTALLED_APPS = [
     'account',
     'orders',
     'mptt',
-    'checkout'
-
-    
-
+    'checkout' 
 ]
 
 MIDDLEWARE = [
@@ -158,12 +156,12 @@ BASKET_SESSION_ID = 'basket'
 # Email setting 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
-from django.utils.translation import gettext_lazy as _
 
 LANGUAGE_CODE = 'en' # default language
+gettext = lambda s: s
 LANGUAGES = (
-    ('en', _('English')),
-    ('ru', _('Russian'))
+    ('en', gettext('Englis')),
+    ('ru', gettext('English')),
 )
 
 LOCALE_PATHS = (

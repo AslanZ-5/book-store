@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-03-20 16:14+0300\n"
+"POT-Creation-Date: 2022-03-20 21:44+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -78,12 +78,12 @@ msgstr ""
 msgid "Default"
 msgstr ""
 
-#: .\book_store\settings\base.py:165
-msgid "English"
+#: .\book_store\settings\base.py:163
+msgid "Englis"
 msgstr ""
 
-#: .\book_store\settings\base.py:166
-msgid "Russian"
+#: .\book_store\settings\base.py:164
+msgid "English"
 msgstr ""
 
 #: .\checkout\models.py:17
@@ -272,7 +272,7 @@ msgstr ""
 msgid "Product Images"
 msgstr ""
 
-#: .\store\views.py:28
+#: .\store\views.py:36 .\templates\store\index.html:9
 msgid "How are you?"
 msgstr ""
 
@@ -298,4 +298,137 @@ msgstr ""
 #: .\templates\account\password_reset\password_reset_email.html:12
 #, python-format
 msgid "The %(site_name)s team"
+msgstr ""
+
+#: .\templates\base.html:37
+msgid "Filter"
+msgstr ""
+
+#: .\templates\base.html:57
+msgid "Shop"
+msgstr ""
+
+#: .\templates\base.html:62
+msgid "Languages"
+msgstr ""
+
+#: .\templates\base.html:83 .\templates\base.html:100
+#: .\templates\base.html:144
+msgid "Login"
+msgstr ""
+
+#: .\templates\base.html:86
+msgid "Account"
+msgstr ""
+
+#: .\templates\base.html:96 .\templates\base.html:140
+msgid "Your Account"
+msgstr ""
+
+#: .\templates\base.html:97 .\templates\base.html:141
+msgid "Orders"
+msgstr ""
+
+#: .\templates\base.html:98 .\templates\base.html:142
+msgid "Logout"
+msgstr ""
+
+#: .\templates\base.html:130
+msgid "Basket"
+msgstr ""
+
+#: .\templates\base.html:137
+msgid "My Account"
+msgstr ""
+
+#: .\templates\base.html:152
+msgid "Search"
+msgstr ""
+
+#: .\templates\base.html:174
+msgid "Features"
+msgstr ""
+
+#: .\templates\base.html:176
+msgid "Cool stuff"
+msgstr ""
+
+#: .\templates\base.html:177
+msgid "Random feature"
+msgstr ""
+
+#: .\templates\base.html:178
+msgid "Team feature"
+msgstr ""
+
+#: .\templates\base.html:179
+msgid "Stuff for developers"
+msgstr ""
+
+#: .\templates\base.html:180
+msgid "Another one"
+msgstr ""
+
+#: .\templates\base.html:181
+msgid "Last time"
+msgstr ""
+
+#: .\templates\base.html:186
+msgid "Resources"
+msgstr ""
+
+#: .\templates\base.html:188
+msgid "Business"
+msgstr ""
+
+#: .\templates\base.html:189
+msgid "Education"
+msgstr ""
+
+#: .\templates\base.html:190
+msgid "Government"
+msgstr ""
+
+#: .\templates\base.html:191
+msgid "Gaming"
+msgstr ""
+
+#: .\templates\base.html:192
+msgid "Resource name"
+msgstr ""
+
+#: .\templates\base.html:193
+msgid "Resource"
+msgstr ""
+
+#: .\templates\base.html:194
+msgid "Another resource"
+msgstr ""
+
+#: .\templates\base.html:195
+msgid "Final resource"
+msgstr ""
+
+#: .\templates\base.html:199
+msgid "About"
+msgstr ""
+
+#: .\templates\base.html:201
+msgid "Team"
+msgstr ""
+
+#: .\templates\base.html:202
+msgid "Locations"
+msgstr ""
+
+#: .\templates\base.html:203
+msgid "Privacy"
+msgstr ""
+
+#: .\templates\base.html:204
+msgid "Terms"
+msgstr ""
+
+#: .\templates\store\filtering.html:33
+msgid "Time"
 msgstr ""
