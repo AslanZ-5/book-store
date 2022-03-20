@@ -17,5 +17,5 @@ def product_types(request):
 
 def min_max_price(request):
     return {
-        'max' : Product.objects.aggregate(max=Round(Max('regular_price')))
+        'min_max' : Product.objects.aggregate(min=Round(Min('regular_price')),max=Round(Max('regular_price')))
     }

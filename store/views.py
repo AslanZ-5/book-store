@@ -14,6 +14,7 @@ from django.utils import timezone
 from datetime import datetime, timedelta
 
 
+
 class Round(Func):
   function = 'ROUND'
   template='%(function)s(%(expressions)s, 1)'
@@ -92,7 +93,6 @@ def add_stars(request):
 
     
 
-
 def category_list(request, category_slug):
     category = get_object_or_404(Category, slug=category_slug)
     products = Product.objects.prefetch_related("product_image").filter(category__in=category.get_descendants(include_self=True))
@@ -100,16 +100,10 @@ def category_list(request, category_slug):
             'category': category,
             'products': products,
     }
-    return render(request, 'category.html', context)
-
-
-    
-
-
+    return render(request, 'filtering.html', context)
 
 
 def product_filter(request):
-    print(request.GET)
     query = request.GET
     products = Product.objects.filter(is_active=True)
     if query:
@@ -120,27 +114,28 @@ def product_filter(request):
                 Q(product_type__name__icontains=q)|
                 Q(title__icontains=q)|
                 Q(description__icontains=q))
-                # Q(created_at__lte=time))
-        
-        if 'time' in query:
-            days = int(query.get('time'))
-            time = timezone.make_aware(datetime.today() - timedelta(days=days))
-            products = products.filter(created_at__gte=time)
-
+                
     context = {
-           
             'products': products,
     }
-    return render(request, 'category.html', context)
+    return render(request, 'filtering.html', context)
 
 
 def filter_data(request):
     categories = request.GET.getlist('category[]')
     product_types = request.GET.getlist('type[]')
+    time = request.GET.getlist('time[]')
     products = Product.objects.prefetch_related("product_image")
     max_price = request.GET.get('maxPrice')
-    if int(max_price) > 0:
-        products = products.filter(regular_price__lte=int(max_price))
+    min_price = request.GET.get('minPrice')
+    products = products.filter(regular_price__gte=min_price)
+    products = products.filter(regular_price__lte=max_price)
+    if time:
+            days = max(map(int,time))
+            time = timezone.make_aware(datetime.today() - timedelta(days=days))
+            products = products.filter(created_at__gte=time)
+
+        
     if categories:
         products = products.filter(category_id__in=categories)
     if product_types:

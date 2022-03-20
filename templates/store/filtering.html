@@ -1,6 +1,8 @@
 {% extends 'base.html' %}
 {% block title %}Filtering{% endblock %}
 {% block content %}
+
+
 <ul class="nav justify-content-center">
   <div class="dropdown">
     <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
@@ -33,15 +35,38 @@
 				<h6 class="card-header">Price</h6>
 				<div class="list-group list-group-flush">
 					<li class="list-group-item">
-						<input type="range" value="0" max={{max.max}} min=0 id="rangeInput" oninput="maxPrice.value=this.value" />
-						<p>0-{{max.max}}</p>
+						<input type="range" value="{{min_max.min}}" max={{min_max.max}} min={{min_max.min}} id="rangeInput" oninput="maxPrice.value=this.value" />
+						<p>{{min_max.min}}-{{min_max.max}}</p>
 					</li>
 					<li class="list-group-item">
-						Max: <input type="number" value="0" max={{max.max}} min=0 class="form-control" id="maxPrice" onkeyup="rangeInput.value=this.value" id="maxPrice" />
+						Max: <input type="number" value="{{min_max.max}}" max={{min_max.max}} min={{min_max.min}} class="form-control" id="maxPrice" onkeyup="rangeInput.value=this.value"  />
 						<button id="priceFilterBtn" class="btn btn-info btn-sm mt-1">Filter</button>
 					</li>
 				</div>
 			</div>
+
+      <div class="card mb-4">
+
+				<h6 class="card-header">Time</h6>
+				<div class="list-group list-group-flush">
+          <ul>
+            <li>
+              <input class="filter-checkbox"  type="radio" data-filter="time"  value="7">
+              last week
+            </li>
+            <li>
+              <input class="filter-checkbox" type="radio" data-filter="time"  value="14">
+              last two weeks
+            </li>
+            <li>
+              <input class="filter-checkbox" type="radio" data-filter="time"  value="30">
+              last month
+            </li>
+          </ul>
+
+				</div>
+			</div>
+      
 			<!-- Filter 1 -->
 			<!-- <div class="card mb-4">
 				<h6 class="card-header">Colors</h6>
@@ -117,21 +142,22 @@ $("#maxPrice").on('blur',function(){
   var _max=$(this).attr('max');
   var _value=$(this).val();
   if(_value < parseInt(_min) || _value > parseInt(_max)){
-    alert("Values should be" +_min + "-" + _max );
+    alert("Values should be " +_min + "-" + _max );
     $(this).val(_min);
     $(this).focus()
     $("#rangeInput").val(_min);
-    return false;
+    return false1
   }
 })
 
   $(document).ready(function(){
     $('#filteredProd').hide()
-    $(".filter-checkbox, #priceFilterBtn").on('click',function(){
+    $(".filter-checkbox, #priceFilterBtn", ).on('click',function(){
       var _filterObj={};
+      var _minPrice = $("#maxPrice").attr('min')
       var _maxPrice = $('#maxPrice').val()
+      _filterObj.minPrice = _minPrice
       _filterObj.maxPrice = _maxPrice
-
       $(".filter-checkbox").each(function(index,ele){
         var _filterVal=$(this).val();
         var _filterKey=$(this).data('filter');
