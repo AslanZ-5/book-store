@@ -1,6 +1,3 @@
-from ast import Or
-from urllib import response
-from django.shortcuts import render
 from django.http.response import JsonResponse
 
 from basket.basket import Basket

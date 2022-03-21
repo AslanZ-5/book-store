@@ -6,7 +6,7 @@ from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseRedirect, JsonResponse
 from django.shortcuts import redirect, render
 from django.contrib import messages
-from django.utils.translation import gettext_lazy
+from django.utils.translation import gettext_lazy as _
 from orders.models import Order, OrderItem
 from account.models import Address
 from basket.basket import Basket
@@ -41,7 +41,7 @@ def basket_update_delivery(request):
 def delivery_address(request):
     session = request.session
     if 'purchase' not in request.session:
-        messages.success(request, "Please select delivery option")
+        messages.success(request, _("Please select delivery option"))
         return HttpResponseRedirect(request.META['HTTP_REFERER'])
     
     addresses = Address.objects.filter(customer=request.user).order_by('-default')

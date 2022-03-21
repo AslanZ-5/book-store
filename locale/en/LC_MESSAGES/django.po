@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-03-21 15:44+0300\n"
+"POT-Creation-Date: 2022-03-21 18:33+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -149,6 +149,10 @@ msgstr ""
 msgid "Payment Selections"
 msgstr ""
 
+#: .\checkout\views.py:44
+msgid "Please select delivery option"
+msgstr ""
+
 #: .\store\models.py:17
 msgid "Category name"
 msgstr ""
@@ -165,7 +169,7 @@ msgstr ""
 msgid "Category"
 msgstr ""
 
-#: .\store\models.py:31 .\templates\store\filtering.html:66
+#: .\store\models.py:31 .\templates\store\filtering.html:65
 msgid "Categories"
 msgstr ""
 
@@ -173,7 +177,7 @@ msgstr ""
 msgid "Product Name"
 msgstr ""
 
-#: .\store\models.py:49 .\templates\store\filtering.html:80
+#: .\store\models.py:49 .\templates\store\filtering.html:79
 msgid "Product Type"
 msgstr ""
 
@@ -489,27 +493,23 @@ msgid "No products have been added to your wishlist yet"
 msgstr ""
 
 #: .\templates\account\login.html:3
-msgid "Log-in"
+msgid "Log in"
 msgstr ""
 
 #: .\templates\account\login.html:9
-msgid "Sign In"
-msgstr ""
-
-#: .\templates\account\login.html:12
-msgid "Error: Username or Password not correct"
-msgstr ""
-
-#: .\templates\account\login.html:21
 msgid "Sign in"
 msgstr ""
 
-#: .\templates\account\login.html:25
+#: .\templates\account\login.html:13
+msgid "Error: Username or Password not correct"
+msgstr ""
+
+#: .\templates\account\login.html:26
 #: .\templates\account\registration\register.html:9
 msgid "Create an account"
 msgstr ""
 
-#: .\templates\account\login.html:26
+#: .\templates\account\login.html:27
 msgid "Forgotten Password"
 msgstr ""
 
@@ -640,7 +640,7 @@ msgstr ""
 msgid "BookStore"
 msgstr ""
 
-#: .\templates\base.html:37 .\templates\store\filtering.html:26
+#: .\templates\base.html:37 .\templates\store\filtering.html:25
 msgid "Filter"
 msgstr ""
 
@@ -673,7 +673,8 @@ msgstr ""
 msgid "My Account"
 msgstr ""
 
-#: .\templates\base.html:152 .\templates\store\filtering.html:10
+#: .\templates\base.html:152 .\templates\store\filtering.html:9
+#: .\templates\store\filtering.html:10
 msgid "Search"
 msgstr ""
 
@@ -845,6 +846,12 @@ msgstr ""
 msgid "add address"
 msgstr ""
 
+#: .\templates\checkout\delivery_address.html:29
+#: .\templates\checkout\delivery_choices.html:36
+#: .\templates\checkout\payment_selection.html:27
+msgid "Delivery Cost"
+msgstr ""
+
 #: .\templates\checkout\delivery_address.html:33
 #: .\templates\checkout\delivery_choices.html:41
 #: .\templates\checkout\payment_selection.html:31
@@ -871,11 +878,6 @@ msgstr ""
 
 #: .\templates\checkout\delivery_choices.html:12
 msgid "Select your delivery options"
-msgstr ""
-
-#: .\templates\checkout\delivery_choices.html:36
-#: .\templates\checkout\payment_selection.html:27
-msgid "Delivery Cost"
 msgstr ""
 
 #: .\templates\checkout\delivery_choices.html:64
@@ -961,31 +963,31 @@ msgstr ""
 msgid "Filters"
 msgstr ""
 
-#: .\templates\store\filtering.html:18
+#: .\templates\store\filtering.html:17
 msgid "Price"
 msgstr ""
 
-#: .\templates\store\filtering.html:33
+#: .\templates\store\filtering.html:32
 msgid "Time"
 msgstr ""
 
-#: .\templates\store\filtering.html:38
+#: .\templates\store\filtering.html:37
 msgid "last week"
 msgstr ""
 
-#: .\templates\store\filtering.html:42
+#: .\templates\store\filtering.html:41
 msgid "last two weeks"
 msgstr ""
 
-#: .\templates\store\filtering.html:46
+#: .\templates\store\filtering.html:45
 msgid "last month"
 msgstr ""
 
-#: .\templates\store\filtering.html:109 .\templates\store\index.html:26
+#: .\templates\store\filtering.html:108 .\templates\store\index.html:26
 msgid "Popular"
 msgstr ""
 
-#: .\templates\store\filtering.html:109
+#: .\templates\store\filtering.html:108
 msgid "products purchased"
 msgstr ""
 
@@ -993,10 +995,10 @@ msgstr ""
 msgid "Store"
 msgstr ""
 
-#: .\templates\store\products_filter.html:4
+#: .\templates\store\products_filter.html:5
 msgid "There are currently no products active"
 msgstr ""
 
-#: .\templates\store\products_filter.html:5
+#: .\templates\store\products_filter.html:6
 msgid "Home"
 msgstr ""

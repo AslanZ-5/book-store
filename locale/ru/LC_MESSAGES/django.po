@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-03-21 15:44+0300\n"
+"POT-Creation-Date: 2022-03-21 18:33+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -151,6 +151,10 @@ msgstr ""
 msgid "Payment Selections"
 msgstr ""
 
+#: .\checkout\views.py:44
+msgid "Please select delivery option"
+msgstr "Выберите варианты доставки"
+
 #: .\store\models.py:17
 msgid "Category name"
 msgstr ""
@@ -167,7 +171,7 @@ msgstr ""
 msgid "Category"
 msgstr ""
 
-#: .\store\models.py:31 .\templates\store\filtering.html:66
+#: .\store\models.py:31 .\templates\store\filtering.html:65
 msgid "Categories"
 msgstr ""
 
@@ -175,7 +179,7 @@ msgstr ""
 msgid "Product Name"
 msgstr ""
 
-#: .\store\models.py:49 .\templates\store\filtering.html:80
+#: .\store\models.py:49 .\templates\store\filtering.html:79
 msgid "Product Type"
 msgstr ""
 
@@ -412,14 +416,14 @@ msgstr "Адрес"
 #: .\templates\account\password_reset\password_reset_form.html:30
 #: .\templates\account\registration\activation_invalid.html:9
 msgid "Error"
-msgstr ""
+msgstr "Ошибка"
 
 #: .\templates\account\dashboard\edit_address.html:20
 #: .\templates\account\dashboard\edit_details.html:30
 #: .\templates\account\password_reset\password_reset_confirm.html:14
 #: .\templates\account\password_reset\password_reset_form.html:30
 msgid "Please try again"
-msgstr "Ошибка"
+msgstr "Пожалуйста, попробуйте снова"
 
 #: .\templates\account\dashboard\edit_details.html:3
 msgid "Edit Profile"
@@ -471,17 +475,14 @@ msgid "Leave a review"
 msgstr "Оставить отзыв"
 
 #: .\templates\account\dashboard\user_wishlist.html:3
-
 msgid "Users Wish List"
 msgstr "Добавить в список желаний"
 
 #: .\templates\account\dashboard\user_wishlist.html:7
-
 msgid "Wish List"
 msgstr "Добавить в список желаний"
 
 #: .\templates\account\dashboard\user_wishlist.html:8
-
 msgid "Manage your Wishlist"
 msgstr "Ваш список желаний"
 
@@ -496,27 +497,23 @@ msgid "No products have been added to your wishlist yet"
 msgstr "В ваш список желаний еще не добавлено ни одного товара"
 
 #: .\templates\account\login.html:3
-msgid "Log-in"
+msgid "Log in"
 msgstr "Войти"
 
 #: .\templates\account\login.html:9
-msgid "Sign In"
-msgstr "Войти"
-
-#: .\templates\account\login.html:12
-msgid "Error: Username or Password not correct"
-msgstr "Ошибка: имя пользователя или пароль неверны"
-
-#: .\templates\account\login.html:21
 msgid "Sign in"
 msgstr "Войти"
 
-#: .\templates\account\login.html:25
+#: .\templates\account\login.html:13
+msgid "Error: Username or Password not correct"
+msgstr "Ошибка: имя пользователя или пароль неверны"
+
+#: .\templates\account\login.html:26
 #: .\templates\account\registration\register.html:9
 msgid "Create an account"
 msgstr "Создать учетную запись"
 
-#: .\templates\account\login.html:26
+#: .\templates\account\login.html:27
 msgid "Forgotten Password"
 msgstr "Забыл пароль"
 
@@ -637,7 +634,9 @@ msgstr "Электронная почта аккаунта отправлена"
 
 #: .\templates\account\registration\register_confirm.html:11
 msgid "Check your email for instructions to activate your account"
-msgstr "Проверьте свою электронную почту, чтобы получить инструкции по активации учетной записи."
+msgstr ""
+"Проверьте свою электронную почту, чтобы получить инструкции по активации "
+"учетной записи."
 
 #: .\templates\account\registration\register_confirm.html:13
 msgid "Home page"
@@ -647,7 +646,7 @@ msgstr "Главная"
 msgid "BookStore"
 msgstr "Книжный магазин"
 
-#: .\templates\base.html:37 .\templates\store\filtering.html:26
+#: .\templates\base.html:37 .\templates\store\filtering.html:25
 msgid "Filter"
 msgstr "фильтр"
 
@@ -680,7 +679,8 @@ msgstr "Корзина"
 msgid "My Account"
 msgstr "Мой Аккаунт"
 
-#: .\templates\base.html:152 .\templates\store\filtering.html:10
+#: .\templates\base.html:152 .\templates\store\filtering.html:9
+#: .\templates\store\filtering.html:10
 msgid "Search"
 msgstr "Поиск"
 
@@ -852,6 +852,12 @@ msgstr "Нет адресов доставки"
 msgid "add address"
 msgstr "добавить адрес"
 
+#: .\templates\checkout\delivery_address.html:29
+#: .\templates\checkout\delivery_choices.html:36
+#: .\templates\checkout\payment_selection.html:27
+msgid "Delivery Cost"
+msgstr "Стоимость доставки"
+
 #: .\templates\checkout\delivery_address.html:33
 #: .\templates\checkout\delivery_choices.html:41
 #: .\templates\checkout\payment_selection.html:31
@@ -879,11 +885,6 @@ msgstr "Выбрать"
 #: .\templates\checkout\delivery_choices.html:12
 msgid "Select your delivery options"
 msgstr "Выберите варианты доставки"
-
-#: .\templates\checkout\delivery_choices.html:36
-#: .\templates\checkout\payment_selection.html:27
-msgid "Delivery Cost"
-msgstr "Стоимость доставки"
 
 #: .\templates\checkout\delivery_choices.html:64
 msgid "Your order should be delivered within"
@@ -970,31 +971,31 @@ msgstr "фильтр"
 msgid "Filters"
 msgstr "фильтры"
 
-#: .\templates\store\filtering.html:18
+#: .\templates\store\filtering.html:17
 msgid "Price"
 msgstr "Цена"
 
-#: .\templates\store\filtering.html:33
+#: .\templates\store\filtering.html:32
 msgid "Time"
 msgstr "Время"
 
-#: .\templates\store\filtering.html:38
+#: .\templates\store\filtering.html:37
 msgid "last week"
 msgstr "на прошлой неделе"
 
-#: .\templates\store\filtering.html:42
+#: .\templates\store\filtering.html:41
 msgid "last two weeks"
 msgstr "последние две недели"
 
-#: .\templates\store\filtering.html:46
+#: .\templates\store\filtering.html:45
 msgid "last month"
 msgstr "прошлый месяц"
 
-#: .\templates\store\filtering.html:109 .\templates\store\index.html:26
+#: .\templates\store\filtering.html:108 .\templates\store\index.html:26
 msgid "Popular"
 msgstr "Популярный"
 
-#: .\templates\store\filtering.html:109
+#: .\templates\store\filtering.html:108
 msgid "products purchased"
 msgstr "купленные продукты"
 
@@ -1002,10 +1003,16 @@ msgstr "купленные продукты"
 msgid "Store"
 msgstr "магазин"
 
-#: .\templates\store\products_filter.html:4
+#: .\templates\store\products_filter.html:5
 msgid "There are currently no products active"
 msgstr "В настоящее время нет активных продуктов"
 
-#: .\templates\store\products_filter.html:5
+#: .\templates\store\products_filter.html:6
 msgid "Home"
 msgstr "Главная"
+
+#~ msgid "Log-in"
+#~ msgstr "Войти"
+
+#~ msgid "Sign In"
+#~ msgstr "Войти"

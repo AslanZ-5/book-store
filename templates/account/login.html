@@ -1,12 +1,13 @@
 {% extends "sub_base.html" %}
 {% load i18n %}
-{% block title %}{% trans 'Log-in' %}{% endblock %}
+{% block title %}{% trans 'Log in' %}{% endblock %}
 {% block subcontent %}
 
 <div class="col-6 mx-auto">
 <form class="account-form" action="{% url 'account:login' %}" method="post">
   {% csrf_token %}
-  <h3 class="mb-4">{% trans 'Sign In' %}</h3>
+  {% trans 'Sign in' as sign_in %}
+  <h3 class="mb-4">{{ sign_in}}</h3>
   {% if form.errors %}
   <div class="alert alert-primary" role="alert">
     {% trans 'Error: Username or Password not correct'%}!
@@ -18,7 +19,7 @@
   {{ form.password}}
   <div class="d-grid gap-2">
     <input type="hidden" name="next" value="{{ next }}">
-    <button class="btn btn-primary py-2 mb-4 mt-5 fw-bold" type="submit" value="Log-in">{% trans 'Sign in'%}
+    <button class="btn btn-primary py-2 mb-4 mt-5 fw-bold" type="submit" value="Log-in">{{ sign_in }}
     </button>
   </div>
   <div class="flex-column justify-content-center mx-auto pb-3">
