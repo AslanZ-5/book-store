@@ -1,15 +1,15 @@
 {% extends 'base.html' %}
-{% load static %}
+{% load static i18n %}
 {% block stylesheet %}{% static 'basket/css/basket.css' %}{% endblock %}
-{% block title %}Delivery Options{% endblock %}
+{% block title %}{% trans 'Delivery Options' %}{% endblock %}
 {% block content %}
 
   <div class="container" >
     <div class="col-12">
-      <h1 class="h2">Delivery Options</h1>
+      <h1 class="h2">{% trans 'Delivery Options' %}</h1>
     </div>
     <div class="col-12">
-      <p>Select your delivery options</p>
+      <p>{% trans 'Select your delivery options' %}</p>
     </div>
     <hr />
   </div>
@@ -24,27 +24,27 @@
     {% endif %}
       <div class="row g-3">
           {% if deliveryoptions|length == 0 %} 
-            <div class="col-12"> There are no delivery options <a href="{% url 'store:home' %}">Shop</a></div>
+            <div class="col-12"> There are no delivery options <a href="{% url 'store:home' %}">{% trans 'Shop' %}</a></div>
             {% else %} 
             <div class="col-md-4 col-lg-4 order-md-last p-0 order-3">
                 <div class="d-flex bd-highlight ms-0">
-                    <div class="p-2 flex-grow-1 bd-highlight">Sub Total:</div>
+                    <div class="p-2 flex-grow-1 bd-highlight">{% trans 'Sub Total' %}:</div>
                     <div class="p-2bd-highlight"><span class="fw-bold h5">$</span><spam 
                         class="fw-bold h5" id="sub_total">{{basket.get_subtotal_price}}</spam></div>
                 </div>
                 <div class="d-flex bd-highlight">
-                    <div class="p-2 flex-grow-1 bd-highlight">Delivery Cost:</div>
+                    <div class="p-2 flex-grow-1 bd-highlight">{% trans 'Delivery Cost' %}:</div>
                     <div class="p-2bd-highlight"><span class="fw-bold h5">$</span><spam 
                         class="fw-bold h5" id="delivery_price">{{basket.delivery_price}}</spam></div>
                 </div>
                 <div class="d-flex bd-highlight">
-                    <div class="p-2 flex-grow-1 bd-highlight">Total:</div>
+                    <div class="p-2 flex-grow-1 bd-highlight">{% trans 'Total' %}:</div>
                     <div class="p-2bd-highlight"><span class="fw-bold h5">$</span><spam 
                         class="fw-bold h5" id="total">{{basket.get_total_price}}</spam></div>
                 </div>
                 
                 <a role="button" href="{% url 'checkout:delivery_address' %}" class="btn btn-success fw-bold w-100"
-                type="button">Pay Securely</a>
+                type="button">{% trans 'Pay Securely' %}</a>
             </div>
             <div class="col-md-7 col-lg-8">
                
@@ -61,7 +61,7 @@
                         <div class="col-md-9 ps-md-1">
                           <div class="card-body p-1">
                             <p class="card-text ps-2 mb-1 pt-1 fw-bold">{{option.delivery_name}}</p>
-                            <p class="card-text ps-2 pb-3">Your order should be delivered within {{option.delivery_timeframe}}</p>
+                            <p class="card-text ps-2 pb-3">{% trans 'Your order should be delivered within' %} {{option.delivery_timeframe}}</p>
                           </div>
                         </div>
                         <div class="col-md-1 ps-md-1">

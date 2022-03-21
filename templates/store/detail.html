@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load static %}
+{% load static i18n %}
 {% block stylesheet %}{% static 'store.css' %}{% endblock %}
 {% block title %}
 {{ product.title }}
@@ -12,7 +12,7 @@
         {% if messages %} 
         <div class="alert alert-warning" alert-{{message.tags}} role="alert">
             {% for message in messages %} 
-                {{message|safe}} - <a href="{% url 'account:wishlist' %}" class="lalert-link">Your Wishlist</a>
+                {{message|safe}} - <a href="{% url 'account:wishlist' %}" class="lalert-link">{% translate 'Your Wishlist' %}</a>
             {% endfor %}
         </div>
         {% endif %}
@@ -26,9 +26,9 @@
               <div class="d-grid gap-2">
   
               <div class="d-flex d-flex-inline justify-content-between">
-              <div><span class="h3">£{{ product.regular_price }}</span><p class="text-muted">includes tax</p></div>
+              <div><span class="h3">£{{ product.regular_price }}</span><p class="text-muted">{% translate 'includes tax' %}</p></div>
                      <div class="">
-                                  <label for="select">Qty</label>
+                                  <label for="select">{% translate 'Qty' %}</label>
                                   <select id="select" class="h6 store-select-dropdown" >
                                       <option value="1">1</option>
                                       <option value="2">2</option>
@@ -41,7 +41,7 @@
                 
 
                 
-                <div class="center" {% if not can_rate %}   title="You cannot rate  because you are not loged in or you have already rated"{% endif %}>
+                <div class="center" {% if not can_rate %}   title="{% translate 'You cannot rate  because you are not loged in or you have already rated' %}"{% endif %}>
                 
                 
                 
@@ -71,8 +71,8 @@
                 
               </div>
               <hr>
-              <button type="button" id="add-button" value="{{product.id}}" class="btn btn-success fw500">Add to basket</button>
-              <a href="{% url 'account:add_to_wishlist' product.id %}" class="btn btn-light fw500" tabindex="-1" role="button" aria-disabled="true">Add to Wish List</a>
+              <button type="button" id="add-button" value="{{product.id}}" class="btn btn-success fw500">{% translate 'Add to basket' %}</button>
+              <a href="{% url 'account:add_to_wishlist' product.id %}" class="btn btn-light fw500" tabindex="-1" role="button" aria-disabled="true">{% translate 'Add to Wish List' %}</a>
               </div>
           </div>
   
@@ -105,7 +105,7 @@
 
 
           <div>
-            <h4>Review</h4>
+            <h4>{% translate 'Review' %}</h4>
             {% load mptt_tags %}
           
             <div>
@@ -113,12 +113,12 @@
               <ul class="root">
                 {% recursetree product.comments.all %}
                     <li>
-                        {{ node.content }}  <button onclick="comentReplay('{{node.pk}}')">Replay</button>
+                        {{ node.content }}  <button onclick="comentReplay('{{node.pk}}')">{% translate 'Replay' %}</button>
                         <form id="{{node.pk}}" class="d-none" method="post" >
                           {% csrf_token %}
                         <input type="hidden" name="parent_id" value="{{node.pk}}">
                       {{form}}
-                      <button type="submit">Comment</button>
+                      <button type="submit">{% translate 'Comment' %}</button>
                     </form>
                         {% if not node.is_leaf_node %}
                             <ul class="children">
@@ -134,7 +134,7 @@
               {% csrf_token %}
             
           {{form}}
-          <button class="commentbtn" type="submit">Comment</button>
+          <button class="commentbtn" type="submit">{% translate 'Comment' %}</button>
         </form>
           </div>
 
@@ -142,7 +142,7 @@
             <div class="row">
               <div class="album py-5">
                 <div class="pb-3">
-                  <h1 class="h3">Related Products</h1>
+                  <h1 class="h3">{% translate 'Related Products' %}</h1>
                 </div>
                
                   <div class="row row-cols-1 row-cols-sm-2 row-cols-md-5 g-3">
@@ -174,7 +174,7 @@
 
           <div class="rec-container">
 
-            <div class="rectext"> Recently Viewed</div>
+            <div class="rectext">{% translate 'Recently Viewed' %}</div>
             <div class="recview">
                 
                 
