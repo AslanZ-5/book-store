@@ -286,56 +286,56 @@ msgstr "Как твои дела?"
 #: .\templates\account\dashboard\adresses.html:3
 #: .\templates\account\dashboard\edit_address.html:3
 msgid "Edit Addresses"
-msgstr ""
+msgstr "Изменить адреса"
 
 #: .\templates\account\dashboard\adresses.html:8
 #: .\templates\account\dashboard\dashboard.html:70
 msgid "Your Addresses"
-msgstr ""
+msgstr "Ваши адреса"
 
 #: .\templates\account\dashboard\adresses.html:9
 #: .\templates\account\dashboard\dashboard.html:11
 #: .\templates\account\dashboard\user_orders.html:11
 #: .\templates\basket\basket.html:12
 msgid "Manage your"
-msgstr ""
+msgstr "Настройте свои "
 
 #: .\templates\account\dashboard\adresses.html:9
 msgid "addresses"
-msgstr ""
+msgstr "адреса"
 
 #: .\templates\account\dashboard\adresses.html:9
 #: .\templates\account\dashboard\edit_address.html:15
 msgid "and delivery preferences"
-msgstr ""
+msgstr "и настройки доставки"
 
 #: .\templates\account\dashboard\adresses.html:25
 #: .\templates\account\dashboard\edit_address.html:37
 msgid "Add Address"
-msgstr ""
+msgstr "Добавить адрес"
 
 #: .\templates\account\dashboard\adresses.html:47
 msgid "Phone number"
-msgstr ""
+msgstr "Телефонный номер"
 
 #: .\templates\account\dashboard\adresses.html:49
 #: .\templates\checkout\delivery_address.html:62
 msgid "Edit"
-msgstr ""
+msgstr "Редактировать"
 
 #: .\templates\account\dashboard\adresses.html:51
 #: .\templates\account\dashboard\edit_details.html:51
 #: .\templates\basket\basket.html:87
 msgid "Delete"
-msgstr ""
+msgstr "Удалить"
 
 #: .\templates\account\dashboard\adresses.html:53
 msgid "Set Default"
-msgstr ""
+msgstr "Установить по умолчанию"
 
 #: .\templates\account\dashboard\dashboard.html:3
 msgid "Dashboard"
-msgstr ""
+msgstr "Панель"
 
 #: .\templates\account\dashboard\dashboard.html:8 .\templates\base.html:96
 #: .\templates\base.html:140
@@ -345,15 +345,13 @@ msgstr "Твой Аккаунт"
 #: .\templates\account\dashboard\dashboard.html:11
 #: .\templates\account\dashboard\user_orders.html:11
 #: .\templates\checkout\payment_successful.html:15
-#, fuzzy
-#| msgid "Orders"
 msgid "orders"
 msgstr "Заказы"
 
 #: .\templates\account\dashboard\dashboard.html:11
 #: .\templates\account\dashboard\user_orders.html:11
 msgid "and personal details"
-msgstr ""
+msgstr "и личные данные"
 
 #: .\templates\account\dashboard\dashboard.html:31 .\templates\base.html:97
 #: .\templates\base.html:141
@@ -362,57 +360,51 @@ msgstr "Заказы"
 
 #: .\templates\account\dashboard\dashboard.html:32
 msgid "View, Track, Change or buy again"
-msgstr ""
+msgstr "Просмотреть, Отследить, Измененить или Купить снова"
 
 #: .\templates\account\dashboard\dashboard.html:51
 msgid "Login & Security"
-msgstr ""
+msgstr "Вход и Безопасность"
 
 #: .\templates\account\dashboard\dashboard.html:52
 msgid "Edit login, email and phone number"
-msgstr ""
+msgstr "Изменить логин, адрес электронной почты и номер телефона"
 
 #: .\templates\account\dashboard\dashboard.html:71
 msgid "Edit your shipping addresses"
-msgstr ""
+msgstr "Изменить адреса доставки"
 
 #: .\templates\account\dashboard\dashboard.html:90
-#, fuzzy
-#| msgid "Your Wishlist"
 msgid "Your Wish List"
 msgstr "Ваш список желаний"
 
 #: .\templates\account\dashboard\dashboard.html:91
-#, fuzzy
-#| msgid "Your Wishlist"
 msgid "Wiew Your Wish"
-msgstr "Ваш список желаний"
+msgstr "Показать Ваш список желаний"
 
 #: .\templates\account\dashboard\delete_confirm.html:3
 msgid "Delete Account Confirmation"
-msgstr ""
+msgstr "Удалить подтверждение учетной записи"
 
 #: .\templates\account\dashboard\delete_confirm.html:14
-#, fuzzy
-#| msgid "Account"
 msgid "Account deleted"
-msgstr "Аккаунт"
+msgstr "Аккаунт Удален"
 
 #: .\templates\account\dashboard\delete_confirm.html:15
 msgid "Thank you"
-msgstr ""
+msgstr "Спасибо"
 
 #: .\templates\account\dashboard\edit_address.html:14
 msgid "Create/Edit Address"
-msgstr ""
+msgstr "Создать/Изменить адрес"
 
 #: .\templates\account\dashboard\edit_address.html:15
 msgid "Add a new delivery"
-msgstr ""
+msgstr "Добавить новую доставку"
 
 #: .\templates\account\dashboard\edit_address.html:15
 msgid "address"
-msgstr ""
+msgstr "Адрес"
 
 #: .\templates\account\dashboard\edit_address.html:20
 #: .\templates\account\dashboard\edit_details.html:30
@@ -427,76 +419,69 @@ msgstr ""
 #: .\templates\account\password_reset\password_reset_confirm.html:14
 #: .\templates\account\password_reset\password_reset_form.html:30
 msgid "Please try again"
-msgstr ""
+msgstr "Ошибка"
 
 #: .\templates\account\dashboard\edit_details.html:3
 msgid "Edit Profile"
-msgstr ""
+msgstr "Редактировать профиль"
 
 #: .\templates\account\dashboard\edit_details.html:18
 msgid "Details successfully updated"
-msgstr ""
+msgstr "Данные успешно изменины"
 
 #: .\templates\account\dashboard\edit_details.html:21
 msgid "Back to Dashboard"
-msgstr ""
+msgstr "Назад к приборной панели"
 
 #: .\templates\account\dashboard\edit_details.html:24
 msgid "Change your details"
-msgstr ""
+msgstr "Изменить свои данные"
 
 #: .\templates\account\dashboard\edit_details.html:25
 msgid "You can edit your account using the following form"
-msgstr ""
+msgstr "Вы можете редактировать свою учетную запись, используя следующую форму"
 
 #: .\templates\account\dashboard\edit_details.html:43
 msgid "Save Changes"
-msgstr ""
+msgstr "Сохранить изменения"
 
 #: .\templates\account\dashboard\edit_details.html:48
-#, fuzzy
-#| msgid "My Account"
 msgid "Delete Account"
-msgstr "Мой Аккаунт"
+msgstr "Удалить Аккаунт"
 
 #: .\templates\account\dashboard\edit_details.html:49
 msgid "Are you sure you want to delete your account"
-msgstr ""
+msgstr "Вы уверены, что хотите удалить свой аккаунт"
 
 #: .\templates\account\dashboard\user_orders.html:3
 #: .\templates\account\dashboard\user_orders.html:8
-#, fuzzy
-#| msgid "Orders"
 msgid "User Orders"
 msgstr "Заказы"
 
 #: .\templates\account\dashboard\user_orders.html:22
 msgid "Dispatched to"
-msgstr ""
+msgstr "Отправлено в"
 
 #: .\templates\account\dashboard\user_orders.html:41
 msgid "Problem with order"
-msgstr ""
+msgstr "Проблема с заказом"
 
 #: .\templates\account\dashboard\user_orders.html:42
 msgid "Leave a review"
-msgstr ""
+msgstr "Оставить отзыв"
 
 #: .\templates\account\dashboard\user_wishlist.html:3
-#, fuzzy
-#| msgid "Add to Wish List"
+
 msgid "Users Wish List"
 msgstr "Добавить в список желаний"
 
 #: .\templates\account\dashboard\user_wishlist.html:7
-#, fuzzy
-#| msgid "Add to Wish List"
+
 msgid "Wish List"
 msgstr "Добавить в список желаний"
 
 #: .\templates\account\dashboard\user_wishlist.html:8
-#, fuzzy
-#| msgid "Your Wishlist"
+
 msgid "Manage your Wishlist"
 msgstr "Ваш список желаний"
 
@@ -508,50 +493,50 @@ msgstr "Добавить в список желаний"
 
 #: .\templates\account\dashboard\user_wishlist.html:41
 msgid "No products have been added to your wishlist yet"
-msgstr ""
+msgstr "В ваш список желаний еще не добавлено ни одного товара"
 
 #: .\templates\account\login.html:3
 msgid "Log-in"
-msgstr ""
+msgstr "Войти"
 
 #: .\templates\account\login.html:9
 msgid "Sign In"
-msgstr ""
+msgstr "Войти"
 
 #: .\templates\account\login.html:12
 msgid "Error: Username or Password not correct"
-msgstr ""
+msgstr "Ошибка: имя пользователя или пароль неверны"
 
 #: .\templates\account\login.html:21
 msgid "Sign in"
-msgstr ""
+msgstr "Войти"
 
 #: .\templates\account\login.html:25
 #: .\templates\account\registration\register.html:9
 msgid "Create an account"
-msgstr ""
+msgstr "Создать учетную запись"
 
 #: .\templates\account\login.html:26
 msgid "Forgotten Password"
-msgstr ""
+msgstr "Забыл пароль"
 
 #: .\templates\account\password_reset\password_reset_confirm.html:3
 msgid "Reset Confirm"
-msgstr ""
+msgstr "Сброс Подтвердить"
 
 #: .\templates\account\password_reset\password_reset_confirm.html:23
 #: .\templates\account\password_reset\password_reset_confirm.html:25
 #: .\templates\account\password_reset\password_reset_confirm.html:26
 msgid "Your password can"
-msgstr ""
+msgstr "Ваш пароль не может"
 
 #: .\templates\account\password_reset\password_reset_confirm.html:24
 msgid "Your password must contain at least 8 characters"
-msgstr ""
+msgstr "Ваш пароль должен содержать не менее 8 символов"
 
 #: .\templates\account\password_reset\password_reset_confirm.html:29
 msgid "Submit"
-msgstr ""
+msgstr "Подтвердить"
 
 #: .\templates\account\password_reset\password_reset_email.html:2
 #, python-format
@@ -562,15 +547,15 @@ msgstr ""
 
 #: .\templates\account\password_reset\password_reset_email.html:4
 msgid "Please go to the following page and choose a new password:"
-msgstr ""
+msgstr "Please go to the following page and choose a new password:"
 
 #: .\templates\account\password_reset\password_reset_email.html:8
 msgid "Your username, in case you’ve forgotten:"
-msgstr ""
+msgstr "Ваше имя пользователя, если вы забыли:"
 
 #: .\templates\account\password_reset\password_reset_email.html:10
 msgid "Thanks for using our site!"
-msgstr ""
+msgstr "Спасибо за использование нашего сайта!"
 
 #: .\templates\account\password_reset\password_reset_email.html:12
 #, python-format
@@ -579,15 +564,15 @@ msgstr ""
 
 #: .\templates\account\password_reset\password_reset_form.html:3
 msgid "Password Reset"
-msgstr ""
+msgstr "Сброс пароля"
 
 #: .\templates\account\password_reset\password_reset_form.html:26
 msgid "Forgotten your password"
-msgstr ""
+msgstr "Забыли свой пароль"
 
 #: .\templates\account\password_reset\password_reset_form.html:27
 msgid "Enter your e-mail address to obtain a new password"
-msgstr ""
+msgstr "Введите свой адрес электронной почты, чтобы получить новый пароль"
 
 #: .\templates\account\password_reset\password_reset_form.html:37
 #: .\templates\account\password_reset\reset_status.html:16
@@ -598,71 +583,69 @@ msgstr "Войти"
 
 #: .\templates\account\password_reset\reset_status.html:2
 msgid "Reset Status"
-msgstr ""
+msgstr "Статус сброса"
 
 #: .\templates\account\password_reset\reset_status.html:11
 #: .\templates\account\password_reset\reset_status.html:15
 msgid "Password Reset Success"
-msgstr ""
+msgstr "Успешный сброс пароля"
 
 #: .\templates\account\password_reset\reset_status.html:12
 msgid "Check your email for instructions"
-msgstr ""
+msgstr "Проверьте свою электронную почту для получения инструкций"
 
 #: .\templates\account\registration\account_activation_email.html:3
 msgid "Hi"
-msgstr ""
+msgstr "Привет"
 
 #: .\templates\account\registration\activation_invalid.html:3
 msgid "Invalid Activation"
-msgstr ""
+msgstr "Неверная активация"
 
 #: .\templates\account\registration\activation_invalid.html:10
 msgid "Please contact our support team"
-msgstr ""
+msgstr "Пожалуйста, свяжитесь с нашей службой поддержки"
 
 #: .\templates\account\registration\register.html:3
 #: .\templates\account\registration\register.html:32
 msgid "Register"
-msgstr ""
+msgstr "Зарегистрироваться"
 
 #: .\templates\account\registration\register.html:10
 msgid "It"
-msgstr ""
+msgstr "Это"
 
 #: .\templates\account\registration\register.html:12
 msgid "Please correct the following errors"
-msgstr ""
+msgstr "Пожалуйста исправьте следующие ошибки"
 
 #: .\templates\account\registration\register.html:27
 msgid "At least 8 characters and 1 digit"
-msgstr ""
+msgstr "Не менее 8 символов и 1 цифра"
 
 #: .\templates\account\registration\register.html:34
 msgid "Already have an account"
-msgstr ""
+msgstr "Уже есть аккаунт"
 
 #: .\templates\account\registration\register_confirm.html:3
 msgid "Account Email Sent"
-msgstr ""
+msgstr "Электронная почта учетной записи отправлена"
 
 #: .\templates\account\registration\register_confirm.html:10
 msgid "Account email sent"
-msgstr ""
+msgstr "Электронная почта аккаунта отправлена"
 
 #: .\templates\account\registration\register_confirm.html:11
 msgid "Check your email for instructions to activate your account"
-msgstr ""
+msgstr "Проверьте свою электронную почту, чтобы получить инструкции по активации учетной записи."
 
 #: .\templates\account\registration\register_confirm.html:13
-#, fuzzy
-#| msgid "Home"
 msgid "Home page"
 msgstr "Главная"
 
 #: .\templates\base.html:8
 msgid "BookStore"
-msgstr ""
+msgstr "Книжный магазин"
 
 #: .\templates\base.html:37 .\templates\store\filtering.html:26
 msgid "Filter"
@@ -787,71 +770,63 @@ msgstr "Условия"
 
 #: .\templates\basket\basket.html:4
 #: .\templates\checkout\delivery_address.html:3
-#, fuzzy
-#| msgid "Basket"
 msgid "Basket Summary"
 msgstr "Корзина"
 
 #: .\templates\basket\basket.html:9
-#, fuzzy
-#| msgid "Basket"
 msgid "Your Basket"
 msgstr "Корзина"
 
 #: .\templates\basket\basket.html:12
 msgid "items"
-msgstr ""
+msgstr "предметы"
 
 #: .\templates\basket\basket.html:12
-#, fuzzy
-#| msgid "Add to basket"
 msgid "in your basket"
 msgstr "Добавить в корзину"
 
 #: .\templates\basket\basket.html:18
 msgid "Your basket is empty"
-msgstr ""
+msgstr "Ваша корзина пуста"
 
 #: .\templates\basket\basket.html:24
-#, fuzzy
-#| msgid "Orders"
 msgid "Order"
 msgstr "Заказы"
 
 #: .\templates\basket\basket.html:27
 msgid "Shipping options"
-msgstr ""
+msgstr "Варианты доставки"
 
 #: .\templates\basket\basket.html:34 .\templates\basket\basket.html:42
 msgid "Next day delivery"
-msgstr ""
+msgstr "Доставка на следующий день"
 
 #: .\templates\basket\basket.html:35
 msgid "Premimum delivery"
-msgstr ""
+msgstr "Премиум доставка"
 
 #: .\templates\basket\basket.html:41
 #: .\templates\checkout\delivery_address.html:25
 #: .\templates\checkout\delivery_choices.html:31
 #: .\templates\checkout\payment_selection.html:23
 msgid "Sub Total"
-msgstr ""
+msgstr "Промежуточный итог"
 
 #: .\templates\basket\basket.html:42
 msgid "Shipping"
-msgstr ""
+msgstr "Перевозка"
 
 #: .\templates\basket\basket.html:43
 msgid "Total to pay"
-msgstr ""
+msgstr "Всего к оплате"
 
 #: .\templates\basket\basket.html:49
 msgid "Checkout Securely"
-msgstr ""
+msgstr "Оформить заказ безопасно"
 
 #: .\templates\basket\basket.html:50
 msgid "Save for later"
-msgstr ""
+msgstr "Сохранить на потом"
 
 #: .\templates\basket\basket.html:78 .\templates\store\detail.html:31
 msgid "Qty"
@@ -859,91 +834,91 @@ msgstr "Количество"
 
 #: .\templates\basket\basket.html:86
 msgid "Update"
-msgstr ""
+msgstr "Обновить"
 
 #: .\templates\checkout\delivery_address.html:8
 msgid "Delivery Address"
-msgstr ""
+msgstr "Адрес доставки"
 
 #: .\templates\checkout\delivery_address.html:11
 msgid "Please select your delivery address"
-msgstr ""
+msgstr "Пожалуйста, выберите адрес доставки"
 
 #: .\templates\checkout\delivery_address.html:20
 msgid "There are no delivery addresses"
-msgstr ""
+msgstr "Нет адресов доставки"
 
 #: .\templates\checkout\delivery_address.html:20
 msgid "add address"
-msgstr ""
+msgstr "добавить адрес"
 
 #: .\templates\checkout\delivery_address.html:33
 #: .\templates\checkout\delivery_choices.html:41
 #: .\templates\checkout\payment_selection.html:31
 msgid "Total"
-msgstr ""
+msgstr "Итог"
 
 #: .\templates\checkout\delivery_address.html:36
 #: .\templates\checkout\delivery_choices.html:47
 #: .\templates\checkout\payment_selection.html:34
 msgid "Pay Securely"
-msgstr ""
+msgstr "Оплатить безопасно"
 
 #: .\templates\checkout\delivery_address.html:42
 msgid "Other Addresses"
-msgstr ""
+msgstr "Другие адреса"
 
 #: .\templates\checkout\delivery_address.html:50
 msgid "Your current address"
-msgstr ""
+msgstr "Ваш текущий адрес"
 
 #: .\templates\checkout\delivery_address.html:64
 msgid "Select"
-msgstr ""
+msgstr "Выбрать"
 
 #: .\templates\checkout\delivery_choices.html:12
 msgid "Select your delivery options"
-msgstr ""
+msgstr "Выберите варианты доставки"
 
 #: .\templates\checkout\delivery_choices.html:36
 #: .\templates\checkout\payment_selection.html:27
 msgid "Delivery Cost"
-msgstr ""
+msgstr "Стоимость доставки"
 
 #: .\templates\checkout\delivery_choices.html:64
 msgid "Your order should be delivered within"
-msgstr ""
+msgstr "Ваш заказ должен быть доставлен в течение"
 
 #: .\templates\checkout\payment_selection.html:3
 msgid "Payment"
-msgstr ""
+msgstr "Оплата"
 
 #: .\templates\checkout\payment_selection.html:11
 msgid "Please select your Payment Options"
-msgstr ""
+msgstr "Пожалуйста, выберите варианты оплаты"
 
 #: .\templates\checkout\payment_successful.html:3
 #: .\templates\checkout\payment_successful.html:8
 msgid "Payment Successful"
-msgstr ""
+msgstr "Оплата прошла успешно"
 
 #: .\templates\checkout\payment_successful.html:11
 msgid "Order Summary"
-msgstr ""
+msgstr "Итог Заказа"
 
 #: .\templates\checkout\payment_successful.html:15
 msgid "View all"
-msgstr ""
+msgstr "Посмотреть все"
 
 #: .\templates\snippets\paginator.html:7
 #: .\templates\snippets\paginator.html:11
 msgid "Previous"
-msgstr ""
+msgstr "Предыдущий"
 
 #: .\templates\snippets\paginator.html:25
 #: .\templates\snippets\paginator.html:29
 msgid "Next"
-msgstr ""
+msgstr "Следующий"
 
 #: .\templates\store\detail.html:15
 msgid "Your Wishlist"
@@ -988,8 +963,6 @@ msgid "Recently Viewed"
 msgstr "Недавно просмотренные"
 
 #: .\templates\store\filtering.html:3
-#, fuzzy
-#| msgid "Filter"
 msgid "Filtering"
 msgstr "фильтр"
 
@@ -1027,7 +1000,7 @@ msgstr "купленные продукты"
 
 #: .\templates\store\index.html:5
 msgid "Store"
-msgstr ""
+msgstr "магазин"
 
 #: .\templates\store\products_filter.html:4
 msgid "There are currently no products active"
