@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-03-21 18:33+0300\n"
+"POT-Creation-Date: 2022-03-21 19:52+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -100,7 +100,7 @@ msgstr ""
 #: .\templates\account\registration\register.html:25
 #: .\templates\account\registration\register.html:30
 msgid "Required"
-msgstr ""
+msgstr "Обязательное Поле"
 
 #: .\checkout\models.py:22
 msgid "delivery price"
@@ -300,7 +300,6 @@ msgstr "Ваши адреса"
 #: .\templates\account\dashboard\adresses.html:9
 #: .\templates\account\dashboard\dashboard.html:11
 #: .\templates\account\dashboard\user_orders.html:11
-#: .\templates\basket\basket.html:12
 msgid "Manage your"
 msgstr "Настройте свои "
 
@@ -557,7 +556,7 @@ msgstr "Спасибо за использование нашего сайта!"
 #: .\templates\account\password_reset\password_reset_email.html:12
 #, python-format
 msgid "The %(site_name)s team"
-msgstr ""
+msgstr "Команда %(site_name)"
 
 #: .\templates\account\password_reset\password_reset_form.html:3
 msgid "Password Reset"
@@ -778,12 +777,10 @@ msgid "Your Basket"
 msgstr "Корзина"
 
 #: .\templates\basket\basket.html:12
-msgid "items"
-msgstr "предметы"
-
-#: .\templates\basket\basket.html:12
-msgid "in your basket"
-msgstr "Добавить в корзину"
+#, fuzzy
+#| msgid "Manage your Wishlist"
+msgid "Manage your items in your basket"
+msgstr "Ваш список желаний"
 
 #: .\templates\basket\basket.html:18
 msgid "Your basket is empty"
@@ -885,6 +882,12 @@ msgstr "Выбрать"
 #: .\templates\checkout\delivery_choices.html:12
 msgid "Select your delivery options"
 msgstr "Выберите варианты доставки"
+
+#: .\templates\checkout\delivery_choices.html:27
+#, fuzzy
+#| msgid "There are no delivery addresses"
+msgid "There are no delivery options"
+msgstr "Нет адресов доставки"
 
 #: .\templates\checkout\delivery_choices.html:64
 msgid "Your order should be delivered within"
@@ -991,7 +994,7 @@ msgstr "последние две недели"
 msgid "last month"
 msgstr "прошлый месяц"
 
-#: .\templates\store\filtering.html:108 .\templates\store\index.html:26
+#: .\templates\store\filtering.html:108 .\templates\store\index.html:25
 msgid "Popular"
 msgstr "Популярный"
 
@@ -1003,13 +1006,19 @@ msgstr "купленные продукты"
 msgid "Store"
 msgstr "магазин"
 
-#: .\templates\store\products_filter.html:5
+#: .\templates\store\index.html:29 .\templates\store\products_filter.html:5
 msgid "There are currently no products active"
 msgstr "В настоящее время нет активных продуктов"
 
 #: .\templates\store\products_filter.html:6
 msgid "Home"
 msgstr "Главная"
+
+#~ msgid "items"
+#~ msgstr "предметы"
+
+#~ msgid "in your basket"
+#~ msgstr "Добавить в корзину"
 
 #~ msgid "Log-in"
 #~ msgstr "Войти"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-03-21 18:33+0300\n"
+"POT-Creation-Date: 2022-03-21 19:52+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -298,7 +298,6 @@ msgstr ""
 #: .\templates\account\dashboard\adresses.html:9
 #: .\templates\account\dashboard\dashboard.html:11
 #: .\templates\account\dashboard\user_orders.html:11
-#: .\templates\basket\basket.html:12
 msgid "Manage your"
 msgstr ""
 
@@ -772,11 +771,7 @@ msgid "Your Basket"
 msgstr ""
 
 #: .\templates\basket\basket.html:12
-msgid "items"
-msgstr ""
-
-#: .\templates\basket\basket.html:12
-msgid "in your basket"
+msgid "Manage your items in your basket"
 msgstr ""
 
 #: .\templates\basket\basket.html:18
@@ -878,6 +873,10 @@ msgstr ""
 
 #: .\templates\checkout\delivery_choices.html:12
 msgid "Select your delivery options"
+msgstr ""
+
+#: .\templates\checkout\delivery_choices.html:27
+msgid "There are no delivery options"
 msgstr ""
 
 #: .\templates\checkout\delivery_choices.html:64
@@ -983,7 +982,7 @@ msgstr ""
 msgid "last month"
 msgstr ""
 
-#: .\templates\store\filtering.html:108 .\templates\store\index.html:26
+#: .\templates\store\filtering.html:108 .\templates\store\index.html:25
 msgid "Popular"
 msgstr ""
 
@@ -995,7 +994,7 @@ msgstr ""
 msgid "Store"
 msgstr ""
 
-#: .\templates\store\products_filter.html:5
+#: .\templates\store\index.html:29 .\templates\store\products_filter.html:5
 msgid "There are currently no products active"
 msgstr ""
 

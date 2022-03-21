@@ -6,7 +6,6 @@
 {% block content %}
   <div class="container">
 
-
     <div class="alert alert-primary fw600 rounded-0 border-0 py-3" role="alert">
       <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-info-circle me-2"
         viewBox="0 0 16 16">
@@ -27,7 +26,7 @@
               </h1>
           </div>
           {% if not products %} 
-              <div class="col-12">There are currently no products active</div>
+              <div class="col-12">{% trans 'There are currently no products active' %}</div>
             {% else %}
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-5 g-3">
             {% for product in products %}
