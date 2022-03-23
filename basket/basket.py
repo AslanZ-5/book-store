@@ -57,7 +57,7 @@ class Basket():
         price = 0.00
         if 'purchase' in self.session:
             price = DeliveryOptions.objects.get(id=self.session['purchase']['delivery_id']).delivery_price
-            return price
+        return price
     def get_delivery_id(self):
         if 'purchase' in self.session:
             id = self.session['purchase']['delivery_id']

@@ -17,7 +17,7 @@
 				<h6 class="card-header">{% trans "Price" %}</h6>
 				<div class="list-group list-group-flush">
 					<li class="list-group-item">
-						<input type="range" value="{{min_max.min}}" max={{min_max.max}} min={{min_max.min}} id="rangeInput" oninput="maxPrice.value=this.value" />
+						<input type="range" value="{{min_max.min}}" max={{min_max.max}} min=0 id="rangeInput" oninput="maxPrice.value=this.value" />
 						<p>{{min_max.min}}-{{min_max.max}}</p>
 					</li>
 					<li class="list-group-item">

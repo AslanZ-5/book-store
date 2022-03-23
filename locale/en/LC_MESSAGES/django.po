@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-03-21 19:52+0300\n"
+"POT-Creation-Date: 2022-03-22 16:47+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -516,14 +516,28 @@ msgstr ""
 msgid "Reset Confirm"
 msgstr ""
 
+#: .\templates\account\password_reset\password_reset_confirm.html:9
+msgid "Change your password"
+msgstr ""
+
+#: .\templates\account\password_reset\password_reset_confirm.html:10
+msgid "Use the form below to change your password"
+msgstr ""
+
 #: .\templates\account\password_reset\password_reset_confirm.html:23
-#: .\templates\account\password_reset\password_reset_confirm.html:25
-#: .\templates\account\password_reset\password_reset_confirm.html:26
-msgid "Your password can"
+msgid "Your password must contain at least 8 characters"
 msgstr ""
 
 #: .\templates\account\password_reset\password_reset_confirm.html:24
-msgid "Your password must contain at least 8 characters"
+msgid "Your password can't be a commonly used password"
+msgstr ""
+
+#: .\templates\account\password_reset\password_reset_confirm.html:25
+msgid "Your password can't be entirely numeric"
+msgstr ""
+
+#: .\templates\account\password_reset\password_reset_confirm.html:26
+msgid "Your password can't be too similar to your other personal information"
 msgstr ""
 
 #: .\templates\account\password_reset\password_reset_confirm.html:29
@@ -567,22 +581,22 @@ msgid "Enter your e-mail address to obtain a new password"
 msgstr ""
 
 #: .\templates\account\password_reset\password_reset_form.html:37
-#: .\templates\account\password_reset\reset_status.html:16
+#: .\templates\account\password_reset\reset_status.html:17
 #: .\templates\base.html:83 .\templates\base.html:100
 #: .\templates\base.html:144
 msgid "Login"
 msgstr ""
 
-#: .\templates\account\password_reset\reset_status.html:2
+#: .\templates\account\password_reset\reset_status.html:3
 msgid "Reset Status"
 msgstr ""
 
-#: .\templates\account\password_reset\reset_status.html:11
-#: .\templates\account\password_reset\reset_status.html:15
+#: .\templates\account\password_reset\reset_status.html:12
+#: .\templates\account\password_reset\reset_status.html:16
 msgid "Password Reset Success"
 msgstr ""
 
-#: .\templates\account\password_reset\reset_status.html:12
+#: .\templates\account\password_reset\reset_status.html:13
 msgid "Check your email for instructions"
 msgstr ""
 

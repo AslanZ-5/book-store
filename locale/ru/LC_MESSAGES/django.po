@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-03-21 19:52+0300\n"
+"POT-Creation-Date: 2022-03-22 16:47+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -520,15 +520,30 @@ msgstr "Забыл пароль"
 msgid "Reset Confirm"
 msgstr "Сброс Подтвердить"
 
-#: .\templates\account\password_reset\password_reset_confirm.html:23
-#: .\templates\account\password_reset\password_reset_confirm.html:25
-#: .\templates\account\password_reset\password_reset_confirm.html:26
-msgid "Your password can"
-msgstr "Ваш пароль не может"
+#: .\templates\account\password_reset\password_reset_confirm.html:9
 
-#: .\templates\account\password_reset\password_reset_confirm.html:24
+msgid "Change your password"
+msgstr "Измените свой пароль"
+
+#: .\templates\account\password_reset\password_reset_confirm.html:10
+msgid "Use the form below to change your password"
+msgstr "Используйте форму ниже, чтобы изменить свой пароль"
+
+#: .\templates\account\password_reset\password_reset_confirm.html:23
 msgid "Your password must contain at least 8 characters"
 msgstr "Ваш пароль должен содержать не менее 8 символов"
+
+#: .\templates\account\password_reset\password_reset_confirm.html:24
+msgid "Your password can't be a commonly used password"
+msgstr "Ваш пароль не может быть широко используемым паролем"
+
+#: .\templates\account\password_reset\password_reset_confirm.html:25
+msgid "Your password can't be entirely numeric"
+msgstr "Ваш пароль не может быть полностью числовым"
+
+#: .\templates\account\password_reset\password_reset_confirm.html:26
+msgid "Your password can't be too similar to your other personal information"
+msgstr "Ваш пароль не должен быть слишком похож на другую личную информацию."
 
 #: .\templates\account\password_reset\password_reset_confirm.html:29
 msgid "Submit"
@@ -556,7 +571,7 @@ msgstr "Спасибо за использование нашего сайта!"
 #: .\templates\account\password_reset\password_reset_email.html:12
 #, python-format
 msgid "The %(site_name)s team"
-msgstr "Команда %(site_name)"
+msgstr ""
 
 #: .\templates\account\password_reset\password_reset_form.html:3
 msgid "Password Reset"
@@ -571,22 +586,22 @@ msgid "Enter your e-mail address to obtain a new password"
 msgstr "Введите свой адрес электронной почты, чтобы получить новый пароль"
 
 #: .\templates\account\password_reset\password_reset_form.html:37
-#: .\templates\account\password_reset\reset_status.html:16
+#: .\templates\account\password_reset\reset_status.html:17
 #: .\templates\base.html:83 .\templates\base.html:100
 #: .\templates\base.html:144
 msgid "Login"
 msgstr "Войти"
 
-#: .\templates\account\password_reset\reset_status.html:2
+#: .\templates\account\password_reset\reset_status.html:3
 msgid "Reset Status"
 msgstr "Статус сброса"
 
-#: .\templates\account\password_reset\reset_status.html:11
-#: .\templates\account\password_reset\reset_status.html:15
+#: .\templates\account\password_reset\reset_status.html:12
+#: .\templates\account\password_reset\reset_status.html:16
 msgid "Password Reset Success"
 msgstr "Успешный сброс пароля"
 
-#: .\templates\account\password_reset\reset_status.html:12
+#: .\templates\account\password_reset\reset_status.html:13
 msgid "Check your email for instructions"
 msgstr "Проверьте свою электронную почту для получения инструкций"
 
@@ -948,7 +963,7 @@ msgstr "Добавить в список желаний"
 
 #: .\templates\store\detail.html:108
 msgid "Review"
-msgstr "Обзор"
+msgstr "Отзывы"
 
 #: .\templates\store\detail.html:116
 msgid "Replay"
