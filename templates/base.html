@@ -17,96 +17,73 @@
     <link rel="stylesheet" href="{% static 'base.css' %}">
     <link rel="stylesheet" href="{% block stylesheet %}{% endblock stylesheet %}">
 </head>
-
 <body>
     <header class="pb-3">
         <nav class="navbar navbar-expand-md navbar-light bg-white border-bottom">
             <div class="container-fluid px-md-4">
                 <div class="d-flex w-100 navbar-collapse">
                     <a class="navbar-brand d-flex-inline" href="/">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor"
-                            class="bi bi-asterisk" viewBox="0 0 16 16">
-                            <path
-                                d="M8 0a1 1 0 0 1 1 1v5.268l4.562-2.634a1 1 0 1 1 1 1.732L10 8l4.562 2.634a1 1 0 1 1-1 1.732L9 9.732V15a1 1 0 1 1-2 0V9.732l-4.562 2.634a1 1 0 1 1-1-1.732L6 8 1.438 5.366a1 1 0 0 1 1-1.732L7 6.268V1a1 1 0 0 1 1-1z" />
-                        </svg>
+                        BOOK STORE
                     </a>
                     <ul class="navbar-nav me-auto mb-2 mb-md-0">
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle d-none d-md-block fw500" href="{% url 'store:filter' %}" id="navbarDropdown"
-                                role="button" >
+                            <a class="nav-link dropdown-toggle d-none d-md-block fw500" href="{% url 'store:filter' %}"
+                                id="navbarDropdown" role="button">
                                 {% trans 'Filter' %}
-                                
                             </a>
-                         
                         </li>
-                        <li class="admin">
-                            
-                        </li>
-                    
                     </ul>
                     <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false"
                         aria-label="Toggle navigation">
                         <div>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor"
-                                class="bi bi-list" viewBox="0 0 16 16">
-                                <path fill-rule="evenodd"
-                                    d="M2.5 11.5A.5.5 0 0 1 3 11h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 7h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 3h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
-                            </svg>
                         </div>
                         <span class="fs15 fw500">{% trans 'Shop' %}</span>
                     </button>
-<!-- Example single danger button -->
-<div class="btn-group">
-    <button type="button" class="btn btn-outline-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-        {% trans 'Languages' %} 
-    </button>
-    <ul class="dropdown-menu">
-        {% get_current_language as LANGUAGE_CODE %}
-        {% get_available_languages as LANGUAGES %}
-        {% get_language_info_list for LANGUAGES as languages %}
-        {% for lang in languages %}
-      <li><a class="dropdown-item" href="/{{ lang.code }}"> {{ lang.name_local }}</a></li>
-        {% endfor %}
-    </ul>
-  </div>
+                    <!-- Example single danger button -->
+                
+                    <div class="btn-group head-btns">
+                        <button type="button" class="btn btn-outline-secondary dropdown-toggle"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            {% trans 'Language' %}
+                        </button>
+                        <ul class="dropdown-menu">
+                            {% get_current_language as LANGUAGE_CODE %}
+                            {% get_available_languages as LANGUAGES %}
+                            {% get_language_info_list for LANGUAGES as languages %}
+                            {% for lang in languages %}
+                            <li><a class="dropdown-item" href="/{{ lang.code }}"> {{ lang.name_local }}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </div>
                     <div>
-                        <div class="collapse navbar-collapse" id="navbarSupportedContent2">
-                          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                            <li class="nav-item dropdown">
-                              <a class="nav-link dropdown-toggle text-reset" href="#" id="navbarDropdown" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false">
-                                <div class="small text-muted">{% translate "Hello" %},
-                                  {% if user.is_authenticated %}
-                                    {{ request.user.name }}
-                                  {% else %}
-                                  {% translate "Login" %}
-                                  {% endif %}
-                                </div>
-                                <span class="fs15 fw500">{% trans 'Account' %}
-                                </span>
-                                </span>
-                              </a>
-                              <div class="dropdown-menu rounded-0" aria-labelledby="navbarDropdown">
-                                <div class="card border-0">
-                                  <div class="card-body">
-                                    <h6 class="card-title"></h6>
-                                    <ul class="list-group list-group-flush dropdown-account-link">
-                                      {% if user.is_authenticated %}
-                                      <a href="{% url 'account:dashboard' %}" class="text-reset small list-group-item p-0 pb-1 border-0 dropdown-account-link">{% translate "Your Account" %}</a>
-                                      <a href="{% url 'account:user_orders' %}" class="text-reset small list-group-item p-0 pb-1 border-0 dropdown-account-link">{% translate "Orders" %}</a>
-                                      <a href="{% url 'account:logout' %}" class="text-reset small list-group-item p-0 pb-1 border-0 dropdown-account-link">{% translate "Logout" %}</a>      
-                                      {% else %}
-                                      <a href="{% url 'account:login' %}" class="text-reset small list-group-item p-0 pb-1 border-0 dropdown-account-link">{% translate "Login" %}</a>
-                                      {% endif %}
-                                    </ul>
-                                  </div>
-                                </div>
-                              </div>
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
+                        <div class="btn-group head-btns">
+                        <button type="button" class="btn btn-outline-secondary dropdown-toggle"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            {% if user.is_authenticated %}
+                            {{ request.user.name }}
+                            {% else %}
+                            {% translate "Login" %}
+                            {% endif %}                        </button>
+                        <ul class="dropdown-menu">
+                            {% if user.is_authenticated %}
+                            <li><a href="{% url 'account:dashboard' %}"
+                                class="text-reset small list-group-item p-0 pb-1 border-0 dropdown-account-link">{% translate "Your Account" %}</a></li>
+                            
+                            <li><a href="{% url 'account:user_orders' %}"
+                                class="text-reset small list-group-item p-0 pb-1 border-0 dropdown-account-link">{% translate "Orders" %}</a></li>
+                            <li><a href="{% url 'account:logout' %}"
+                                class="text-reset small list-group-item p-0 pb-1 border-0 dropdown-account-link">{% translate "Logout" %}</a></li>
+                            {% else %}
+                            <li>   <a href="{% url 'account:login' %}"
+                                class="text-reset small list-group-item p-0 pb-1 border-0 dropdown-account-link">{% translate "Login" %}</a>
+                           </li>
+                           {% endif %}
+
+                        </ul>
+                    </div>
+                       
+                    </div>
 
                     <a type="button" role="button" href="{% url 'basket:basket_summary' %}"
                         class="btn btn-outline-secondary border-0 basket-btn">
@@ -129,20 +106,21 @@
                         </div>
                         <span class="fs15 fw500">{% trans 'Basket' %}</span>
                     </a>
-                </div>
+        
+            </div>
                 <div class="d-md-none d-lg-none d-xl-none">
                     <div class="collapse navbar-collapse" id="navbarCollapse">
-                  
-                        
+
+
                         <h6 class="card-title">{% trans 'My Account' %}</h6>
                         <ul class="list-group list-group-flush dropdown-account-link">
-                          {% if user.is_authenticated %}
-                          <a href="{% url "account:dashboard" %}" class="dropdown-item">{% trans 'Your Account' %}</a>
-                          <a href="#" class="dropdown-item">{% trans 'Orders' %}</a>
-                          <a href="{% url "account:logout" %}" class="dropdown-item">{% trans 'Logout' %}</a>      
-                          {% else %}
-                          <a href="{% url "account:login" %}" class="dropdown-item">{% trans 'Login' %}</a>
-                          {% endif %}
+                            {% if user.is_authenticated %}
+                            <a href="{% url "account:dashboard" %}" class="dropdown-item">{% trans 'Your Account' %}</a>
+                            <a href="#" class="dropdown-item">{% trans 'Orders' %}</a>
+                            <a href="{% url "account:logout" %}" class="dropdown-item">{% trans 'Logout' %}</a>
+                            {% else %}
+                            <a href="{% url "account:login" %}" class="dropdown-item">{% trans 'Login' %}</a>
+                            {% endif %}
                         </ul>
                     </div>
                 </div>
@@ -155,19 +133,15 @@
         </nav>
     </header>
     <main class="pt-5">
-    <div id="content">{% block content %} {% endblock %}</div>
-    <div>
-    </div>
+        <div id="content">{% block content %} {% endblock %}</div>
+        <div>
+        </div>
     </main>
     <footer class="container py-5 footer">
         <hr>
         <div class="row pt-4">
             <div class="col-12 col-md">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                    class="bi bi-asterisk" viewBox="0 0 16 16">
-                    <path
-                        d="M8 0a1 1 0 0 1 1 1v5.268l4.562-2.634a1 1 0 1 1 1 1.732L10 8l4.562 2.634a1 1 0 1 1-1 1.732L9 9.732V15a1 1 0 1 1-2 0V9.732l-4.562 2.634a1 1 0 1 1-1-1.732L6 8 1.438 5.366a1 1 0 0 1 1-1.732L7 6.268V1a1 1 0 0 1 1-1z" />
-                </svg>
+                BOOK STORE
                 <small class="d-block mb-3 text-muted">&copy; 2017-2021</small>
             </div>
             <div class="col-6 col-md fs15">
@@ -176,12 +150,13 @@
                     <li><a class="link-secondary text-decoration-none" href="#">{% trans 'Cool stuff' %}</a></li>
                     <li><a class="link-secondary text-decoration-none" href="#">{% trans 'Random feature' %}</a></li>
                     <li><a class="link-secondary text-decoration-none" href="#">{% trans 'Team feature' %}</a></li>
-                    <li><a class="link-secondary text-decoration-none" href="#">{% trans 'Stuff for developers' %}</a></li>
+                    <li><a class="link-secondary text-decoration-none" href="#">{% trans 'Stuff for developers' %}</a>
+                    </li>
                     <li><a class="link-secondary text-decoration-none" href="#">{% trans 'Another one' %}</a></li>
                     <li><a class="link-secondary text-decoration-none" href="#">{% trans 'Last time' %}</a></li>
                 </ul>
             </div>
-            
+
             <div class="col-6 col-md fs15">
                 <h5>{% trans 'Resources' %}</h5>
                 <ul class="list-unstyled">

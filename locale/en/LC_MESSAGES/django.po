@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-03-22 16:47+0300\n"
+"POT-Creation-Date: 2022-03-23 22:15+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -338,8 +338,8 @@ msgstr ""
 msgid "Dashboard"
 msgstr ""
 
-#: .\templates\account\dashboard\dashboard.html:8 .\templates\base.html:96
-#: .\templates\base.html:140
+#: .\templates\account\dashboard\dashboard.html:8 .\templates\base.html:70
+#: .\templates\base.html:116
 msgid "Your Account"
 msgstr ""
 
@@ -354,8 +354,8 @@ msgstr ""
 msgid "and personal details"
 msgstr ""
 
-#: .\templates\account\dashboard\dashboard.html:31 .\templates\base.html:97
-#: .\templates\base.html:141
+#: .\templates\account\dashboard\dashboard.html:31 .\templates\base.html:73
+#: .\templates\base.html:117
 msgid "Orders"
 msgstr ""
 
@@ -582,8 +582,7 @@ msgstr ""
 
 #: .\templates\account\password_reset\password_reset_form.html:37
 #: .\templates\account\password_reset\reset_status.html:17
-#: .\templates\base.html:83 .\templates\base.html:100
-#: .\templates\base.html:144
+#: .\templates\base.html:65 .\templates\base.html:78 .\templates\base.html:120
 msgid "Login"
 msgstr ""
 
@@ -653,125 +652,117 @@ msgstr ""
 msgid "BookStore"
 msgstr ""
 
-#: .\templates\base.html:37 .\templates\store\filtering.html:25
+#: .\templates\base.html:32 .\templates\store\filtering.html:25
 msgid "Filter"
 msgstr ""
 
-#: .\templates\base.html:57 .\templates\basket\basket.html:18
+#: .\templates\base.html:41 .\templates\basket\basket.html:18
 #: .\templates\checkout\delivery_choices.html:27
 msgid "Shop"
 msgstr ""
 
-#: .\templates\base.html:62
-msgid "Languages"
+#: .\templates\base.html:47
+msgid "Language"
 msgstr ""
 
-#: .\templates\base.html:79
-msgid "Hello"
-msgstr ""
-
-#: .\templates\base.html:86
-msgid "Account"
-msgstr ""
-
-#: .\templates\base.html:98 .\templates\base.html:142
+#: .\templates\base.html:75 .\templates\base.html:118
 msgid "Logout"
 msgstr ""
 
-#: .\templates\base.html:130
+#: .\templates\base.html:106
 msgid "Basket"
 msgstr ""
 
-#: .\templates\base.html:137
+#: .\templates\base.html:113
 msgid "My Account"
 msgstr ""
 
-#: .\templates\base.html:152 .\templates\store\filtering.html:9
+#: .\templates\base.html:128 .\templates\store\filtering.html:9
 #: .\templates\store\filtering.html:10
 msgid "Search"
 msgstr ""
 
-#: .\templates\base.html:174
+#: .\templates\base.html:146
 msgid "Features"
 msgstr ""
 
-#: .\templates\base.html:176
+#: .\templates\base.html:148
 msgid "Cool stuff"
 msgstr ""
 
-#: .\templates\base.html:177
+#: .\templates\base.html:149
 msgid "Random feature"
 msgstr ""
 
-#: .\templates\base.html:178
+#: .\templates\base.html:150
 msgid "Team feature"
 msgstr ""
 
-#: .\templates\base.html:179
+#: .\templates\base.html:151
 msgid "Stuff for developers"
 msgstr ""
 
-#: .\templates\base.html:180
+#: .\templates\base.html:153
 msgid "Another one"
 msgstr ""
 
-#: .\templates\base.html:181
+#: .\templates\base.html:154
 msgid "Last time"
 msgstr ""
 
-#: .\templates\base.html:186
+#: .\templates\base.html:159
 msgid "Resources"
 msgstr ""
 
-#: .\templates\base.html:188
+#: .\templates\base.html:161
 msgid "Business"
 msgstr ""
 
-#: .\templates\base.html:189
+#: .\templates\base.html:162
 msgid "Education"
 msgstr ""
 
-#: .\templates\base.html:190
+#: .\templates\base.html:163
 msgid "Government"
 msgstr ""
 
-#: .\templates\base.html:191
+#: .\templates\base.html:164
 msgid "Gaming"
 msgstr ""
 
-#: .\templates\base.html:192
+#: .\templates\base.html:165
 msgid "Resource name"
 msgstr ""
 
-#: .\templates\base.html:193
+#: .\templates\base.html:166
 msgid "Resource"
 msgstr ""
 
-#: .\templates\base.html:194
+#: .\templates\base.html:167
 msgid "Another resource"
 msgstr ""
 
-#: .\templates\base.html:195
+#: .\templates\base.html:168
 msgid "Final resource"
 msgstr ""
 
-#: .\templates\base.html:199
+#: .\templates\base.html:172
 msgid "About"
 msgstr ""
 
-#: .\templates\base.html:201
+#: .\templates\base.html:174
 msgid "Team"
 msgstr ""
 
-#: .\templates\base.html:202
+#: .\templates\base.html:175
 msgid "Locations"
 msgstr ""
 
-#: .\templates\base.html:203
+#: .\templates\base.html:176
 msgid "Privacy"
 msgstr ""
 
-#: .\templates\base.html:204
+#: .\templates\base.html:177
 msgid "Terms"
 msgstr ""
 
