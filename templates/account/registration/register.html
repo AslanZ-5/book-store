@@ -7,7 +7,7 @@
 <form action="." method="post" class="account-form p-4 rounded  mx-auto">
     {% csrf_token %}
     <h3 class="mb-2 ">{% trans 'Create an account' %}</h3>
-    <p class="mb-4">{% trans 'It's free and only takes a minute' %}.</p>
+    <p class="mb-4">{% trans "It's free and only takes a minute" %}.</p>
     {% if form.errors %}
     <p> {% trans 'Please correct the following errors' %}:</p>
     {% for field in form %}

@@ -78,7 +78,6 @@ def payment_complete(request):
     total_paid = response.result.purchase_units[0].amount.value
 
     basket = Basket(request)
-    print(type(basket.get_total_price))
     order = Order.objects.create(
         user_id=user_id,
         full_name=response.result.purchase_units[0].shipping.name.full_name,
