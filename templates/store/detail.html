@@ -112,17 +112,28 @@
               
               <ul class="root">
                 {% recursetree product.comments.all %}
-                    <li>
-                        {{ node.content }}  <button onclick="comentReplay('{{node.pk}}')">{% translate 'Replay' %}</button>
+                    <li class="card p-3">
+                      <div class="d-flex justify-content-between align-items-center">
+                        <div class="user d-flex flex-row align-items-center"> <span><small class="font-weight-bold text-primary">{{ node.author }}</small> <small class="font-weight-bold">{{ node.content }}</small></span> </div> <small>{{node.created|timesince}}</small>
+                    </div>
+                    <div class="action d-flex justify-content-between mt-2 align-items-center">
+                      <div class="reply px-4"> <small>Remove</small> <span class="dots"></span> <small> <a onclick="comentReplay('{{node.pk}}')">{% translate 'Replay' %}</a></small> <span class="dots"></span>  <small> <a onclick="comentShowReplay('show{{node.pk}}')">Show replays</a> </small> <span class="dots"></span> </div>
+                      <div class="icons align-items-center">  </div>
+                  </div>
+                         
+                        <div class="input-group mb-3">
                         <form id="{{node.pk}}" class="d-none" method="post" >
                           {% csrf_token %}
                         <input type="hidden" name="parent_id" value="{{node.pk}}">
-                      {{form}}
-                      <button type="submit">{% translate 'Comment' %}</button>
+                        <div style="display: flex;">
+                      {{form.content}}
+                      <button type="submit" class="commentbtn btn btn-outline-secondary" >{% translate 'Comment' %}</button>
+                    </div>
+                      </div>
                     </form>
                         {% if not node.is_leaf_node %}
-                            <ul class="children">
-                                {{ children }}
+                            <ul class="children d-none"  id="show{{node.pk}}" >
+                                {{ children }} 
                             </ul>
                         {% endif %}
                     </li>
@@ -130,13 +141,31 @@
             </ul>
             
             </div>
-            <form id="FormReview" method="post">
+              <form id="FormReview" method="post">
               {% csrf_token %}
+                     
+              <div style="display: flex;">
+                {{form.content}}
+                 <button class="commentbtn btn btn-outline-secondary" type="submit">{% translate 'Comment' %}</button>
+              </div>
+            </form>
             
-          {{form}}
-          <button class="commentbtn" type="submit">{% translate 'Comment' %}</button>
-        </form>
+              
+          
           </div>
+
+
+
+
+
+
+
+
+
+
+
+
+          
 
           <div class="container">
             <div class="row">
@@ -206,6 +235,17 @@ function comentReplay(id) {
     row.classList.add('d-none')
   }
 };
+
+
+function comentShowReplay(id) {
+  const row = document.getElementById(id);
+  if (row.classList.contains('d-none')) {
+    row.classList.remove('d-none');
+  } else {
+    row.classList.add('d-none')
+  }
+};
+
 
 $(document).on("click",".star_val", function () {
   var clickedBtnVal = $(this).attr('value');
