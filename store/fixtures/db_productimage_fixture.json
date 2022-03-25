@@ -1,0 +1,678 @@
+[{
+    "model": "store.productimage",
+    "pk": 1,
+    "fields": {
+        "product": 1,
+        "image": "images/ulysses.jpg",
+        "alt_text": "dds",
+        "alt_text_en": "dds",
+        "alt_text_ru": "вавыаы",
+        "is_feature": true,
+        "created_at": "2022-03-22T12:13:47.445Z",
+        "updated_at": "2022-03-22T12:13:47.445Z"
+    }
+}, {
+    "model": "store.productimage",
+    "pk": 2,
+    "fields": {
+        "product": 2,
+        "image": "images/notebook2.jpg",
+        "alt_text": "notebook 150 pages",
+        "alt_text_en": "notebook 150 pages",
+        "alt_text_ru": "тетрадь 150 страниц",
+        "is_feature": true,
+        "created_at": "2022-03-24T13:45:52.564Z",
+        "updated_at": "2022-03-24T13:48:43.523Z"
+    }
+}, {
+    "model": "store.productimage",
+    "pk": 3,
+    "fields": {
+        "product": 2,
+        "image": "images/notebook_bPycGiI.jpg",
+        "alt_text": "notebook 150 pages",
+        "alt_text_en": "notebook 150 pages",
+        "alt_text_ru": "тетрадь 150 страниц",
+        "is_feature": false,
+        "created_at": "2022-03-24T13:48:43.527Z",
+        "updated_at": "2022-03-24T13:48:43.527Z"
+    }
+}, {
+    "model": "store.productimage",
+    "pk": 4,
+    "fields": {
+        "product": 3,
+        "image": "images/bnw3.jpg",
+        "alt_text": "Brawe new worl",
+        "alt_text_en": "Brawe new worl",
+        "alt_text_ru": "О дивный новый мир",
+        "is_feature": true,
+        "created_at": "2022-03-25T08:25:19.740Z",
+        "updated_at": "2022-03-25T08:25:19.740Z"
+    }
+}, {
+    "model": "store.productimage",
+    "pk": 5,
+    "fields": {
+        "product": 3,
+        "image": "images/bc2.jpg",
+        "alt_text": "Brawe new worl",
+        "alt_text_en": "Brawe new worl",
+        "alt_text_ru": "О дивный новый мир",
+        "is_feature": false,
+        "created_at": "2022-03-25T08:25:19.749Z",
+        "updated_at": "2022-03-25T08:25:19.749Z"
+    }
+}, {
+    "model": "store.productimage",
+    "pk": 6,
+    "fields": {
+        "product": 3,
+        "image": "images/bnw1.jpg",
+        "alt_text": "Brawe new worl",
+        "alt_text_en": "Brawe new worl",
+        "alt_text_ru": "О дивный новый мир",
+        "is_feature": false,
+        "created_at": "2022-03-25T08:25:19.752Z",
+        "updated_at": "2022-03-25T08:25:19.752Z"
+    }
+}, {
+    "model": "store.productimage",
+    "pk": 7,
+    "fields": {
+        "product": 4,
+        "image": "images/nef1.jpg",
+        "alt_text": "Nineteen Eighty-Four",
+        "alt_text_en": "Nineteen Eighty-Four",
+        "alt_text_ru": "Девятнадцать восемьдесят четыре",
+        "is_feature": true,
+        "created_at": "2022-03-25T08:29:47.495Z",
+        "updated_at": "2022-03-25T08:29:47.495Z"
+    }
+}, {
+    "model": "store.productimage",
+    "pk": 8,
+    "fields": {
+        "product": 4,
+        "image": "images/new3.jpg",
+        "alt_text": "Nineteen Eighty-Four",
+        "alt_text_en": "Nineteen Eighty-Four",
+        "alt_text_ru": "Девятнадцать восемьдесят четыре",
+        "is_feature": false,
+        "created_at": "2022-03-25T08:29:47.500Z",
+        "updated_at": "2022-03-25T08:29:47.500Z"
+    }
+}, {
+    "model": "store.productimage",
+    "pk": 9,
+    "fields": {
+        "product": 4,
+        "image": "images/new2.jpg",
+        "alt_text": "Nineteen Eighty-Four",
+        "alt_text_en": "Nineteen Eighty-Four",
+        "alt_text_ru": "Девятнадцать восемьдесят четыре",
+        "is_feature": false,
+        "created_at": "2022-03-25T08:29:47.503Z",
+        "updated_at": "2022-03-25T08:29:47.507Z"
+    }
+}, {
+    "model": "store.productimage",
+    "pk": 10,
+    "fields": {
+        "product": 5,
+        "image": "images/ith1.jpg",
+        "alt_text": "In the Woods",
+        "alt_text_en": "In the Woods",
+        "alt_text_ru": "В лесу",
+        "is_feature": true,
+        "created_at": "2022-03-25T08:34:24.903Z",
+        "updated_at": "2022-03-25T08:37:57.651Z"
+    }
+}, {
+    "model": "store.productimage",
+    "pk": 11,
+    "fields": {
+        "product": 5,
+        "image": "images/itw.jpg",
+        "alt_text": "In the Woods",
+        "alt_text_en": "In the Woods",
+        "alt_text_ru": "В лесу",
+        "is_feature": false,
+        "created_at": "2022-03-25T08:34:24.909Z",
+        "updated_at": "2022-03-25T08:34:24.909Z"
+    }
+}, {
+    "model": "store.productimage",
+    "pk": 12,
+    "fields": {
+        "product": 5,
+        "image": "images/ith2.jpg",
+        "alt_text": "In the Woods",
+        "alt_text_en": "In the Woods",
+        "alt_text_ru": "В лесу",
+        "is_feature": false,
+        "created_at": "2022-03-25T08:34:24.918Z",
+        "updated_at": "2022-03-25T08:34:24.918Z"
+    }
+}, {
+    "model": "store.productimage",
+    "pk": 13,
+    "fields": {
+        "product": 6,
+        "image": "images/tmwdt1.jpg",
+        "alt_text": "Random text",
+        "alt_text_en": "Random text",
+        "alt_text_ru": "Случайный текст",
+        "is_feature": true,
+        "created_at": "2022-03-25T08:37:29.083Z",
+        "updated_at": "2022-03-25T08:37:29.083Z"
+    }
+}, {
+    "model": "store.productimage",
+    "pk": 14,
+    "fields": {
+        "product": 6,
+        "image": "images/twdt2.jpg",
+        "alt_text": "Random text",
+        "alt_text_en": "Random text",
+        "alt_text_ru": "Случайный текст",
+        "is_feature": false,
+        "created_at": "2022-03-25T08:37:29.089Z",
+        "updated_at": "2022-03-25T08:37:29.089Z"
+    }
+}, {
+    "model": "store.productimage",
+    "pk": 15,
+    "fields": {
+        "product": 6,
+        "image": "images/twdt3.jpg",
+        "alt_text": "Random text",
+        "alt_text_en": "Random text",
+        "alt_text_ru": "Случайный текст",
+        "is_feature": false,
+        "created_at": "2022-03-25T08:37:29.100Z",
+        "updated_at": "2022-03-25T08:37:29.101Z"
+    }
+}, {
+    "model": "store.productimage",
+    "pk": 16,
+    "fields": {
+        "product": 7,
+        "image": "images/t7.jpg",
+        "alt_text": "Random text",
+        "alt_text_en": "Random text",
+        "alt_text_ru": "Случайный текст",
+        "is_feature": false,
+        "created_at": "2022-03-25T08:37:29.100Z",
+        "updated_at": "2022-03-25T08:37:29.101Z"
+    }
+}, {
+    "model": "store.productimage",
+    "pk": 17,
+    "fields": {
+        "product": 8,
+        "image": "images/t8.jpg",
+        "alt_text": "Random text",
+        "alt_text_en": "Random text",
+        "alt_text_ru": "Случайный текст",
+        "is_feature": false,
+        "created_at": "2022-03-25T08:37:29.100Z",
+        "updated_at": "2022-03-25T08:37:29.101Z"
+    }
+}, {
+    "model": "store.productimage",
+    "pk": 18,
+    "fields": {
+        "product": 9,
+        "image": "images/t9.jpg",
+        "alt_text": "Random text",
+        "alt_text_en": "Random text",
+        "alt_text_ru": "Случайный текст",
+        "is_feature": false,
+        "created_at": "2022-03-25T08:37:29.100Z",
+        "updated_at": "2022-03-25T08:37:29.101Z"
+    }
+}, {
+    "model": "store.productimage",
+    "pk": 19,
+    "fields": {
+        "product": 10,
+        "image": "images/t10.jpg",
+        "alt_text": "Random text",
+        "alt_text_en": "Random text",
+        "alt_text_ru": "Случайный текст",
+        "is_feature": false,
+        "created_at": "2022-03-25T08:37:29.100Z",
+        "updated_at": "2022-03-25T08:37:29.101Z"
+    }
+}, {
+    "model": "store.productimage",
+    "pk": 20,
+    "fields": {
+        "product": 11,
+        "image": "images/t11.jpg",
+        "alt_text": "Random text",
+        "alt_text_en": "Random text",
+        "alt_text_ru": "Случайный текст",
+        "is_feature": false,
+        "created_at": "2022-03-25T08:37:29.100Z",
+        "updated_at": "2022-03-25T08:37:29.101Z"
+    }
+}, {
+    "model": "store.productimage",
+    "pk": 21,
+    "fields": {
+        "product": 12,
+        "image": "images/t12.jpg",
+        "alt_text": "Random text",
+        "alt_text_en": "Random text",
+        "alt_text_ru": "Случайный текст",
+        "is_feature": false,
+        "created_at": "2022-03-25T08:37:29.100Z",
+        "updated_at": "2022-03-25T08:37:29.101Z"
+    }
+}, {
+    "model": "store.productimage",
+    "pk": 22,
+    "fields": {
+        "product": 13,
+        "image": "images/t13.jpg",
+        "alt_text": "Random text",
+        "alt_text_en": "Random text",
+        "alt_text_ru": "Случайный текст",
+        "is_feature": false,
+        "created_at": "2022-03-25T08:37:29.100Z",
+        "updated_at": "2022-03-25T08:37:29.101Z"
+    }
+}, {
+    "model": "store.productimage",
+    "pk": 23,
+    "fields": {
+        "product": 14,
+        "image": "images/t14.jpg",
+        "alt_text": "Random text",
+        "alt_text_en": "Random text",
+        "alt_text_ru": "Случайный текст",
+        "is_feature": false,
+        "created_at": "2022-03-25T08:37:29.100Z",
+        "updated_at": "2022-03-25T08:37:29.101Z"
+    }
+}, {
+    "model": "store.productimage",
+    "pk": 24,
+    "fields": {
+        "product": 15,
+        "image": "images/t15.jpg",
+        "alt_text": "Random text",
+        "alt_text_en": "Random text",
+        "alt_text_ru": "Случайный текст",
+        "is_feature": false,
+        "created_at": "2022-03-25T08:37:29.100Z",
+        "updated_at": "2022-03-25T08:37:29.101Z"
+    }
+}, {
+    "model": "store.productimage",
+    "pk": 25,
+    "fields": {
+        "product": 16,
+        "image": "images/t16.jpg",
+        "alt_text": "Random text",
+        "alt_text_en": "Random text",
+        "alt_text_ru": "Случайный текст",
+        "is_feature": false,
+        "created_at": "2022-03-25T08:37:29.100Z",
+        "updated_at": "2022-03-25T08:37:29.101Z"
+    }
+}, {
+    "model": "store.productimage",
+    "pk": 26,
+    "fields": {
+        "product": 17,
+        "image": "images/t17.jpg",
+        "alt_text": "Random text",
+        "alt_text_en": "Random text",
+        "alt_text_ru": "Случайный текст",
+        "is_feature": false,
+        "created_at": "2022-03-25T08:37:29.100Z",
+        "updated_at": "2022-03-25T08:37:29.101Z"
+    }
+}, {
+    "model": "store.productimage",
+    "pk": 27,
+    "fields": {
+        "product": 18,
+        "image": "images/t18.jpg",
+        "alt_text": "Random text",
+        "alt_text_en": "Random text",
+        "alt_text_ru": "Случайный текст",
+        "is_feature": false,
+        "created_at": "2022-03-25T08:37:29.100Z",
+        "updated_at": "2022-03-25T08:37:29.101Z"
+    }
+}, {
+    "model": "store.productimage",
+    "pk": 28,
+    "fields": {
+        "product": 19,
+        "image": "images/t19.jpg",
+        "alt_text": "Random text",
+        "alt_text_en": "Random text",
+        "alt_text_ru": "Случайный текст",
+        "is_feature": false,
+        "created_at": "2022-03-25T08:37:29.100Z",
+        "updated_at": "2022-03-25T08:37:29.101Z"
+    }
+}, {
+    "model": "store.productimage",
+    "pk": 29,
+    "fields": {
+        "product": 20,
+        "image": "images/t20.jpg",
+        "alt_text": "Random text",
+        "alt_text_en": "Random text",
+        "alt_text_ru": "Случайный текст",
+        "is_feature": false,
+        "created_at": "2022-03-25T08:37:29.100Z",
+        "updated_at": "2022-03-25T08:37:29.101Z"
+    }
+}, {
+    "model": "store.productimage",
+    "pk": 30,
+    "fields": {
+        "product": 21,
+        "image": "images/t21.jpg",
+        "alt_text": "Random text",
+        "alt_text_en": "Random text",
+        "alt_text_ru": "Случайный текст",
+        "is_feature": false,
+        "created_at": "2022-03-25T08:37:29.100Z",
+        "updated_at": "2022-03-25T08:37:29.101Z"
+    }
+}, {
+    "model": "store.productimage",
+    "pk": 31,
+    "fields": {
+        "product": 22,
+        "image": "images/t22.jpg",
+        "alt_text": "Random text",
+        "alt_text_en": "Random text",
+        "alt_text_ru": "Случайный текст",
+        "is_feature": false,
+        "created_at": "2022-03-25T08:37:29.100Z",
+        "updated_at": "2022-03-25T08:37:29.101Z"
+    }
+}, {
+    "model": "store.productimage",
+    "pk": 32,
+    "fields": {
+        "product": 23,
+        "image": "images/t23.jpg",
+        "alt_text": "Random text",
+        "alt_text_en": "Random text",
+        "alt_text_ru": "Случайный текст",
+        "is_feature": false,
+        "created_at": "2022-03-25T08:37:29.100Z",
+        "updated_at": "2022-03-25T08:37:29.101Z"
+    }
+}, {
+    "model": "store.productimage",
+    "pk": 33,
+    "fields": {
+        "product": 24,
+        "image": "images/t24.jpg",
+        "alt_text": "Random text",
+        "alt_text_en": "Random text",
+        "alt_text_ru": "Случайный текст",
+        "is_feature": false,
+        "created_at": "2022-03-25T08:37:29.100Z",
+        "updated_at": "2022-03-25T08:37:29.101Z"
+    }
+}, {
+    "model": "store.productimage",
+    "pk": 34,
+    "fields": {
+        "product": 25,
+        "image": "images/t25.jpg",
+        "alt_text": "Random text",
+        "alt_text_en": "Random text",
+        "alt_text_ru": "Случайный текст",
+        "is_feature": false,
+        "created_at": "2022-03-25T08:37:29.100Z",
+        "updated_at": "2022-03-25T08:37:29.101Z"
+    }
+}, {
+    "model": "store.productimage",
+    "pk": 35,
+    "fields": {
+        "product": 26,
+        "image": "images/t26.jpg",
+        "alt_text": "Random text",
+        "alt_text_en": "Random text",
+        "alt_text_ru": "Случайный текст",
+        "is_feature": false,
+        "created_at": "2022-03-25T08:37:29.100Z",
+        "updated_at": "2022-03-25T08:37:29.101Z"
+    }
+}, {
+    "model": "store.productimage",
+    "pk": 36,
+    "fields": {
+        "product": 27,
+        "image": "images/t27.jpg",
+        "alt_text": "Random text",
+        "alt_text_en": "Random text",
+        "alt_text_ru": "Случайный текст",
+        "is_feature": false,
+        "created_at": "2022-03-25T08:37:29.100Z",
+        "updated_at": "2022-03-25T08:37:29.101Z"
+    }
+}, {
+    "model": "store.productimage",
+    "pk": 37,
+    "fields": {
+        "product": 28,
+        "image": "images/t28.jpg",
+        "alt_text": "Random text",
+        "alt_text_en": "Random text",
+        "alt_text_ru": "Случайный текст",
+        "is_feature": false,
+        "created_at": "2022-03-25T08:37:29.100Z",
+        "updated_at": "2022-03-25T08:37:29.101Z"
+    }
+}, {
+    "model": "store.productimage",
+    "pk": 38,
+    "fields": {
+        "product": 29,
+        "image": "images/t29.jpg",
+        "alt_text": "Random text",
+        "alt_text_en": "Random text",
+        "alt_text_ru": "Случайный текст",
+        "is_feature": false,
+        "created_at": "2022-03-25T08:37:29.100Z",
+        "updated_at": "2022-03-25T08:37:29.101Z"
+    }
+}, {
+    "model": "store.productimage",
+    "pk": 39,
+    "fields": {
+        "product": 30,
+        "image": "images/t30.jpg",
+        "alt_text": "Random text",
+        "alt_text_en": "Random text",
+        "alt_text_ru": "Случайный текст",
+        "is_feature": false,
+        "created_at": "2022-03-25T08:37:29.100Z",
+        "updated_at": "2022-03-25T08:37:29.101Z"
+    }
+}, {
+    "model": "store.productimage",
+    "pk": 40,
+    "fields": {
+        "product": 31,
+        "image": "images/t31.jpg",
+        "alt_text": "Random text",
+        "alt_text_en": "Random text",
+        "alt_text_ru": "Случайный текст",
+        "is_feature": false,
+        "created_at": "2022-03-25T08:37:29.100Z",
+        "updated_at": "2022-03-25T08:37:29.101Z"
+    }
+}, {
+    "model": "store.productimage",
+    "pk": 41,
+    "fields": {
+        "product": 32,
+        "image": "images/t32.jpg",
+        "alt_text": "Random text",
+        "alt_text_en": "Random text",
+        "alt_text_ru": "Случайный текст",
+        "is_feature": false,
+        "created_at": "2022-03-25T08:37:29.100Z",
+        "updated_at": "2022-03-25T08:37:29.101Z"
+    }
+}, {
+    "model": "store.productimage",
+    "pk": 42,
+    "fields": {
+        "product": 33,
+        "image": "images/t33.jpg",
+        "alt_text": "Random text",
+        "alt_text_en": "Random text",
+        "alt_text_ru": "Случайный текст",
+        "is_feature": false,
+        "created_at": "2022-03-25T08:37:29.100Z",
+        "updated_at": "2022-03-25T08:37:29.101Z"
+    }
+}, {
+    "model": "store.productimage",
+    "pk": 43,
+    "fields": {
+        "product": 34,
+        "image": "images/t34.jpg",
+        "alt_text": "Random text",
+        "alt_text_en": "Random text",
+        "alt_text_ru": "Случайный текст",
+        "is_feature": false,
+        "created_at": "2022-03-25T08:37:29.100Z",
+        "updated_at": "2022-03-25T08:37:29.101Z"
+    }
+}, {
+    "model": "store.productimage",
+    "pk": 44,
+    "fields": {
+        "product": 35,
+        "image": "images/t35.jpg",
+        "alt_text": "Random text",
+        "alt_text_en": "Random text",
+        "alt_text_ru": "Случайный текст",
+        "is_feature": false,
+        "created_at": "2022-03-25T08:37:29.100Z",
+        "updated_at": "2022-03-25T08:37:29.101Z"
+    }
+}, {
+    "model": "store.productimage",
+    "pk": 45,
+    "fields": {
+        "product": 36,
+        "image": "images/t36.jpg",
+        "alt_text": "Random text",
+        "alt_text_en": "Random text",
+        "alt_text_ru": "Случайный текст",
+        "is_feature": false,
+        "created_at": "2022-03-25T08:37:29.100Z",
+        "updated_at": "2022-03-25T08:37:29.101Z"
+    }
+}, {
+    "model": "store.productimage",
+    "pk": 46,
+    "fields": {
+        "product": 37,
+        "image": "images/t37.jpg",
+        "alt_text": "Random text",
+        "alt_text_en": "Random text",
+        "alt_text_ru": "Случайный текст",
+        "is_feature": false,
+        "created_at": "2022-03-25T08:37:29.100Z",
+        "updated_at": "2022-03-25T08:37:29.101Z"
+    }
+}, {
+    "model": "store.productimage",
+    "pk": 47,
+    "fields": {
+        "product": 38,
+        "image": "images/t38.jpg",
+        "alt_text": "Random text",
+        "alt_text_en": "Random text",
+        "alt_text_ru": "Случайный текст",
+        "is_feature": false,
+        "created_at": "2022-03-25T08:37:29.100Z",
+        "updated_at": "2022-03-25T08:37:29.101Z"
+    }
+}, {
+    "model": "store.productimage",
+    "pk": 48,
+    "fields": {
+        "product": 39,
+        "image": "images/t39.jpg",
+        "alt_text": "Random text",
+        "alt_text_en": "Random text",
+        "alt_text_ru": "Случайный текст",
+        "is_feature": false,
+        "created_at": "2022-03-25T08:37:29.100Z",
+        "updated_at": "2022-03-25T08:37:29.101Z"
+    }
+}, {
+    "model": "store.productimage",
+    "pk": 49,
+    "fields": {
+        "product": 40,
+        "image": "images/t40.jpg",
+        "alt_text": "Random text",
+        "alt_text_en": "Random text",
+        "alt_text_ru": "Случайный текст",
+        "is_feature": false,
+        "created_at": "2022-03-25T08:37:29.100Z",
+        "updated_at": "2022-03-25T08:37:29.101Z"
+    }
+}, {
+    "model": "store.productimage",
+    "pk": 50,
+    "fields": {
+        "product": 41,
+        "image": "images/t41.jpg",
+        "alt_text": "Random text",
+        "alt_text_en": "Random text",
+        "alt_text_ru": "Случайный текст",
+        "is_feature": false,
+        "created_at": "2022-03-25T08:37:29.100Z",
+        "updated_at": "2022-03-25T08:37:29.101Z"
+    }
+}, {
+    "model": "store.productimage",
+    "pk": 51,
+    "fields": {
+        "product": 42,
+        "image": "images/t42.jpg",
+        "alt_text": "Random text",
+        "alt_text_en": "Random text",
+        "alt_text_ru": "Случайный текст",
+        "is_feature": false,
+        "created_at": "2022-03-25T08:37:29.100Z",
+        "updated_at": "2022-03-25T08:37:29.101Z"
+    }
+}, {
+    "model": "store.productimage",
+    "pk": 52,
+    "fields": {
+        "product": 43,
+        "image": "images/t43.jpg",
+        "alt_text": "Random text",
+        "alt_text_en": "Random text",
+        "alt_text_ru": "Случайный текст",
+        "is_feature": false,
+        "created_at": "2022-03-25T08:37:29.100Z",
+        "updated_at": "2022-03-25T08:37:29.101Z"
+    }
+}
+]

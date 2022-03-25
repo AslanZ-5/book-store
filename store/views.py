@@ -132,11 +132,6 @@ def filter_data(request):
     min_price = request.GET.get('minPrice')
     products = products.filter(regular_price__gte=min_price)
     products = products.filter(regular_price__lte=max_price)
-    print(categories)
-    print(product_types)
-    print(time)
-    print(max_price)
-    print(min_price)
     if time:
             days = max(map(int,time))
             time = timezone.make_aware(datetime.today() - timedelta(days=days))

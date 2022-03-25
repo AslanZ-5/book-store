@@ -1,0 +1,19 @@
+[{
+    "model": "store.productsecification",
+    "pk": 1,
+    "fields": {
+        "product_type": 1,
+        "name": "pages",
+        "name_en": "pages",
+        "name_ru": "страницы"
+    }
+}, {
+    "model": "store.productsecification",
+    "pk": 2,
+    "fields": {
+        "product_type": 2,
+        "name": "pages",
+        "name_en": "pages",
+        "name_ru": "страницы"
+    }
+}]

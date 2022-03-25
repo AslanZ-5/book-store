@@ -167,3 +167,6 @@ LANGUAGES = (
 LOCALE_PATHS = (
     os.path.join(BASE_DIR, 'locale/'),
 )
+
+
+PYTHONIOENCODING='utf-8'

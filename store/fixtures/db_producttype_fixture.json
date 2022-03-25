@@ -1,0 +1,28 @@
+[{
+    "model": "store.producttype",
+    "pk": 1,
+    "fields": {
+        "name": "book",
+        "name_en": "book",
+        "name_ru": "книга",
+        "is_active": true
+    }
+}, {
+    "model": "store.producttype",
+    "pk": 2,
+    "fields": {
+        "name": "notebook",
+        "name_en": "notebook",
+        "name_ru": "тетрадь",
+        "is_active": true
+    }
+}, {
+    "model": "store.producttype",
+    "pk": 3,
+    "fields": {
+        "name": "Pen",
+        "name_en": "Pen",
+        "name_ru": "Ручка",
+        "is_active": true
+    }
+}]

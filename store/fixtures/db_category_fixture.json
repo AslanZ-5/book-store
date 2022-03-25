@@ -1,0 +1,151 @@
+[{
+    "model": "store.category",
+    "pk": 1,
+    "fields": {
+        "name": "novel",
+        "name_en": "novel",
+        "name_ru": "роман",
+        "slug": "novel",
+        "parent": null,
+        "is_active": true,
+        "lft": 1,
+        "rght": 2,
+        "tree_id": 10,
+        "level": 0
+    }
+}, {
+    "model": "store.category",
+    "pk": 2,
+    "fields": {
+        "name": "stationery",
+        "name_en": "stationery",
+        "name_ru": "канцелярия",
+        "slug": "stationery",
+        "parent": null,
+        "is_active": true,
+        "lft": 1,
+        "rght": 2,
+        "tree_id": 9,
+        "level": 0
+    }
+}, {
+    "model": "store.category",
+    "pk": 3,
+    "fields": {
+        "name": "Fantasy",
+        "name_en": "Fantasy",
+        "name_ru": "Фантастика",
+        "slug": "fantasy",
+        "parent": null,
+        "is_active": true,
+        "lft": 1,
+        "rght": 2,
+        "tree_id": 8,
+        "level": 0
+    }
+}, {
+    "model": "store.category",
+    "pk": 4,
+    "fields": {
+        "name": "Science Fiction",
+        "name_en": "Science Fiction",
+        "name_ru": "Научная фантастика",
+        "slug": "science-fiction",
+        "parent": null,
+        "is_active": true,
+        "lft": 1,
+        "rght": 2,
+        "tree_id": 3,
+        "level": 0
+    }
+}, {
+    "model": "store.category",
+    "pk": 5,
+    "fields": {
+        "name": "Adventure",
+        "name_en": "Adventure",
+        "name_ru": "Приключение",
+        "slug": "adventure",
+        "parent": null,
+        "is_active": true,
+        "lft": 1,
+        "rght": 2,
+        "tree_id": 4,
+        "level": 0
+    }
+}, {
+    "model": "store.category",
+    "pk": 6,
+    "fields": {
+        "name": "Dystopian",
+        "name_en": "Dystopian",
+        "name_ru": "Антиутопия",
+        "slug": "dystopian",
+        "parent": null,
+        "is_active": true,
+        "lft": 1,
+        "rght": 2,
+        "tree_id": 1,
+        "level": 0
+    }
+}, {
+    "model": "store.category",
+    "pk": 7,
+    "fields": {
+        "name": "Romance",
+        "name_en": "Romance",
+        "name_ru": "Романтика",
+        "slug": "romance",
+        "parent": null,
+        "is_active": true,
+        "lft": 1,
+        "rght": 2,
+        "tree_id": 5,
+        "level": 0
+    }
+}, {
+    "model": "store.category",
+    "pk": 8,
+    "fields": {
+        "name": "Detective & Mystery",
+        "name_en": "Detective & Mystery",
+        "name_ru": "Детектив",
+        "slug": "detectie-mystery",
+        "parent": null,
+        "is_active": true,
+        "lft": 1,
+        "rght": 2,
+        "tree_id": 2,
+        "level": 0
+    }
+}, {
+    "model": "store.category",
+    "pk": 9,
+    "fields": {
+        "name": "Thriller",
+        "name_en": "Thriller",
+        "name_ru": "Триллер",
+        "slug": "thriller",
+        "parent": null,
+        "is_active": true,
+        "lft": 1,
+        "rght": 2,
+        "tree_id": 6,
+        "level": 0
+    }
+}, {
+    "model": "store.category",
+    "pk": 10,
+    "fields": {
+        "name": "Horror",
+        "name_en": "Horror",
+        "name_ru": "Ужастик",
+        "slug": "horror",
+        "parent": null,
+        "is_active": true,
+        "lft": 1,
+        "rght": 2,
+        "tree_id": 7,
+        "level": 0
+    }
+}]
