@@ -202,7 +202,7 @@
         "alt_text": "Random text",
         "alt_text_en": "Random text",
         "alt_text_ru": "Случайный текст",
-        "is_feature": false,
+        "is_feature": true,
         "created_at": "2022-03-25T08:37:29.100Z",
         "updated_at": "2022-03-25T08:37:29.101Z"
     }
@@ -215,7 +215,7 @@
         "alt_text": "Random text",
         "alt_text_en": "Random text",
         "alt_text_ru": "Случайный текст",
-        "is_feature": false,
+        "is_feature": true,
         "created_at": "2022-03-25T08:37:29.100Z",
         "updated_at": "2022-03-25T08:37:29.101Z"
     }
@@ -228,7 +228,7 @@
         "alt_text": "Random text",
         "alt_text_en": "Random text",
         "alt_text_ru": "Случайный текст",
-        "is_feature": false,
+        "is_feature": true,
         "created_at": "2022-03-25T08:37:29.100Z",
         "updated_at": "2022-03-25T08:37:29.101Z"
     }
@@ -241,7 +241,7 @@
         "alt_text": "Random text",
         "alt_text_en": "Random text",
         "alt_text_ru": "Случайный текст",
-        "is_feature": false,
+        "is_feature": true,
         "created_at": "2022-03-25T08:37:29.100Z",
         "updated_at": "2022-03-25T08:37:29.101Z"
     }
@@ -254,7 +254,7 @@
         "alt_text": "Random text",
         "alt_text_en": "Random text",
         "alt_text_ru": "Случайный текст",
-        "is_feature": false,
+        "is_feature": true,
         "created_at": "2022-03-25T08:37:29.100Z",
         "updated_at": "2022-03-25T08:37:29.101Z"
     }
@@ -267,7 +267,7 @@
         "alt_text": "Random text",
         "alt_text_en": "Random text",
         "alt_text_ru": "Случайный текст",
-        "is_feature": false,
+        "is_feature": true,
         "created_at": "2022-03-25T08:37:29.100Z",
         "updated_at": "2022-03-25T08:37:29.101Z"
     }
@@ -280,7 +280,7 @@
         "alt_text": "Random text",
         "alt_text_en": "Random text",
         "alt_text_ru": "Случайный текст",
-        "is_feature": false,
+        "is_feature": true,
         "created_at": "2022-03-25T08:37:29.100Z",
         "updated_at": "2022-03-25T08:37:29.101Z"
     }
@@ -293,7 +293,7 @@
         "alt_text": "Random text",
         "alt_text_en": "Random text",
         "alt_text_ru": "Случайный текст",
-        "is_feature": false,
+        "is_feature": true,
         "created_at": "2022-03-25T08:37:29.100Z",
         "updated_at": "2022-03-25T08:37:29.101Z"
     }
@@ -306,7 +306,7 @@
         "alt_text": "Random text",
         "alt_text_en": "Random text",
         "alt_text_ru": "Случайный текст",
-        "is_feature": false,
+        "is_feature": true,
         "created_at": "2022-03-25T08:37:29.100Z",
         "updated_at": "2022-03-25T08:37:29.101Z"
     }
@@ -319,7 +319,7 @@
         "alt_text": "Random text",
         "alt_text_en": "Random text",
         "alt_text_ru": "Случайный текст",
-        "is_feature": false,
+        "is_feature": true,
         "created_at": "2022-03-25T08:37:29.100Z",
         "updated_at": "2022-03-25T08:37:29.101Z"
     }
@@ -332,7 +332,7 @@
         "alt_text": "Random text",
         "alt_text_en": "Random text",
         "alt_text_ru": "Случайный текст",
-        "is_feature": false,
+        "is_feature": true,
         "created_at": "2022-03-25T08:37:29.100Z",
         "updated_at": "2022-03-25T08:37:29.101Z"
     }
@@ -345,7 +345,7 @@
         "alt_text": "Random text",
         "alt_text_en": "Random text",
         "alt_text_ru": "Случайный текст",
-        "is_feature": false,
+        "is_feature": true,
         "created_at": "2022-03-25T08:37:29.100Z",
         "updated_at": "2022-03-25T08:37:29.101Z"
     }
@@ -358,7 +358,7 @@
         "alt_text": "Random text",
         "alt_text_en": "Random text",
         "alt_text_ru": "Случайный текст",
-        "is_feature": false,
+        "is_feature": true,
         "created_at": "2022-03-25T08:37:29.100Z",
         "updated_at": "2022-03-25T08:37:29.101Z"
     }
@@ -371,7 +371,7 @@
         "alt_text": "Random text",
         "alt_text_en": "Random text",
         "alt_text_ru": "Случайный текст",
-        "is_feature": false,
+        "is_feature": true,
         "created_at": "2022-03-25T08:37:29.100Z",
         "updated_at": "2022-03-25T08:37:29.101Z"
     }
@@ -384,7 +384,7 @@
         "alt_text": "Random text",
         "alt_text_en": "Random text",
         "alt_text_ru": "Случайный текст",
-        "is_feature": false,
+        "is_feature": true,
         "created_at": "2022-03-25T08:37:29.100Z",
         "updated_at": "2022-03-25T08:37:29.101Z"
     }
@@ -397,7 +397,7 @@
         "alt_text": "Random text",
         "alt_text_en": "Random text",
         "alt_text_ru": "Случайный текст",
-        "is_feature": false,
+        "is_feature": true,
         "created_at": "2022-03-25T08:37:29.100Z",
         "updated_at": "2022-03-25T08:37:29.101Z"
     }
@@ -410,7 +410,7 @@
         "alt_text": "Random text",
         "alt_text_en": "Random text",
         "alt_text_ru": "Случайный текст",
-        "is_feature": false,
+        "is_feature": true,
         "created_at": "2022-03-25T08:37:29.100Z",
         "updated_at": "2022-03-25T08:37:29.101Z"
     }
@@ -423,7 +423,7 @@
         "alt_text": "Random text",
         "alt_text_en": "Random text",
         "alt_text_ru": "Случайный текст",
-        "is_feature": false,
+        "is_feature": true,
         "created_at": "2022-03-25T08:37:29.100Z",
         "updated_at": "2022-03-25T08:37:29.101Z"
     }
@@ -436,7 +436,7 @@
         "alt_text": "Random text",
         "alt_text_en": "Random text",
         "alt_text_ru": "Случайный текст",
-        "is_feature": false,
+        "is_feature": true,
         "created_at": "2022-03-25T08:37:29.100Z",
         "updated_at": "2022-03-25T08:37:29.101Z"
     }
@@ -449,7 +449,7 @@
         "alt_text": "Random text",
         "alt_text_en": "Random text",
         "alt_text_ru": "Случайный текст",
-        "is_feature": false,
+        "is_feature": true,
         "created_at": "2022-03-25T08:37:29.100Z",
         "updated_at": "2022-03-25T08:37:29.101Z"
     }
@@ -462,7 +462,7 @@
         "alt_text": "Random text",
         "alt_text_en": "Random text",
         "alt_text_ru": "Случайный текст",
-        "is_feature": false,
+        "is_feature": true,
         "created_at": "2022-03-25T08:37:29.100Z",
         "updated_at": "2022-03-25T08:37:29.101Z"
     }
@@ -475,7 +475,7 @@
         "alt_text": "Random text",
         "alt_text_en": "Random text",
         "alt_text_ru": "Случайный текст",
-        "is_feature": false,
+        "is_feature": true,
         "created_at": "2022-03-25T08:37:29.100Z",
         "updated_at": "2022-03-25T08:37:29.101Z"
     }
@@ -488,7 +488,7 @@
         "alt_text": "Random text",
         "alt_text_en": "Random text",
         "alt_text_ru": "Случайный текст",
-        "is_feature": false,
+        "is_feature": true,
         "created_at": "2022-03-25T08:37:29.100Z",
         "updated_at": "2022-03-25T08:37:29.101Z"
     }
@@ -501,7 +501,7 @@
         "alt_text": "Random text",
         "alt_text_en": "Random text",
         "alt_text_ru": "Случайный текст",
-        "is_feature": false,
+        "is_feature": true,
         "created_at": "2022-03-25T08:37:29.100Z",
         "updated_at": "2022-03-25T08:37:29.101Z"
     }
@@ -514,7 +514,7 @@
         "alt_text": "Random text",
         "alt_text_en": "Random text",
         "alt_text_ru": "Случайный текст",
-        "is_feature": false,
+        "is_feature": true,
         "created_at": "2022-03-25T08:37:29.100Z",
         "updated_at": "2022-03-25T08:37:29.101Z"
     }
@@ -527,7 +527,7 @@
         "alt_text": "Random text",
         "alt_text_en": "Random text",
         "alt_text_ru": "Случайный текст",
-        "is_feature": false,
+        "is_feature": true,
         "created_at": "2022-03-25T08:37:29.100Z",
         "updated_at": "2022-03-25T08:37:29.101Z"
     }
@@ -540,7 +540,7 @@
         "alt_text": "Random text",
         "alt_text_en": "Random text",
         "alt_text_ru": "Случайный текст",
-        "is_feature": false,
+        "is_feature": true,
         "created_at": "2022-03-25T08:37:29.100Z",
         "updated_at": "2022-03-25T08:37:29.101Z"
     }
@@ -553,7 +553,7 @@
         "alt_text": "Random text",
         "alt_text_en": "Random text",
         "alt_text_ru": "Случайный текст",
-        "is_feature": false,
+        "is_feature": true,
         "created_at": "2022-03-25T08:37:29.100Z",
         "updated_at": "2022-03-25T08:37:29.101Z"
     }
@@ -566,7 +566,7 @@
         "alt_text": "Random text",
         "alt_text_en": "Random text",
         "alt_text_ru": "Случайный текст",
-        "is_feature": false,
+        "is_feature": true,
         "created_at": "2022-03-25T08:37:29.100Z",
         "updated_at": "2022-03-25T08:37:29.101Z"
     }
@@ -579,7 +579,7 @@
         "alt_text": "Random text",
         "alt_text_en": "Random text",
         "alt_text_ru": "Случайный текст",
-        "is_feature": false,
+        "is_feature": true,
         "created_at": "2022-03-25T08:37:29.100Z",
         "updated_at": "2022-03-25T08:37:29.101Z"
     }
@@ -592,7 +592,7 @@
         "alt_text": "Random text",
         "alt_text_en": "Random text",
         "alt_text_ru": "Случайный текст",
-        "is_feature": false,
+        "is_feature": true,
         "created_at": "2022-03-25T08:37:29.100Z",
         "updated_at": "2022-03-25T08:37:29.101Z"
     }
@@ -605,7 +605,7 @@
         "alt_text": "Random text",
         "alt_text_en": "Random text",
         "alt_text_ru": "Случайный текст",
-        "is_feature": false,
+        "is_feature": true,
         "created_at": "2022-03-25T08:37:29.100Z",
         "updated_at": "2022-03-25T08:37:29.101Z"
     }
@@ -618,7 +618,7 @@
         "alt_text": "Random text",
         "alt_text_en": "Random text",
         "alt_text_ru": "Случайный текст",
-        "is_feature": false,
+        "is_feature": true,
         "created_at": "2022-03-25T08:37:29.100Z",
         "updated_at": "2022-03-25T08:37:29.101Z"
     }
@@ -631,7 +631,7 @@
         "alt_text": "Random text",
         "alt_text_en": "Random text",
         "alt_text_ru": "Случайный текст",
-        "is_feature": false,
+        "is_feature": true,
         "created_at": "2022-03-25T08:37:29.100Z",
         "updated_at": "2022-03-25T08:37:29.101Z"
     }
@@ -644,7 +644,7 @@
         "alt_text": "Random text",
         "alt_text_en": "Random text",
         "alt_text_ru": "Случайный текст",
-        "is_feature": false,
+        "is_feature": true,
         "created_at": "2022-03-25T08:37:29.100Z",
         "updated_at": "2022-03-25T08:37:29.101Z"
     }
@@ -657,7 +657,7 @@
         "alt_text": "Random text",
         "alt_text_en": "Random text",
         "alt_text_ru": "Случайный текст",
-        "is_feature": false,
+        "is_feature": true,
         "created_at": "2022-03-25T08:37:29.100Z",
         "updated_at": "2022-03-25T08:37:29.101Z"
     }
@@ -670,7 +670,7 @@
         "alt_text": "Random text",
         "alt_text_en": "Random text",
         "alt_text_ru": "Случайный текст",
-        "is_feature": false,
+        "is_feature": true,
         "created_at": "2022-03-25T08:37:29.100Z",
         "updated_at": "2022-03-25T08:37:29.101Z"
     }
