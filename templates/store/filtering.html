@@ -4,44 +4,46 @@
 {% block content %}
 
 
-<ul class="nav justify-content-center">
+<div class="nav justify-content-center">
   <form class="d-flex" action="{% url 'store:filter' %}" method="get">
     <input class="form-control me-2" type="search" name="q" placeholder="{% trans 'Search' %}" aria-label="{% trans 'Search' %}">
     <button class="btn btn-outline-success" type="submit">{% trans "Search" %}</button>
   </form>
-</ul>
-
+</div>
+<br>
+<br>
+<div class="container" style="display: flex; ; "> 
+          <div class="filt-container" style="left:10px; width: 100% ">
 			<h3 class="mb-4 border-bottom pb-1">{% trans "Filters" %}</h3>
 			<!-- Price Filter -->
 			<div class="card mb-4">
 				<h6 class="card-header">{% trans "Price" %}</h6>
 				<div class="list-group list-group-flush">
 					<li class="list-group-item">
-						<input type="range" value="{{min_max.min}}" max={{min_max.max}} min=0 id="rangeInput" oninput="maxPrice.value=this.value" />
+						<input type="range" value="{{min_max.min}}" max={{min_max.max}} min={{min_max.min}} id="rangeInput" oninput="maxPrice.value=this.value" />
 						<p>{{min_max.min}}-{{min_max.max}}</p>
-					</li>
-					<li class="list-group-item">
-						Max: <input type="number" value="{{min_max.max}}" max={{min_max.max}} min={{min_max.min}} class="form-control" id="maxPrice" onkeyup="rangeInput.value=this.value"  />
+            <input type="number" value="{{min_max.max}}" max={{min_max.max}} min={{min_max.min}} class="form-control" id="maxPrice" onkeyup="rangeInput.value=this.value"  />
 						<button id="priceFilterBtn" class="btn btn-info btn-sm mt-1">{% trans "Filter" %}</button>
 					</li>
+					
 				</div>
 			</div>
 
       <div class="card mb-4">
 
 				<h6 class="card-header">{% translate "Time" %}</h6>
-				<div class="list-group list-group-flush">
-          <ul>
-            <li>
-              <input class="filter-checkbox"  type="radio" data-filter="time"  value="7">
+				<div >
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <input class="filter-checkbox"  type="checkbox" data-filter="time"  value="7">
               {% trans "last week" %}
             </li>
-            <li>
-              <input class="filter-checkbox" type="radio" data-filter="time"  value="14">
+            <li class="list-group-item">
+              <input class="filter-checkbox" type="checkbox" data-filter="time"  value="14">
               {% trans "last two weeks" %}
             </li>
-            <li>
-              <input class="filter-checkbox" type="radio" data-filter="time"  value="30">
+            <li class="list-group-item">
+              <input class="filter-checkbox" type="checkbox" data-filter="time"  value="30">
               {% trans "last month" %}
             </li>
           </ul>
@@ -100,22 +102,20 @@
 					</li>
 				</div>
 			</div> -->
-<div class="container" style="max-width: 1000px">
-   <div class="col-12">
-     <h1 class="h2">{{ category.name|title}}</h1>
-   </div>
+    </div>
+<div class="container product" style="max-width: 1000px; width: 150%;">
    <div class="col-12 d-flex justify-content-between">
      <div><b>{% trans "Popular" %}</b> {% trans "products purchased" %}</div>
      
    </div>
    <hr />
-</div>
 
-  <div class="container filteredProd2">
+
+  <div class="filteredProd2">
     {% include 'products_filter.html' %} 
   </div>
-
-
+</div>
+</div>
 
   
 <script>

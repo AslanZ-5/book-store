@@ -4,7 +4,7 @@ from django.db.models import Min, Max, Func
 
 class Round(Func):
   function = 'ROUND'
-  template='%(function)s(%(expressions)s, 1)'
+  template='%(function)s(%(expressions)s)'
 
 def categories(request):
     return {

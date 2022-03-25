@@ -133,10 +133,11 @@
             <small>{{node.created|timesince}}</small>
           </div>
           <div class="action d-flex justify-content-between mt-2 align-items-center">
-            <div class="reply px-4"> <small>Remove</small> <span class="dots"></span> <small> <a
-                  onclick="comentReplay('{{node.pk}}')">{% translate 'Replays' %}</a></small> <span class="dots"></span>
-              <small
-                  >{% translate 'Show replays' %}</small> <a onclick="comentShowReplay('show{{node.pk}}')"><span id="innershow{{node.pk}}"><i class="fa fa-arrow-circle-down" style="font-size:19px; color: gray; padding: 5px;"></i></span> </a></div>
+            <div class="reply px-4"> <small class="reply-h">Remove</small> <span class="dots"></span> <small class="reply-h"> <a
+                  onclick="comentReplay('{{node.pk}}')">{% translate 'Replay' %}</a></small> <span class="dots"></span>
+              <small>{% translate 'Show replays' %}</small> <a onclick="comentShowReplay('show{{node.pk}}')"><span
+                 id="innershow{{node.pk}}"><i class="fa fa-arrow-circle-down reply-icon"
+                    ></i></span> </a></div>
             <div class="icons align-items-center"> </div>
           </div>
 
@@ -245,10 +246,10 @@
     const row = document.getElementById(id);
     if (row.classList.contains('d-none')) {
       row.classList.remove('d-none');
-      row2.innerHTML = '<i class="fa fa-arrow-circle-up" style="font-size:19px; color: gray; padding: 5px;"></i>'
+      row2.innerHTML = '<i class="fa fa-arrow-circle-up reply-icon"></i>'
     } else {
       row.classList.add('d-none')
-      row2.innerHTML = '<i class="fa fa-arrow-circle-down" style="font-size:19px; color: gray; padding: 5px;"></i>'
+      row2.innerHTML = '<i class="fa fa-arrow-circle-down reply-icon"></i>'
 
     }
   };
