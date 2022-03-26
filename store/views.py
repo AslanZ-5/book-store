@@ -105,7 +105,7 @@ def add_stars(request):
 
 
 
-def product_filter(request):
+def product_search(request):
     query = request.GET
     products = Product.objects.filter(is_active=True)
     if query:
