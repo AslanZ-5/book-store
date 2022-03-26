@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-03-25 10:59+0300\n"
+"POT-Creation-Date: 2022-03-26 17:01+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -78,11 +78,11 @@ msgstr ""
 msgid "Default"
 msgstr ""
 
-#: .\book_store\settings\base.py:163
+#: .\book_store\settings\base.py:173
 msgid "Englis"
 msgstr ""
 
-#: .\book_store\settings\base.py:164
+#: .\book_store\settings\base.py:174
 msgid "English"
 msgstr ""
 
@@ -601,6 +601,12 @@ msgstr ""
 
 #: .\templates\account\registration\account_activation_email.html:3
 msgid "Hi"
+msgstr ""
+
+#: .\templates\account\registration\account_activation_email.html:5
+msgid ""
+"Your account has been successfully created. Please click below link to "
+"activate your account"
 msgstr ""
 
 #: .\templates\account\registration\activation_invalid.html:3

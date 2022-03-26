@@ -2,8 +2,7 @@
 {% autoescape off %}
 {% trans 'Hi' %} {{user.user_name}},
 
-{% trans 'Your account has been successfully created. Please click 
-below link to activate your account' %}.
+{% trans 'Your account has been successfully created. Please click below link to activate your account' %}.
 
 http://{{domain}}{% url 'account:activate' uidb64=uid token=token %}
 
