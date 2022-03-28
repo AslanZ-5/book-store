@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-03-26 17:01+0300\n"
+"POT-Creation-Date: 2022-03-28 15:50+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -80,13 +80,25 @@ msgstr ""
 msgid "Default"
 msgstr ""
 
-#: .\book_store\settings\base.py:173
+#: .\book_store\settings\base.py:185
 msgid "Englis"
 msgstr ""
 
-#: .\book_store\settings\base.py:174
+#: .\book_store\settings\base.py:186
 msgid "English"
 msgstr ""
+
+#: .\checkout\models.py:12
+msgid "In Store"
+msgstr "В магазине"
+
+#: .\checkout\models.py:13
+msgid "Home Delivery"
+msgstr "Доставка на дом"
+
+#: .\checkout\models.py:14
+msgid "Digital Delivery"
+msgstr "Цифровая доставка"
 
 #: .\checkout\models.py:17
 msgid "delivery_name"
@@ -145,11 +157,11 @@ msgstr ""
 
 #: .\checkout\models.py:70
 msgid "Payment Selection"
-msgstr ""
+msgstr "Выбор платежа"
 
 #: .\checkout\models.py:71 .\templates\checkout\payment_selection.html:8
 msgid "Payment Selections"
-msgstr ""
+msgstr "Выбор платежа"
 
 #: .\checkout\views.py:44
 msgid "Please select delivery option"
@@ -283,7 +295,7 @@ msgstr ""
 msgid "Product Images"
 msgstr ""
 
-#: .\store\views.py:36
+#: .\store\views.py:37
 msgid "How are you?"
 msgstr "Как твои дела?"
 
@@ -609,8 +621,11 @@ msgstr "Привет"
 
 #: .\templates\account\registration\account_activation_email.html:5
 msgid ""
-"Your account has been successfully created. Please click below link to activate your account"
-msgstr "Ваша учетная запись успешно создана. Пожалуйста, нажмите на ссылку ниже, чтобы активировать свою учетную запись"
+"Your account has been successfully created. Please click below link to "
+"activate your account"
+msgstr ""
+"Ваша учетная запись успешно создана. Пожалуйста, нажмите на ссылку ниже, "
+"чтобы активировать свою учетную запись"
 
 #: .\templates\account\registration\activation_invalid.html:3
 msgid "Invalid Activation"
@@ -948,23 +963,23 @@ msgstr ""
 "Вы не можете поставить оценку, потому что вы не вошли в систему или уже "
 "поставили"
 
-#: .\templates\store\detail.html:84
+#: .\templates\store\detail.html:83
 msgid "Add to basket"
 msgstr "Добавить в корзину"
 
-#: .\templates\store\detail.html:86
+#: .\templates\store\detail.html:85
 msgid "Add to Wish List"
 msgstr "Добавить в список желаний"
 
-#: .\templates\store\detail.html:121
+#: .\templates\store\detail.html:120
 msgid "Review"
 msgstr "Отзывы"
 
-#: .\templates\store\detail.html:136
+#: .\templates\store\detail.html:135
 msgid "Remove"
 msgstr ""
 
-#: .\templates\store\detail.html:137
+#: .\templates\store\detail.html:136
 msgid "Replay"
 msgstr "Ответить"
 
@@ -972,15 +987,15 @@ msgstr "Ответить"
 msgid "Show replays"
 msgstr "Показать ответы"
 
-#: .\templates\store\detail.html:150 .\templates\store\detail.html:169
+#: .\templates\store\detail.html:149 .\templates\store\detail.html:168
 msgid "Comment"
 msgstr "Комментарий"
 
-#: .\templates\store\detail.html:177
+#: .\templates\store\detail.html:176
 msgid "Related Products"
 msgstr "сопутствующие товары"
 
-#: .\templates\store\detail.html:209
+#: .\templates\store\detail.html:208
 msgid "Recently Viewed"
 msgstr "Недавно просмотренные"
 

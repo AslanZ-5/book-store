@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-03-26 17:01+0300\n"
+"POT-Creation-Date: 2022-03-28 15:50+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -78,12 +78,24 @@ msgstr ""
 msgid "Default"
 msgstr ""
 
-#: .\book_store\settings\base.py:173
+#: .\book_store\settings\base.py:185
 msgid "Englis"
 msgstr ""
 
-#: .\book_store\settings\base.py:174
+#: .\book_store\settings\base.py:186
 msgid "English"
+msgstr ""
+
+#: .\checkout\models.py:12
+msgid "In Store"
+msgstr ""
+
+#: .\checkout\models.py:13
+msgid "Home Delivery"
+msgstr ""
+
+#: .\checkout\models.py:14
+msgid "Digital Delivery"
 msgstr ""
 
 #: .\checkout\models.py:17
@@ -281,7 +293,7 @@ msgstr ""
 msgid "Product Images"
 msgstr ""
 
-#: .\store\views.py:36
+#: .\store\views.py:37
 msgid "How are you?"
 msgstr ""
 
@@ -937,23 +949,23 @@ msgstr ""
 msgid "You cannot rate  because you are not loged in or you have already rated"
 msgstr ""
 
-#: .\templates\store\detail.html:84
+#: .\templates\store\detail.html:83
 msgid "Add to basket"
 msgstr ""
 
-#: .\templates\store\detail.html:86
+#: .\templates\store\detail.html:85
 msgid "Add to Wish List"
 msgstr ""
 
-#: .\templates\store\detail.html:121
+#: .\templates\store\detail.html:120
 msgid "Review"
 msgstr ""
 
-#: .\templates\store\detail.html:136
+#: .\templates\store\detail.html:135
 msgid "Remove"
 msgstr ""
 
-#: .\templates\store\detail.html:137
+#: .\templates\store\detail.html:136
 msgid "Replay"
 msgstr ""
 
@@ -961,15 +973,15 @@ msgstr ""
 msgid "Show replays"
 msgstr ""
 
-#: .\templates\store\detail.html:150 .\templates\store\detail.html:169
+#: .\templates\store\detail.html:149 .\templates\store\detail.html:168
 msgid "Comment"
 msgstr ""
 
-#: .\templates\store\detail.html:177
+#: .\templates\store\detail.html:176
 msgid "Related Products"
 msgstr ""
 
-#: .\templates\store\detail.html:209
+#: .\templates\store\detail.html:208
 msgid "Recently Viewed"
 msgstr ""
 
