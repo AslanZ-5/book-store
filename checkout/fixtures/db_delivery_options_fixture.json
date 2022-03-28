@@ -1,0 +1,93 @@
+[{
+    "model": "checkout.deliveryoptions",
+    "pk": 1,
+    "fields": {
+        "delivery_name": "2-day shipping",
+        "delivery_name_en": "2-day shipping",
+        "delivery_name_ru": "2-дневная доставка",
+        "delivery_price": "12.00",
+        "delivery_method": "IS",
+        "delivery_timeframe": "1-2 days",
+        "delivery_timeframe_en": "1-2 days",
+        "delivery_timeframe_ru": "1-2 дня",
+        "delivery_window": "9:00am - 9:00pm",
+        "delivery_window_en": "9:00am - 9:00pm",
+        "delivery_window_ru": "9:00 - 21:00",
+        "order": 12,
+        "is_active": true
+    }
+}, {
+    "model": "checkout.deliveryoptions",
+    "pk": 2,
+    "fields": {
+        "delivery_name": "Same-day delivery",
+        "delivery_name_en": "Same-day delivery",
+        "delivery_name_ru": "Доставка в тот же день",
+        "delivery_price": "30.00",
+        "delivery_method": "IS",
+        "delivery_timeframe": "24 hours",
+        "delivery_timeframe_en": "24 hours",
+        "delivery_timeframe_ru": "24 часа",
+        "delivery_window": "9:00am - 9:00pm",
+        "delivery_window_en": "9:00am - 9:00pm",
+        "delivery_window_ru": "9:00 - 21:00",
+        "order": 12,
+        "is_active": true
+    }
+}, {
+    "model": "checkout.deliveryoptions",
+    "pk": 3,
+    "fields": {
+        "delivery_name": "International shipping",
+        "delivery_name_en": "International shipping",
+        "delivery_name_ru": "Международный доставка",
+        "delivery_price": "15.00",
+        "delivery_method": "DD",
+        "delivery_timeframe": "6-7 days",
+        "delivery_timeframe_en": "6-7 days",
+        "delivery_timeframe_ru": "6-7 дня",
+        "delivery_window": "9:00am - 9:00pm",
+        "delivery_window_en": "9:00am - 9:00pm",
+        "delivery_window_ru": "9:00 - 21:00",
+        "order": 12,
+        "is_active": true
+    }
+}, {
+    "model": "checkout.deliveryoptions",
+    "pk": 4,
+    "fields": {
+        "delivery_name": "expedited shipping",
+        "delivery_name_en": "expedited shipping",
+        "delivery_name_ru": "ускоренная доставка",
+        "delivery_price": "19.00",
+        "delivery_method": "HD",
+        "delivery_timeframe": "4-6 hours",
+        "delivery_timeframe_en": "4-6 hours",
+        "delivery_timeframe_ru": "4-6 часа",
+        "delivery_window": "9:00am - 9:00pm",
+        "delivery_window_en": "9:00am - 9:00pm",
+        "delivery_window_ru": "9:00 - 21:00",
+        "order": 3,
+        "is_active": true
+    }
+}, {
+    "model": "checkout.deliveryoptions",
+    "pk": 5,
+    "fields": {
+        "delivery_name": "Freight shipping",
+        "delivery_name_en": "Freight shipping",
+        "delivery_name_ru": "Грузовая доставка",
+        "delivery_price": "192.00",
+        "delivery_method": "IS",
+        "delivery_timeframe": "2-3 weeks",
+        "delivery_timeframe_en": "2-3 weeks",
+        "delivery_timeframe_ru": "2-3 недели",
+        "delivery_window": "9:00am - 9:00pm",
+        "delivery_window_en": "9:00am - 9:00pm",
+        "delivery_window_ru": "9:00 - 21:00",
+        "order": 3,
+        "is_active": true
+    }
+}
+
+]

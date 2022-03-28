@@ -2,17 +2,17 @@ from tabnanny import verbose
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 
+
+
 class DeliveryOptions(models.Model):
     """
     The Delivery methods table contining all delivery
     """
-
-    DELIVERY_CHOICES = [
-        ("IS", "In Store"),
-        ("HD", "Home Delivery"),
-        ("DD", "Digital Delivery"),
-    ]
-
+    class DeliveryChoices(models.TextChoices):
+        in_store = 'IS', _("In Store")
+        home_delivery = 'HD', _('Home Delivery')
+        digital_delivery = 'DD', _('Digital Delivery')
+   
     delivery_name = models.CharField(
         verbose_name=_("delivery_name"),
         help_text=_("Required"),
@@ -30,7 +30,7 @@ class DeliveryOptions(models.Model):
         decimal_places=2,
     )
     delivery_method = models.CharField(
-        choices=DELIVERY_CHOICES,
+        choices=DeliveryChoices.choices,
         verbose_name=_("delivery_method"),
         help_text=_("Required"),
         max_length=255,
