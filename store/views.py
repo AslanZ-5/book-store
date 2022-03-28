@@ -1,3 +1,4 @@
+from json import JSONDecodeError
 from django.shortcuts import redirect, render
 from .models import Category, Product, Rating
 from django.shortcuts import get_object_or_404
@@ -80,7 +81,9 @@ def product_detail(request, slug):
             can_rate = True 
     else:
         can_rate = False
-    
+    print(rating)
+    if rating['user__count'] == 0:
+        rating['stars__avg'] = '0'
     context = {
         'product': product,
         'recently_viewed':recently_viewed,
@@ -98,7 +101,14 @@ def add_stars(request):
             prductid = int(request.POST.get('productid'))
             rate = Rating.objects.create(product_id=prductid, user=request.user, stars=value)
             rate.save()
-            return HttpResponseRedirect(request.META['HTTP_REFERER'])
+            a = Product.objects.get(id=prductid)
+            rate = a.rating_set.all().aggregate(stars__avg=Round(Avg('stars')), user__count=Count('user'))
+            data = {
+                'stars':rate['stars__avg'],
+                'cnt': rate['user__count'],
+            }
+            print(data)
+            return JsonResponse(data)
 
     
 

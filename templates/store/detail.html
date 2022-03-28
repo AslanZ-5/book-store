@@ -68,11 +68,10 @@
               <span class="result"></span>
 
               <div>
-                {% if rating.stars__avg %}
-                <p>{{rating.stars__avg}}/5</p>
-                {% endif %}
 
-                <p>ratings: {{rating.user__count}} </p>
+                <span style="display: flex; justify-content: center; font-weight: 600; font-size: larger; color:gray" >rating: <div  id="starsavg">{{rating.stars__avg}}</div>/5</span>
+
+                <span style="display: flex; justify-content: center; font-weight: 600; font-size: larger; color:gray"" >rated: <div id="usercount">{{rating.user__count}}</div> </span>
               </div>
             </div>
 
@@ -133,11 +132,11 @@
             <small>{{node.created|timesince}}</small>
           </div>
           <div class="action d-flex justify-content-between mt-2 align-items-center">
-            <div class="reply px-4"> <small class="reply-h">{% translate 'Remove' %}</small> <span class="dots"></span> <small class="reply-h"> <a
-                  onclick="comentReplay('{{node.pk}}')">{% translate 'Replay' %}</a></small> <span class="dots"></span>
+            <div class="reply px-4"> <small class="reply-h">{% translate 'Remove' %}</small> <span class="dots"></span>
+              <small class="reply-h"> <a onclick="comentReplay('{{node.pk}}')">{% translate 'Replay' %}</a></small>
+              <span class="dots"></span>
               <small>{% translate 'Show replays' %}</small> <a onclick="comentShowReplay('show{{node.pk}}')"><span
-                 id="innershow{{node.pk}}"><i class="fa fa-arrow-circle-down reply-icon"
-                    ></i></span> </a></div>
+                  id="innershow{{node.pk}}"><i class="fa fa-arrow-circle-down reply-icon"></i></span> </a></div>
             <div class="icons align-items-center"> </div>
           </div>
 
@@ -242,7 +241,6 @@
 
   function comentShowReplay(id) {
     const row2 = document.getElementById('inner' + id)
-    console.log('inner' + id)
     const row = document.getElementById(id);
     if (row.classList.contains('d-none')) {
       row.classList.remove('d-none');
@@ -257,8 +255,6 @@
 
   $(document).on("click", ".star_val", function () {
     var clickedBtnVal = $(this).attr('value');
-    console.log('hello you clicked at')
-    console.log($('#add-button').val())
     $.ajax({
       type: 'POST',
       url: '{% url "store:add_stars" %}',
@@ -267,6 +263,12 @@
         value: clickedBtnVal,
         csrfmiddlewaretoken: "{{csrf_token}}",
         action: 'post_star'
+      },
+      success: function (json) {
+        console.log('staravvdd', json.stars)
+        console.log('count ', json.cnt)
+        document.getElementById('starsavg').innerHTML = json.stars
+        document.getElementById('usercount').innerHTML = json.cnt
       },
 
       error: function (xhr, errmsg, err) {}
